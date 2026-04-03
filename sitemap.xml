@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Landing -->
+  <!-- Homepage -->
   <url>
-    <loc>https://dictokey.com/landing.html</loc>
+    <loc>https://dictokey.com/</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -18,37 +18,37 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://dictokey.com/blog/index.html</loc>
+    <loc>https://dictokey.com/blog/</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dictokey.com/blog/best-voice-keyboard-android-2026.html</loc>
+    <loc>https://dictokey.com/blog/best-voice-dictation-apps-android-2026.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dictokey.com/blog/whisper-vs-google-speech-recognition.html</loc>
+    <loc>https://dictokey.com/blog/voice-typing-vs-keyboard-speed-test.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dictokey.com/blog/voice-typing-productivity-tips.html</loc>
+    <loc>https://dictokey.com/blog/how-to-translate-text-on-android-keyboard.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dictokey.com/blog/multilingual-dictation-guide.html</loc>
+    <loc>https://dictokey.com/blog/whisper-speech-recognition-accuracy.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dictokey.com/blog/ai-rewrite-feature-explained.html</loc>
+    <loc>https://dictokey.com/blog/ai-keyboard-for-multilingual-users.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
