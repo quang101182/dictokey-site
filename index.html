@@ -69,7 +69,7 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.0.0
+           DictoKey Landing Page v1.1.0
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -149,6 +149,20 @@
             display: block; width: 22px; height: 2px; background: var(--text);
             margin: 5px 0; border-radius: 2px; transition: .3s;
         }
+
+        /* ---- LANG SWITCHER ---- */
+        .lang-switcher { position: relative; display: flex; align-items: center; }
+        .lang-btn { display: flex; align-items: center; gap: .35rem; background: rgba(124,106,255,.1); border: 1px solid var(--border-light); color: var(--text); padding: .35rem .7rem; border-radius: var(--radius-sm); font-size: .82rem; font-weight: 600; cursor: pointer; font-family: var(--font-sans); transition: border-color .2s, background .2s; }
+        .lang-btn:hover { border-color: var(--accent); background: rgba(124,106,255,.18); }
+        .lang-btn .lang-flag { font-size: 1.1rem; line-height: 1; }
+        .lang-btn .lang-arrow { font-size: .6rem; color: var(--text-dim); margin-left: .15rem; transition: transform .2s; }
+        .lang-switcher.open .lang-arrow { transform: rotate(180deg); }
+        .lang-dropdown { display: none; position: absolute; top: calc(100% + 6px); right: 0; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); box-shadow: var(--shadow); min-width: 160px; z-index: 1001; overflow: hidden; }
+        .lang-switcher.open .lang-dropdown { display: block; }
+        .lang-option { display: flex; align-items: center; gap: .6rem; padding: .6rem 1rem; font-size: .88rem; color: var(--text); cursor: pointer; transition: background .15s; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-sans); }
+        .lang-option:hover { background: rgba(124,106,255,.12); color: var(--text-bright); }
+        .lang-option.active { background: rgba(124,106,255,.18); color: var(--accent); }
+        .lang-option .lang-flag { font-size: 1.15rem; }
 
         /* ---- HERO ---- */
         .hero {
@@ -296,7 +310,7 @@
             box-shadow: 0 0 40px rgba(124,106,255,.12);
         }
         .price-card.featured::before {
-            content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            content: var(--popular-text, 'Most Popular'); position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
             background: var(--accent); color: #fff; padding: .3rem 1rem;
             border-radius: 50px; font-size: .75rem; font-weight: 600;
         }
@@ -432,6 +446,8 @@
                 border-bottom: 1px solid var(--border); gap: 1rem;
             }
             .nav-hamburger { display: block; }
+            .lang-switcher { order: -1; }
+            .lang-dropdown { right: auto; left: 0; }
             .hero { padding: 120px 0 60px; }
             .features-grid { grid-template-columns: 1fr; }
             .steps { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -447,11 +463,27 @@
     <div class="nav-inner">
         <a href="#" class="nav-logo">DictoKey</a>
         <div class="nav-links" id="navLinks">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="#tutorials">Tutorials</a>
-            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="nav-cta" target="_blank" rel="noopener">Get it on Google Play</a>
+            <a href="#features" data-i18n="nav_features">Features</a>
+            <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+            <a href="#faq" data-i18n="nav_faq">FAQ</a>
+            <a href="#tutorials" data-i18n="nav_tutorials">Tutorials</a>
+            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="nav-cta" target="_blank" rel="noopener" data-i18n="nav_cta">Get it on Google Play</a>
+        </div>
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-btn" id="langBtn" aria-label="Change language">
+                <span class="lang-flag" id="langFlag">🇬🇧</span>
+                <span class="lang-code" id="langCode">EN</span>
+                <span class="lang-arrow">&#9660;</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span> English</button>
+                <button class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span> Français</button>
+                <button class="lang-option" data-lang="de"><span class="lang-flag">🇩🇪</span> Deutsch</button>
+                <button class="lang-option" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</button>
+                <button class="lang-option" data-lang="pt"><span class="lang-flag">🇧🇷</span> Português</button>
+                <button class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span> Русский</button>
+                <button class="lang-option" data-lang="th"><span class="lang-flag">🇹🇭</span> ไทย</button>
+            </div>
         </div>
         <button class="nav-hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -462,24 +494,24 @@
 <!-- ====== HERO ====== -->
 <section class="hero">
     <div class="container">
-        <span class="hero-badge fade-in">Android Keyboard &middot; Powered by Whisper AI</span>
-        <h1 class="fade-in">Your Voice, Any Language,<br><span class="gradient-text">One Keyboard</span></h1>
-        <p class="hero-sub fade-in">AI-powered voice keyboard for Android. Dictate, translate, rewrite — in 52 languages. 3x cheaper than alternatives.</p>
+        <span class="hero-badge fade-in" data-i18n="hero_badge">Android Keyboard &middot; Powered by Whisper AI</span>
+        <h1 class="fade-in"><span data-i18n="hero_title_1">Your Voice, Any Language,</span><br><span class="gradient-text" data-i18n="hero_title_2">One Keyboard</span></h1>
+        <p class="hero-sub fade-in" data-i18n="hero_sub">AI-powered voice keyboard for Android. Dictate, translate, rewrite — in 52 languages. 3x cheaper than alternatives.</p>
         <div class="hero-ctas fade-in">
             <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-primary" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.396 13l2.302-2.492zM5.864 2.658L16.8 9.492l-2.302 2.302-8.635-8.636z"/></svg>
-                Download Free on Google Play
+                <span data-i18n="hero_btn_primary">Download Free on Google Play</span>
             </a>
-            <a href="#features" class="btn-secondary">Learn more &darr;</a>
+            <a href="#features" class="btn-secondary" data-i18n="hero_btn_secondary">Learn more &darr;</a>
         </div>
-        <p class="hero-note fade-in"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
+        <p class="hero-note fade-in" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
 
         <!-- QR Code Play Store -->
         <div class="hero-qr fade-in" style="margin:2rem auto;text-align:center">
             <div style="display:inline-block;background:#fff;padding:12px;border-radius:12px">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.dictokey.app&format=svg" alt="QR Code — Download DictoKey on Google Play" width="160" height="160" loading="lazy">
             </div>
-            <p style="font-size:.8rem;color:var(--text-dim);margin-top:.5rem">Scan to download on Android</p>
+            <p style="font-size:.8rem;color:var(--text-dim);margin-top:.5rem" data-i18n="hero_qr">Scan to download on Android</p>
         </div>
 
         <div class="hero-video fade-in">
@@ -491,40 +523,40 @@
 <!-- ====== FEATURES ====== -->
 <section id="features">
     <div class="container text-center">
-        <p class="section-label fade-in">Features</p>
-        <h2 class="section-title fade-in">Everything You Need in a Keyboard</h2>
-        <p class="section-desc fade-in">The only Android keyboard that combines native IME, Whisper-powered dictation, 52-language translation, and AI rewriting in one app.</p>
+        <p class="section-label fade-in" data-i18n="feat_label">Features</p>
+        <h2 class="section-title fade-in" data-i18n="feat_title">Everything You Need in a Keyboard</h2>
+        <p class="section-desc fade-in" data-i18n="feat_desc">The only Android keyboard that combines native IME, Whisper-powered dictation, 52-language translation, and AI rewriting in one app.</p>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <span class="feature-icon">🎤</span>
-                <h3>Whisper-Powered Dictation</h3>
-                <p>Industry-leading accuracy. Works in noisy environments, recognizes accents, handles technical terms. Under 300ms latency.</p>
+                <h3 data-i18n="feat_1_title">Whisper-Powered Dictation</h3>
+                <p data-i18n="feat_1_desc">Industry-leading accuracy. Works in noisy environments, recognizes accents, handles technical terms. Under 300ms latency.</p>
             </div>
             <div class="feature-card fade-in">
                 <span class="feature-icon">🌍</span>
-                <h3>52 Languages</h3>
-                <p>Dictate in French, translate to Japanese. Real-time translation powered by Azure AI. Any language pair, instantly.</p>
+                <h3 data-i18n="feat_2_title">52 Languages</h3>
+                <p data-i18n="feat_2_desc">Dictate in French, translate to Japanese. Real-time translation powered by Azure AI. Any language pair, instantly.</p>
             </div>
             <div class="feature-card fade-in">
                 <span class="feature-icon">✨</span>
-                <h3>AI Rewrite</h3>
-                <p>Transform your text: formal, casual, concise, expanded. One tap to polish any message to perfection.</p>
+                <h3 data-i18n="feat_3_title">AI Rewrite</h3>
+                <p data-i18n="feat_3_desc">Transform your text: formal, casual, concise, expanded. One tap to polish any message to perfection.</p>
             </div>
             <div class="feature-card fade-in">
                 <span class="feature-icon">🔧</span>
-                <h3>Voice Correction</h3>
-                <p>Say "replace X with Y" to edit hands-free. No typing needed. Natural voice commands for effortless editing.</p>
+                <h3 data-i18n="feat_4_title">Voice Correction</h3>
+                <p data-i18n="feat_4_desc">Say "replace X with Y" to edit hands-free. No typing needed. Natural voice commands for effortless editing.</p>
             </div>
             <div class="feature-card fade-in">
                 <span class="feature-icon">🗣️</span>
-                <h3>Interpreter Mode</h3>
-                <p>Face-to-face translation. Two microphones, real-time conversation in any language pair. Like having a personal interpreter.</p>
+                <h3 data-i18n="feat_5_title">Interpreter Mode</h3>
+                <p data-i18n="feat_5_desc">Face-to-face translation. Two microphones, real-time conversation in any language pair. Like having a personal interpreter.</p>
             </div>
             <div class="feature-card fade-in">
                 <span class="feature-icon">🔒</span>
-                <h3>Privacy First</h3>
-                <p>No personal data collected. No account required. Your voice is processed and immediately deleted. GDPR compliant.</p>
+                <h3 data-i18n="feat_6_title">Privacy First</h3>
+                <p data-i18n="feat_6_desc">No personal data collected. No account required. Your voice is processed and immediately deleted. GDPR compliant.</p>
             </div>
         </div>
     </div>
@@ -533,25 +565,25 @@
 <!-- ====== HOW IT WORKS ====== -->
 <section style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in">How It Works</p>
-        <h2 class="section-title fade-in">Start Dictating in 30 Seconds</h2>
-        <p class="section-desc fade-in">No account, no setup wizard. Install, enable, and speak.</p>
+        <p class="section-label fade-in" data-i18n="how_label">How It Works</p>
+        <h2 class="section-title fade-in" data-i18n="how_title">Start Dictating in 30 Seconds</h2>
+        <p class="section-desc fade-in" data-i18n="how_desc">No account, no setup wizard. Install, enable, and speak.</p>
 
         <div class="steps">
             <div class="step fade-in">
                 <div class="step-num">1</div>
-                <h3>Install & Enable</h3>
-                <p>Download DictoKey from Google Play and enable it as your keyboard in Android settings.</p>
+                <h3 data-i18n="how_1_title">Install & Enable</h3>
+                <p data-i18n="how_1_desc">Download DictoKey from Google Play and enable it as your keyboard in Android settings.</p>
             </div>
             <div class="step fade-in">
                 <div class="step-num">2</div>
-                <h3>Hold & Speak</h3>
-                <p>Open any app, hold the microphone button on the keyboard, and speak naturally.</p>
+                <h3 data-i18n="how_2_title">Tap & Speak</h3>
+                <p data-i18n="how_2_desc">Open any app, tap the microphone button on the keyboard, speak naturally, then tap again to stop.</p>
             </div>
             <div class="step fade-in">
                 <div class="step-num">3</div>
-                <h3>Translate & Rewrite</h3>
-                <p>Your text appears instantly. Translate or rewrite with a single tap — right from the keyboard.</p>
+                <h3 data-i18n="how_3_title">Translate & Rewrite</h3>
+                <p data-i18n="how_3_desc">Your text appears instantly. Translate or rewrite with a single tap — right from the keyboard.</p>
             </div>
         </div>
     </div>
@@ -560,70 +592,70 @@
 <!-- ====== PRICING ====== -->
 <section id="pricing">
     <div class="container text-center">
-        <p class="section-label fade-in">Pricing</p>
-        <h2 class="section-title fade-in">Simple, Honest Pricing</h2>
-        <p class="section-desc fade-in">Start free, upgrade when you need more. No hidden fees, cancel anytime.</p>
+        <p class="section-label fade-in" data-i18n="price_label">Pricing</p>
+        <h2 class="section-title fade-in" data-i18n="price_title">Simple, Honest Pricing</h2>
+        <p class="section-desc fade-in" data-i18n="price_desc">Start free, upgrade when you need more. No hidden fees, cancel anytime.</p>
 
         <div class="pricing-grid">
             <!-- Free -->
             <div class="price-card fade-in">
-                <h3>Free</h3>
-                <div class="price-amount">€0 <span class="period">forever</span></div>
-                <p class="price-alt">No credit card required</p>
+                <h3 data-i18n="price_free">Free</h3>
+                <div class="price-amount" data-i18n="price_free_amount">€0 <span class="period">forever</span></div>
+                <p class="price-alt" data-i18n="price_free_alt">No credit card required</p>
                 <ul class="price-features">
-                    <li><span class="check">&#10003;</span> 30 dictations per day</li>
-                    <li><span class="check">&#10003;</span> 52 languages</li>
-                    <li><span class="check">&#10003;</span> Clean mode (formatting)</li>
-                    <li><span class="check">&#10003;</span> Whisper AI accuracy</li>
-                    <li><span class="dim">&mdash;</span> <span class="dim">AI Rewrite modes</span></li>
-                    <li><span class="dim">&mdash;</span> <span class="dim">Interpreter Mode</span></li>
-                    <li><span class="dim">&mdash;</span> <span class="dim">Voice Correction</span></li>
+                    <li data-i18n="price_free_1"><span class="check">&#10003;</span> 30 dictations per day</li>
+                    <li data-i18n="price_free_2"><span class="check">&#10003;</span> 52 languages</li>
+                    <li data-i18n="price_free_3"><span class="check">&#10003;</span> Clean mode (formatting)</li>
+                    <li data-i18n="price_free_4"><span class="check">&#10003;</span> Whisper AI accuracy</li>
+                    <li data-i18n="price_free_5"><span class="dim">&mdash;</span> <span class="dim">AI Rewrite modes</span></li>
+                    <li data-i18n="price_free_6"><span class="dim">&mdash;</span> <span class="dim">Interpreter Mode</span></li>
+                    <li data-i18n="price_free_7"><span class="dim">&mdash;</span> <span class="dim">Voice Correction</span></li>
                 </ul>
-                <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-pricing secondary" target="_blank" rel="noopener">Download Free</a>
+                <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-pricing secondary" target="_blank" rel="noopener" data-i18n="price_free_btn">Download Free</a>
             </div>
 
             <!-- Premium -->
             <div class="price-card featured fade-in">
-                <h3>Premium</h3>
-                <div class="price-amount">€4.99 <span class="period">/month</span></div>
-                <p class="price-alt">or €34.99/year — save 42%</p>
+                <h3 data-i18n="price_prem">Premium</h3>
+                <div class="price-amount" data-i18n="price_prem_amount">€4.99 <span class="period">/month</span></div>
+                <p class="price-alt" data-i18n="price_prem_alt">or €34.99/year — save 42%</p>
                 <ul class="price-features">
-                    <li><span class="check">&#10003;</span> <strong>Unlimited</strong> dictations</li>
-                    <li><span class="check">&#10003;</span> 52 languages</li>
-                    <li><span class="check">&#10003;</span> All rewrite modes</li>
-                    <li><span class="check">&#10003;</span> Interpreter Mode</li>
-                    <li><span class="check">&#10003;</span> Voice Correction</li>
-                    <li><span class="check">&#10003;</span> Priority processing</li>
-                    <li><span class="check">&#10003;</span> 7-day free trial</li>
+                    <li data-i18n="price_prem_1"><span class="check">&#10003;</span> <strong>Unlimited</strong> dictations</li>
+                    <li data-i18n="price_prem_2"><span class="check">&#10003;</span> 52 languages</li>
+                    <li data-i18n="price_prem_3"><span class="check">&#10003;</span> All rewrite modes</li>
+                    <li data-i18n="price_prem_4"><span class="check">&#10003;</span> Interpreter Mode</li>
+                    <li data-i18n="price_prem_5"><span class="check">&#10003;</span> Voice Correction</li>
+                    <li data-i18n="price_prem_6"><span class="check">&#10003;</span> Priority processing</li>
+                    <li data-i18n="price_prem_7"><span class="check">&#10003;</span> 7-day free trial</li>
                 </ul>
-                <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-pricing primary" target="_blank" rel="noopener">Start 7-Day Free Trial</a>
+                <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-pricing primary" target="_blank" rel="noopener" data-i18n="price_prem_btn">Start 7-Day Free Trial</a>
             </div>
         </div>
-        <p class="pricing-note fade-in"><strong>7-day free trial</strong> — All Premium features unlocked. Cancel anytime.</p>
+        <p class="pricing-note fade-in" data-i18n="price_note"><strong>7-day free trial</strong> — All Premium features unlocked. Cancel anytime.</p>
     </div>
 </section>
 
 <!-- ====== TESTIMONIALS ====== -->
 <section style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in">Testimonials</p>
-        <h2 class="section-title fade-in">What Users Say</h2>
+        <p class="section-label fade-in" data-i18n="test_label">Testimonials</p>
+        <h2 class="section-title fade-in" data-i18n="test_title">What Users Say</h2>
 
         <div class="testimonials-grid">
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"I stopped typing entirely. DictoKey is faster and more accurate than any keyboard I've used."</blockquote>
-                <p class="testimonial-author"><strong>Beta tester</strong> — France</p>
+                <blockquote data-i18n="test_1_quote">"I stopped typing entirely. DictoKey is faster and more accurate than any keyboard I've used."</blockquote>
+                <p class="testimonial-author" data-i18n="test_1_author"><strong>Beta tester</strong> — France</p>
             </div>
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"The translation feature is incredible. I communicate with Thai colleagues directly from my keyboard."</blockquote>
-                <p class="testimonial-author"><strong>Beta tester</strong> — Thailand</p>
+                <blockquote data-i18n="test_2_quote">"The translation feature is incredible. I communicate with Thai colleagues directly from my keyboard."</blockquote>
+                <p class="testimonial-author" data-i18n="test_2_author"><strong>Beta tester</strong> — Thailand</p>
             </div>
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"Voice correction blew my mind. I just say 'replace hello with bonjour' and it does it."</blockquote>
-                <p class="testimonial-author"><strong>Beta tester</strong> — Ukraine</p>
+                <blockquote data-i18n="test_3_quote">"Voice correction blew my mind. I just say 'replace hello with bonjour' and it does it."</blockquote>
+                <p class="testimonial-author" data-i18n="test_3_author"><strong>Beta tester</strong> — Ukraine</p>
             </div>
         </div>
     </div>
@@ -632,9 +664,9 @@
 <!-- ====== TUTORIALS ====== -->
 <section id="tutorials">
     <div class="container text-center">
-        <p class="section-label fade-in">Tutorials</p>
-        <h2 class="section-title fade-in">Watch DictoKey in Action</h2>
-        <p class="section-desc fade-in">Short video guides to get the most out of every feature.</p>
+        <p class="section-label fade-in" data-i18n="tut_label">Tutorials</p>
+        <h2 class="section-title fade-in" data-i18n="tut_title">Watch DictoKey in Action</h2>
+        <p class="section-desc fade-in" data-i18n="tut_desc">Short video guides to get the most out of every feature.</p>
 
         <div class="videos-scroll">
             <div class="video-thumb fade-in">
@@ -668,44 +700,44 @@
 <!-- ====== FAQ ====== -->
 <section id="faq" style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in">FAQ</p>
-        <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+        <p class="section-label fade-in" data-i18n="faq_label">FAQ</p>
+        <h2 class="section-title fade-in" data-i18n="faq_title">Frequently Asked Questions</h2>
 
         <div class="faq-list">
             <div class="faq-item fade-in">
-                <button class="faq-question">Is DictoKey really free? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_1_q">Is DictoKey really free?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>Yes! DictoKey offers 30 free dictations per day, forever. No account needed, no credit card required. Premium unlocks unlimited dictations and advanced features like AI Rewrite and Interpreter Mode.</p>
+                    <p data-i18n="faq_1_a">Yes! DictoKey offers 30 free dictations per day, forever. No account needed, no credit card required. Premium unlocks unlimited dictations and advanced features like AI Rewrite and Interpreter Mode.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
-                <button class="faq-question">Which languages are supported? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_2_q">Which languages are supported?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>DictoKey supports 52 languages for both dictation and translation — including English, French, Spanish, German, Japanese, Chinese, Arabic, Korean, Thai, Vietnamese, and many more.</p>
+                    <p data-i18n="faq_2_a">DictoKey supports 52 languages for both dictation and translation — including English, French, Spanish, German, Japanese, Chinese, Arabic, Korean, Thai, Vietnamese, and many more.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
-                <button class="faq-question">Does it work offline? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_3_q">Does it work offline?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>DictoKey requires an internet connection for AI processing (Whisper speech recognition and translation run in the cloud). The good news: latency is under 300ms, so it feels instant.</p>
+                    <p data-i18n="faq_3_a">DictoKey requires an internet connection for AI processing (Whisper speech recognition and translation run in the cloud). The good news: latency is under 300ms, so it feels instant.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
-                <button class="faq-question">Is my data private? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_4_q">Is my data private?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>Absolutely. DictoKey collects no personal data, requires no account, and your voice recordings are processed then immediately deleted. We are fully GDPR compliant. <a href="privacy.html">Read our Privacy Policy</a>.</p>
+                    <p data-i18n="faq_4_a">Absolutely. DictoKey collects no personal data, requires no account, and your voice recordings are processed then immediately deleted. We are fully GDPR compliant.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
-                <button class="faq-question">Can I use it with any app? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_5_q">Can I use it with any app?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>Yes! DictoKey is a system keyboard (IME) — it works everywhere: WhatsApp, email, browser, notes, social media, and any app where you can type.</p>
+                    <p data-i18n="faq_5_a">Yes! DictoKey is a system keyboard (IME) — it works everywhere: WhatsApp, email, browser, notes, social media, and any app where you can type.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
-                <button class="faq-question">What is Interpreter Mode? <span class="faq-arrow">+</span></button>
+                <button class="faq-question"><span data-i18n="faq_6_q">What is Interpreter Mode?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
-                    <p>Interpreter Mode is a Premium feature for face-to-face translation. It uses two microphones to enable real-time conversation between any two languages — like having a personal interpreter in your pocket.</p>
+                    <p data-i18n="faq_6_a">Interpreter Mode is a Premium feature for face-to-face translation. It uses two microphones to enable real-time conversation between any two languages — like having a personal interpreter in your pocket.</p>
                 </div>
             </div>
         </div>
@@ -715,12 +747,12 @@
 <!-- ====== CTA FINAL ====== -->
 <section class="cta-final">
     <div class="container">
-        <h2 class="fade-in">Ready to Stop Typing?</h2>
-        <p class="fade-in">Join thousands who dictate faster than they type. Free to start, no account needed.</p>
+        <h2 class="fade-in" data-i18n="cta_title">Ready to Stop Typing?</h2>
+        <p class="fade-in" data-i18n="cta_desc">Join thousands who dictate faster than they type. Free to start, no account needed.</p>
         <div class="hero-ctas fade-in">
             <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-primary" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.396 13l2.302-2.492zM5.864 2.658L16.8 9.492l-2.302 2.302-8.635-8.636z"/></svg>
-                Download Free on Google Play
+                <span data-i18n="cta_btn">Download Free on Google Play</span>
             </a>
         </div>
     </div>
@@ -730,15 +762,16 @@
 <footer>
     <div class="container">
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:quangapps.dev@gmail.com">Contact</a>
-            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" target="_blank" rel="noopener">Google Play</a>
+            <a href="privacy.html" data-i18n="foot_privacy">Privacy Policy</a>
+            <a href="mailto:quangapps.dev@gmail.com" data-i18n="foot_contact">Contact</a>
+            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" target="_blank" rel="noopener" data-i18n="foot_gplay">Google Play</a>
         </div>
-        <p class="footer-copy">&copy; 2026 DictoKey. All rights reserved. &middot; <span id="visitCount" style="color:var(--accent-green)"></span></p>
+        <p class="footer-copy"><span data-i18n="foot_copy">&copy; 2026 DictoKey. All rights reserved.</span> &middot; <span id="visitCount" style="color:var(--accent-green)"></span></p>
     </div>
 </footer>
 
 <!-- ====== JS ====== -->
+<script src="translations.js"></script>
 <script>
     // Mobile menu toggle
     const hamburger = document.getElementById('hamburger');
@@ -782,6 +815,58 @@
         if (el) el.textContent = d.total + ' visitors';
       })
       .catch(() => {});
+
+    // ====== i18n ======
+    const LANGS = {
+        en: { flag: '\u{1F1EC}\u{1F1E7}', code: 'EN' },
+        fr: { flag: '\u{1F1EB}\u{1F1F7}', code: 'FR' },
+        de: { flag: '\u{1F1E9}\u{1F1EA}', code: 'DE' },
+        es: { flag: '\u{1F1EA}\u{1F1F8}', code: 'ES' },
+        pt: { flag: '\u{1F1E7}\u{1F1F7}', code: 'PT' },
+        ru: { flag: '\u{1F1F7}\u{1F1FA}', code: 'RU' },
+        th: { flag: '\u{1F1F9}\u{1F1ED}', code: 'TH' },
+    };
+
+    function setLang(lang) {
+        if (!T || !T[lang]) lang = 'en';
+        const t = T[lang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+        document.documentElement.lang = lang;
+        if (t.meta_title) document.title = t.meta_title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle && t.meta_title) ogTitle.setAttribute('content', t.meta_title);
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc && t.meta_desc) ogDesc.setAttribute('content', t.meta_desc);
+        const twTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twTitle && t.meta_title) twTitle.setAttribute('content', t.meta_title);
+        const twDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twDesc && t.meta_desc) twDesc.setAttribute('content', t.meta_desc);
+        const featured = document.querySelector('.price-card.featured');
+        if (featured && t.price_popular) featured.style.setProperty('--popular-text', '"' + t.price_popular + '"');
+        const info = LANGS[lang];
+        document.getElementById('langFlag').textContent = info.flag;
+        document.getElementById('langCode').textContent = info.code;
+        document.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+        localStorage.setItem('dictokey-lang', lang);
+    }
+
+    document.getElementById('langBtn').addEventListener('click', e => { e.stopPropagation(); document.getElementById('langSwitcher').classList.toggle('open'); });
+    document.addEventListener('click', () => document.getElementById('langSwitcher').classList.remove('open'));
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.addEventListener('click', () => { setLang(opt.dataset.lang); document.getElementById('langSwitcher').classList.remove('open'); });
+    });
+
+    (function() {
+        const saved = localStorage.getItem('dictokey-lang');
+        if (saved && LANGS[saved]) { setLang(saved); return; }
+        const prefix = (navigator.language || 'en').split('-')[0].toLowerCase();
+        setLang(LANGS[prefix] ? prefix : 'en');
+    })();
 </script>
 
 </body>
