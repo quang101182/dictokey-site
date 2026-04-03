@@ -734,7 +734,7 @@
             <a href="mailto:quangapps.dev@gmail.com">Contact</a>
             <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" target="_blank" rel="noopener">Google Play</a>
         </div>
-        <p class="footer-copy">&copy; 2026 DictoKey. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 DictoKey. All rights reserved. &middot; <span id="visitCount" style="color:var(--accent-green)"></span></p>
     </div>
 </footer>
 
@@ -770,6 +770,18 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Visit counter (gateway-pro)
+    const VISIT_URL = 'https://api-gateway-pro.quang101182.workers.dev/api/visit?page=dk';
+    const visited = sessionStorage.getItem('dk_visited');
+    fetch(VISIT_URL, { method: visited ? 'GET' : 'POST' })
+      .then(r => r.json())
+      .then(d => {
+        if (!visited) sessionStorage.setItem('dk_visited', '1');
+        const el = document.getElementById('visitCount');
+        if (el) el.textContent = d.total + ' visitors';
+      })
+      .catch(() => {});
 </script>
 
 </body>
