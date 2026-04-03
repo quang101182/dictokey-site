@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — DictoKey</title>
+    <meta name="description" content="DictoKey Privacy Policy. No personal data collected. No account required. GDPR compliant.">
+    <link rel="canonical" href="https://dictokey.com/privacy.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #080810;
+            --bg-card: #10101a;
+            --border: #1a1a2e;
+            --text: #e0e0e8;
+            --text-dim: #8888a0;
+            --accent: #7c6aff;
+            --accent-green: #00d4aa;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color .2s; }
+        a:hover { color: var(--accent-green); }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8, 8, 16, .85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            height: 64px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+        .nav-back { font-size: .95rem; color: var(--text-dim); }
+        .nav-back:hover { color: var(--accent); }
+
+        /* Content */
+        .privacy-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 1.5rem 80px;
+        }
+        .privacy-container h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .privacy-container .updated {
+            color: var(--text-dim);
+            font-size: .9rem;
+            margin-bottom: 2.5rem;
+        }
+        .privacy-container h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 2rem 0 .75rem;
+        }
+        .privacy-container p, .privacy-container li {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .privacy-container ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .privacy-container li { margin-bottom: .5rem; }
+
+        .highlight-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p { margin-bottom: 0; }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .contact-box a { font-family: var(--font-mono); font-size: .95rem; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: .85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="nav-logo">DictoKey</span>
+    <a href="/" class="nav-back">&larr; Back to Home</a>
+</nav>
+
+<div class="privacy-container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 3, 2026</p>
+
+    <div class="highlight-box">
+        <p><strong>TL;DR</strong> — DictoKey collects no personal data, requires no account, and does not track you. Your voice recordings are processed and immediately deleted.</p>
+    </div>
+
+    <h2>1. No Personal Data Collection</h2>
+    <p>DictoKey does not collect, store, or share any personal information. We do not require:</p>
+    <ul>
+        <li>User accounts or registration</li>
+        <li>Email addresses</li>
+        <li>Names or phone numbers</li>
+        <li>Location data</li>
+    </ul>
+
+    <h2>2. Voice & Audio Processing</h2>
+    <p>When you use DictoKey's voice dictation:</p>
+    <ul>
+        <li>Your audio is sent to our secure servers for speech-to-text processing (powered by OpenAI Whisper).</li>
+        <li>The audio is processed in real time and <strong>immediately deleted</strong> after transcription — it is never stored.</li>
+        <li>Transcribed text is returned to your device and is not retained on our servers.</li>
+    </ul>
+
+    <h2>3. Translation & AI Rewrite</h2>
+    <p>When you use translation or AI rewrite features:</p>
+    <ul>
+        <li>Your text is sent to Azure AI / OpenAI for processing.</li>
+        <li>The text is processed and returned — it is not stored or used for model training.</li>
+    </ul>
+
+    <h2>4. Anonymous Device Identifier</h2>
+    <p>DictoKey generates an <strong>anonymous device ID</strong> solely for the purpose of counting daily dictation usage (to enforce the free tier limit of 30 dictations/day). This ID:</p>
+    <ul>
+        <li>Cannot identify you personally</li>
+        <li>Is not linked to any personal information</li>
+        <li>Is not shared with third parties</li>
+        <li>Can be deleted at any time using the "Delete my data" button in the app settings</li>
+    </ul>
+
+    <h2>5. No Cookies or Third-Party Tracking</h2>
+    <p>DictoKey does not use cookies, analytics trackers, advertising SDKs, or any third-party tracking tools. We do not serve ads.</p>
+
+    <h2>6. Data Security</h2>
+    <p>All communications between DictoKey and our servers are encrypted using TLS (HTTPS). Audio data exists only transiently during processing and is never written to persistent storage.</p>
+
+    <h2>7. GDPR Compliance</h2>
+    <p>DictoKey is fully compliant with the General Data Protection Regulation (GDPR). Since we do not collect personal data, there is minimal data to manage. However, you can:</p>
+    <ul>
+        <li>Use the <strong>"Delete my data"</strong> button in the app to remove your anonymous device ID</li>
+        <li>Contact us to request information about any data associated with your device</li>
+        <li>Uninstall the app at any time — no residual data remains on our servers</li>
+    </ul>
+
+    <h2>8. Children's Privacy</h2>
+    <p>DictoKey does not knowingly collect data from children under 13. Since no personal data is collected from any user, the app is safe for all ages.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date.</p>
+
+    <div class="contact-box">
+        <p><strong>Questions or concerns?</strong></p>
+        <p style="margin-top: .5rem;">Contact us at <a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a></p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 DictoKey &middot; <a href="/">Home</a> &middot; <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
