@@ -56,8 +56,8 @@
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "50"
+            "ratingValue": "5.0",
+            "ratingCount": "7"
         }
     }
     </script>
@@ -69,7 +69,7 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.1.0
+           DictoKey Landing Page v1.2.0
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -344,10 +344,10 @@
         .pricing-note strong { color: var(--accent-green); }
 
         /* ---- TESTIMONIALS ---- */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; justify-items: center; }
         .testimonial-card {
             background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2rem 1.75rem;
+            border-radius: var(--radius); padding: 2rem 1.75rem; max-width: 420px; width: 100%;
         }
         .testimonial-stars { color: #fbbf24; font-size: .9rem; margin-bottom: 1rem; letter-spacing: 2px; }
         .testimonial-card blockquote {
@@ -356,6 +356,7 @@
         }
         .testimonial-author { font-size: .85rem; color: var(--text-dim); }
         .testimonial-author strong { color: var(--text); font-style: normal; }
+        .testimonial-source { font-size: .75rem; color: var(--text-dimmer); margin-top: .5rem; }
 
         /* ---- VIDEOS ---- */
         .videos-scroll {
@@ -645,18 +646,45 @@
         <div class="testimonials-grid">
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote data-i18n="test_1_quote">"I stopped typing entirely. DictoKey is faster and more accurate than any keyboard I've used."</blockquote>
-                <p class="testimonial-author" data-i18n="test_1_author"><strong>Beta tester</strong> — France</p>
+                <blockquote>"App simple et rapide à comprendre puis à utiliser, très pratique quand on n'a pas le temps d'écrire. Moi qui vis dans un endroit cosmopolite et polyglotte, ça me permet d'échanger plus aisément avec les gens. En plus il n'y a peu de latence, voire pas du tout. J'adore et j'adhère !"</blockquote>
+                <p class="testimonial-author"><strong>Thomas P.</strong> — Google Pixel 10 Pro</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
             </div>
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote data-i18n="test_2_quote">"The translation feature is incredible. I communicate with Thai colleagues directly from my keyboard."</blockquote>
-                <p class="testimonial-author" data-i18n="test_2_author"><strong>Beta tester</strong> — Thailand</p>
+                <blockquote>"Un clavier super pratique avec une transcription beaucoup plus fidèle que les autres ! Même pour la traduction, c'est vraiment fidèle ! Il rajoute même des virgules et des points dans les phrases... Pas besoin de repasser dessus après pour les ajouter !"</blockquote>
+                <p class="testimonial-author"><strong>Berry S.</strong> — Samsung Galaxy S24+</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
             </div>
             <div class="testimonial-card fade-in">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote data-i18n="test_3_quote">"Voice correction blew my mind. I just say 'replace hello with bonjour' and it does it."</blockquote>
-                <p class="testimonial-author" data-i18n="test_3_author"><strong>Beta tester</strong> — Ukraine</p>
+                <blockquote>"Impressions très positives. Le programme est simple, clair et facilite grandement la communication. J'en suis ravi, un grand merci au développeur."</blockquote>
+                <p class="testimonial-author"><strong>Marina M.</strong> — Redmi Note 14 Pro</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Incroyable app, tout y est, facile d'utilisation et intuitif. Développeur réactif et à l'écoute des idées et recommandations !"</blockquote>
+                <p class="testimonial-author"><strong>Cristina M.</strong> — Samsung Galaxy S25</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"DictoKey me fait gagner beaucoup de temps dans mon quotidien. La prise en main est facile et intuitive."</blockquote>
+                <p class="testimonial-author"><strong>Imane H.</strong> — Samsung Galaxy S26 Ultra</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Super appli, un gain de temps incroyable. Appli fiable et très bien faite même pour les novices comme moi. Je recommande vraiment."</blockquote>
+                <p class="testimonial-author"><strong>Sylvie S.</strong> — Samsung Galaxy A53 5G</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Application prometteuse et bonne chance aux développeurs."</blockquote>
+                <p class="testimonial-author"><strong>Xavier B.</strong> — Samsung Galaxy A53 5G</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5</p>
             </div>
         </div>
     </div>
