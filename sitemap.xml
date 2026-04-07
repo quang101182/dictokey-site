@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://dictokey.com/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Privacy -->
   <url>
     <loc>https://dictokey.com/privacy.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -19,129 +19,137 @@
   <!-- Blog -->
   <url>
     <loc>https://dictokey.com/blog/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dictokey.com/blog/best-voice-dictation-apps-android-2026.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dictokey.com/blog/voice-typing-vs-keyboard-speed-test.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dictokey.com/blog/how-to-translate-text-on-android-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dictokey.com/blog/whisper-speech-recognition-accuracy.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dictokey.com/blog/ai-keyboard-for-multilingual-users.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tools Index -->
+  <url>
+    <loc>https://dictokey.com/tools/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Tools — Language Voice Keyboards -->
   <url>
     <loc>https://dictokey.com/tools/french-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/spanish-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/german-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/japanese-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/chinese-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/arabic-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/russian-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/portuguese-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/korean-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/italian-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/hindi-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/thai-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/turkish-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/polish-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dictokey.com/tools/ukrainian-voice-keyboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

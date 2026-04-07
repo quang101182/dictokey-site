@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Keyboards for 15 Languages — AI Dictation Tools | DictoKey</title>
+<meta name="description" content="Free AI voice keyboards for Android. Dictate in French, Spanish, German, Japanese, Chinese, Arabic, Russian, Portuguese, Korean, Italian, Hindi, Thai, Turkish, Polish, and Ukrainian.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://dictokey.com/tools/">
+
+<meta property="og:title" content="Voice Keyboards for 15 Languages — AI Dictation Tools | DictoKey">
+<meta property="og:description" content="Free AI voice keyboards for Android. Dictate in French, Spanish, German, Japanese, Chinese, Arabic, Russian, Portuguese, Korean, Italian, Hindi, Thai, Turkish, Polish, and Ukrainian.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dictokey.com/tools/">
+<meta property="og:site_name" content="DictoKey">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Voice Keyboards for 15 Languages — AI Dictation Tools | DictoKey">
+<meta name="twitter:description" content="Free AI voice keyboards for Android. Dictate in 15 languages with Whisper AI accuracy. Free, no account required.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "DictoKey",
+      "item": "https://dictokey.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://dictokey.com/tools/"
+    }
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- v1.0.0 | tools-index -->
+<style>
+:root {
+  --bg: #080810;
+  --surface: rgba(255,255,255,.04);
+  --surface2: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.08);
+  --accent: #7c6aff;
+  --accent2: #00d4aa;
+  --text: #f0f0f8;
+  --muted: #888;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Inter', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 10% 10%, rgba(124,106,255,.12) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 90% 85%, rgba(0,212,170,.09) 0%, transparent 60%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,8,16,.85);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { font-family: var(--mono); font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 12px; align-items: center; }
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all .2s;
+}
+.nav-links a:hover { background: var(--surface2); }
+.nav-links .nav-cta {
+  border: 1px solid var(--accent);
+  padding: 8px 20px;
+}
+.nav-links .nav-cta:hover { background: var(--accent); }
+
+/* HERO */
+.tools-hero {
+  text-align: center;
+  padding: 64px 24px 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.tools-hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.tools-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.tools-hero p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* GRID */
+.tools-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text);
+}
+.tool-card:hover {
+  border-color: rgba(124,106,255,.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124,106,255,.12);
+}
+.tool-card .flag {
+  font-size: 36px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.tool-card .card-body {
+  flex: 1;
+  min-width: 0;
+}
+.tool-card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.tool-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.tool-card .arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all .2s;
+}
+.tool-card:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* CTA */
+.tools-cta {
+  text-align: center;
+  padding: 0 24px 80px;
+}
+.tools-cta p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.cta {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--accent), #6c5ce7);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124,106,255,.4);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--muted);
+}
+footer a { color: var(--accent2); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 12px 16px; }
+  .tools-hero { padding: 48px 16px 36px; }
+  .tools-grid { grid-template-columns: 1fr; padding: 0 16px 60px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="logo">Dicto<span>Key</span></a>
+  <div class="nav-links">
+    <a href="../">Home</a>
+    <a href="../blog/">Blog</a>
+    <a href="./">Tools</a>
+    <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="nav-cta">Get on Google Play</a>
+  </div>
+</nav>
+
+<div class="tools-hero">
+  <h1><em>Voice Keyboards</em> for 15 Languages</h1>
+  <p>Free AI-powered voice keyboards for Android. Dictate in any language with Whisper accuracy, real-time translation, and smart rewrite. No account required.</p>
+</div>
+
+<div class="tools-grid">
+
+  <a href="french-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127467;&#127479;</span>
+    <div class="card-body">
+      <h2>French Voice Keyboard</h2>
+      <p>Dictate in French on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="spanish-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127466;&#127480;</span>
+    <div class="card-body">
+      <h2>Spanish Voice Keyboard</h2>
+      <p>Dictate in Spanish on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="german-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127465;&#127466;</span>
+    <div class="card-body">
+      <h2>German Voice Keyboard</h2>
+      <p>Dictate in German on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="japanese-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127471;&#127477;</span>
+    <div class="card-body">
+      <h2>Japanese Voice Keyboard</h2>
+      <p>Dictate in Japanese on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="chinese-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127464;&#127475;</span>
+    <div class="card-body">
+      <h2>Chinese Voice Keyboard</h2>
+      <p>Dictate in Chinese on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="arabic-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127480;&#127462;</span>
+    <div class="card-body">
+      <h2>Arabic Voice Keyboard</h2>
+      <p>Dictate in Arabic on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="russian-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127479;&#127482;</span>
+    <div class="card-body">
+      <h2>Russian Voice Keyboard</h2>
+      <p>Dictate in Russian on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="portuguese-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127463;&#127479;</span>
+    <div class="card-body">
+      <h2>Portuguese Voice Keyboard</h2>
+      <p>Dictate in Portuguese on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="korean-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127472;&#127479;</span>
+    <div class="card-body">
+      <h2>Korean Voice Keyboard</h2>
+      <p>Dictate in Korean on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="italian-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127470;&#127481;</span>
+    <div class="card-body">
+      <h2>Italian Voice Keyboard</h2>
+      <p>Dictate in Italian on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="hindi-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127470;&#127475;</span>
+    <div class="card-body">
+      <h2>Hindi Voice Keyboard</h2>
+      <p>Dictate in Hindi on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="thai-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127481;&#127469;</span>
+    <div class="card-body">
+      <h2>Thai Voice Keyboard</h2>
+      <p>Dictate in Thai on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="turkish-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127481;&#127479;</span>
+    <div class="card-body">
+      <h2>Turkish Voice Keyboard</h2>
+      <p>Dictate in Turkish on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="polish-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127477;&#127473;</span>
+    <div class="card-body">
+      <h2>Polish Voice Keyboard</h2>
+      <p>Dictate in Polish on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+  <a href="ukrainian-voice-keyboard.html" class="tool-card">
+    <span class="flag">&#127482;&#127462;</span>
+    <div class="card-body">
+      <h2>Ukrainian Voice Keyboard</h2>
+      <p>Dictate in Ukrainian on any Android app</p>
+    </div>
+    <span class="arrow">&rarr;</span>
+  </a>
+
+</div>
+
+<div class="tools-cta">
+  <p>All 15 languages included free — 30 dictations per day, no account needed.</p>
+  <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="cta">Download Free on Google Play</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../">Home</a>
+    <a href="../blog/">Blog</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="https://play.google.com/store/apps/details?id=com.dictokey.app">Google Play</a>
+  </div>
+  <p>DictoKey &mdash; AI Voice Keyboard &mdash; Built by <a href="https://nocode-flow.com">NoCodeFlow</a></p>
+</footer>
+
+</body>
+</html>
