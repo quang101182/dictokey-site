@@ -65,11 +65,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- v1.3.0 — Preconnect Google Play CDN for faster badge load -->
+    <link rel="preconnect" href="https://play.google.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.2.0
+           DictoKey Landing Page v1.4.0
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -223,6 +225,48 @@
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
         .hero-note { font-size: .85rem; color: var(--text-dim); margin-top: .75rem; }
         .hero-note strong { color: var(--accent-green); }
+
+        /* v1.3.0 — Hero logo + Google Play badge (mobile-first) */
+        .hero-logo {
+            display: flex; justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        .hero-logo svg {
+            width: 96px; height: 96px;
+            filter: drop-shadow(0 8px 32px rgba(124,106,255,.35));
+        }
+        .btn-playstore {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0; border: 0;
+            transition: transform .15s ease;
+            line-height: 0;
+            /* Fixed box to avoid CLS when badge src changes per locale */
+            width: 228px; height: 76px;
+            /* Fallback background matching the official Google Play badge (black) */
+            background: #000;
+            border-radius: 10px;
+            color: #fff; font-weight: 700; font-size: 1rem;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        .btn-playstore:hover { transform: translateY(-2px) scale(1.03); }
+        .btn-playstore img {
+            display: block; width: 100%; height: 100%;
+            object-fit: cover; /* fills the box, no violet gaps on aspect-ratio mismatch */
+            border-radius: 10px;
+        }
+        /* v1.3.0 — Testimonials hidden by default (FR-only). Shown via JS when lang=fr. */
+        #testimonialsSection { display: none; }
+        /* Simple social proof (shown when testimonials are hidden) */
+        .hero-proof {
+            display: none; /* default hidden, JS shows it outside FR */
+            margin: 1.5rem auto 0;
+            font-size: .95rem; color: var(--text-dim);
+            text-align: center;
+        }
+        .hero-proof .stars { color: #ffcc33; font-size: 1.1rem; letter-spacing: 2px; }
+        .hero-proof strong { color: var(--text-bright); }
+        .hero-proof a { color: var(--accent); font-weight: 600; }
 
         /* Video embed */
         .hero-video {
@@ -450,7 +494,11 @@
             .nav-hamburger { display: block; }
             .lang-switcher { order: -1; }
             .lang-dropdown { right: auto; left: 0; }
-            .hero { padding: 120px 0 60px; }
+            .hero { padding: 100px 0 50px; }
+            .hero-logo svg { width: 80px; height: 80px; }
+            .btn-playstore img { height: 66px; }
+            /* QR code useless on mobile — user is already on phone */
+            .hero-qr { display: none; }
             .features-grid { grid-template-columns: 1fr; }
             .steps { grid-template-columns: 1fr; gap: 2.5rem; }
             .pricing-grid { grid-template-columns: 1fr; }
@@ -498,19 +546,45 @@
 <!-- ====== HERO ====== -->
 <section class="hero">
     <div class="container">
-        <span class="hero-badge fade-in" data-i18n="hero_badge">Android Keyboard &middot; Powered by Whisper AI</span>
-        <h1 class="fade-in"><span data-i18n="hero_title_1">Your Voice, Any Language,</span><br><span class="gradient-text" data-i18n="hero_title_2">One Keyboard</span></h1>
-        <p class="hero-sub fade-in" data-i18n="hero_sub">AI-powered voice keyboard for Android. Dictate, translate, rewrite — in 52 languages. 3x cheaper than alternatives.</p>
+        <!-- Logo DictoKey (v1.3.0) -->
+        <div class="hero-logo fade-in">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DictoKey logo">
+                <defs>
+                    <linearGradient id="dk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#7c6aff"/>
+                        <stop offset="100%" stop-color="#00d4aa"/>
+                    </linearGradient>
+                </defs>
+                <rect x="6" y="6" width="108" height="108" rx="26" fill="#10101a" stroke="url(#dk-grad)" stroke-width="2"/>
+                <g transform="translate(60 50)">
+                    <rect x="-14" y="-24" width="28" height="44" rx="14" fill="url(#dk-grad)"/>
+                    <path d="M -24 0 Q -24 26 0 26 Q 24 26 24 0" stroke="url(#dk-grad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <line x1="0" y1="26" x2="0" y2="38" stroke="url(#dk-grad)" stroke-width="5" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+
+        <span class="hero-badge fade-in" data-i18n="hero_badge">Add a voice keyboard to your Android</span>
+        <h1 class="fade-in"><span data-i18n="hero_title_1">Speak instead of typing.</span><br><span class="gradient-text" data-i18n="hero_title_2">In any Android app.</span></h1>
+        <p class="hero-sub fade-in" data-i18n="hero_sub">DictoKey adds a voice keyboard to your phone. Open WhatsApp, Gmail, Notes — tap the mic, speak, your words appear. In 52 languages.</p>
+
+        <!-- Gros badge Google Play officiel (v1.3.0: fixed box + localized + text fallback) -->
         <div class="hero-ctas fade-in">
-            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-primary" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.396 13l2.302-2.492zM5.864 2.658L16.8 9.492l-2.302 2.302-8.635-8.636z"/></svg>
-                <span data-i18n="hero_btn_primary">Download Free on Google Play</span>
+            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-playstore" id="btnPlaystore" target="_blank" rel="noopener" data-i18n-aria="hero_btn_primary" aria-label="Get it on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="playstoreBadge" alt="Get it on Google Play" width="228" height="76" loading="eager" decoding="async">
             </a>
             <a href="#features" class="btn-secondary" data-i18n="hero_btn_secondary">Learn more &darr;</a>
         </div>
         <p class="hero-note fade-in" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
 
-        <!-- QR Code Play Store -->
+        <!-- Social proof simple (affiché JS si lang != FR, cf. script bas de page) -->
+        <div class="hero-proof fade-in" id="heroProof">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <strong>5.0</strong>
+            <span data-i18n="hero_proof_label">on Google Play</span>
+        </div>
+
+        <!-- QR Code Play Store (desktop only — hidden on mobile via media query) -->
         <div class="hero-qr fade-in" style="margin:2rem auto;text-align:center">
             <div style="display:inline-block;background:#fff;padding:12px;border-radius:12px">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.dictokey.app&format=svg" alt="QR Code — Download DictoKey on Google Play" width="160" height="160" loading="lazy">
@@ -639,8 +713,8 @@
     </div>
 </section>
 
-<!-- ====== TESTIMONIALS ====== -->
-<section style="background: var(--bg-subtle);">
+<!-- ====== TESTIMONIALS (FR only — all reviews are in French, displayed JS-side) ====== -->
+<section id="testimonialsSection" style="background: var(--bg-subtle);">
     <div class="container text-center">
         <p class="section-label fade-in" data-i18n="test_label">Testimonials</p>
         <h2 class="section-title fade-in" data-i18n="test_title">What Users Say</h2>
@@ -861,31 +935,68 @@
     };
 
     function setLang(lang) {
-        if (!T || !T[lang]) lang = 'en';
-        const t = T[lang];
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (t[key] !== undefined) el.innerHTML = t[key];
-        });
-        document.documentElement.lang = lang;
-        if (t.meta_title) document.title = t.meta_title;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle && t.meta_title) ogTitle.setAttribute('content', t.meta_title);
-        const ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc && t.meta_desc) ogDesc.setAttribute('content', t.meta_desc);
-        const twTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twTitle && t.meta_title) twTitle.setAttribute('content', t.meta_title);
-        const twDesc = document.querySelector('meta[name="twitter:description"]');
-        if (twDesc && t.meta_desc) twDesc.setAttribute('content', t.meta_desc);
-        const featured = document.querySelector('.price-card.featured');
-        if (featured && t.price_popular) featured.style.setProperty('--popular-text', '"' + t.price_popular + '"');
-        const info = LANGS[lang];
-        document.getElementById('langFlag').textContent = info.flag;
-        document.getElementById('langCode').textContent = info.code;
-        document.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
-        localStorage.setItem('dictokey-lang', lang);
+        try {
+            if (!T || !T[lang]) lang = 'en';
+            const t = T[lang] || T.en || {};
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) el.innerHTML = t[key];
+            });
+            document.documentElement.lang = lang;
+            if (t.meta_title) document.title = t.meta_title;
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle && t.meta_title) ogTitle.setAttribute('content', t.meta_title);
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc && t.meta_desc) ogDesc.setAttribute('content', t.meta_desc);
+            const twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twTitle && t.meta_title) twTitle.setAttribute('content', t.meta_title);
+            const twDesc = document.querySelector('meta[name="twitter:description"]');
+            if (twDesc && t.meta_desc) twDesc.setAttribute('content', t.meta_desc);
+            const featured = document.querySelector('.price-card.featured');
+            if (featured && t.price_popular) featured.style.setProperty('--popular-text', '"' + t.price_popular + '"');
+            const info = LANGS[lang] || LANGS.en;
+            const flagEl = document.getElementById('langFlag');
+            const codeEl = document.getElementById('langCode');
+            if (flagEl) flagEl.textContent = info.flag;
+            if (codeEl) codeEl.textContent = info.code;
+            document.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+            try { localStorage.setItem('dictokey-lang', lang); } catch(_) {}
+
+            // v1.3.0 — Testimonials FR only. Display the section only when lang=fr, swap to lightweight social proof otherwise.
+            const testiSection = document.getElementById('testimonialsSection');
+            const heroProof = document.getElementById('heroProof');
+            if (testiSection) testiSection.style.display = (lang === 'fr') ? 'block' : 'none';
+            if (heroProof) heroProof.style.display = (lang === 'fr') ? 'none' : 'block';
+
+            // v1.3.0 — Localize Google Play badge image + aria-label + alt for accessibility.
+            const badgeMap = {
+                en: 'en_badge_web_generic.png',
+                fr: 'fr_badge_web_generic.png',
+                de: 'de_badge_web_generic.png',
+                es: 'es_badge_web_generic.png',
+                pt: 'pt-br_badge_web_generic.png',
+                ru: 'ru_badge_web_generic.png',
+                th: 'th_badge_web_generic.png'
+            };
+            const localeMap = {
+                en: 'en_us', fr: 'fr_fr', de: 'de_de', es: 'es_es',
+                pt: 'pt-br', ru: 'ru_ru', th: 'th_th'
+            };
+            const badgeFile = badgeMap[lang] || badgeMap.en;
+            const locale = localeMap[lang] || localeMap.en;
+            const newBadgeSrc = 'https://play.google.com/intl/' + locale + '/badges/images/generic/' + badgeFile;
+            const badgeImg = document.getElementById('playstoreBadge');
+            if (badgeImg && badgeImg.src !== newBadgeSrc) badgeImg.src = newBadgeSrc;
+            // Localize the CTA alt + aria-label so screen readers and image-broken fallback speak the right language.
+            const ctaLabel = t.hero_btn_primary || 'Get it on Google Play';
+            const btnLink = document.getElementById('btnPlaystore');
+            if (btnLink) btnLink.setAttribute('aria-label', ctaLabel);
+            if (badgeImg) badgeImg.setAttribute('alt', ctaLabel);
+        } catch(err) {
+            console.warn('[setLang] error:', err && err.message);
+        }
     }
 
     document.getElementById('langBtn').addEventListener('click', e => { e.stopPropagation(); document.getElementById('langSwitcher').classList.toggle('open'); });
