@@ -296,6 +296,15 @@
         .sticky-cta .btn-playstore img { border-radius: 8px; }
         @media (min-width: 769px) { .sticky-cta { display: none; } }
 
+        /* App screenshot */
+        .hero-screenshot {
+            max-width: 380px; margin: 2rem auto 0;
+            border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-glow);
+        }
+        .hero-screenshot img { display: block; width: 100%; height: auto; }
+
         /* Video embed */
         .hero-video {
             max-width: 720px; margin: 3rem auto 0;
@@ -609,6 +618,14 @@
             </a>
         </div>
         <p class="hero-note" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
+
+        <!-- App screenshot (v1.6.0) -->
+        <div class="hero-screenshot fade-in">
+            <picture>
+                <source srcset="screenshot-keyboard.webp" type="image/webp">
+                <img src="screenshot-keyboard.jpg" alt="DictoKey voice keyboard in WhatsApp — dictated text appears instantly" width="640" height="580" loading="lazy" decoding="async">
+            </picture>
+        </div>
 
         <!-- QR Code Play Store (desktop only — hidden on mobile via media query) -->
         <div class="hero-qr fade-in" style="margin:2rem auto;text-align:center">
