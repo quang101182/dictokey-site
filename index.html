@@ -930,6 +930,19 @@
       })
       .catch(() => {});
 
+    // Play Store click tracking (sendBeacon, non-blocking)
+    const CLICK_URL = 'https://api-gateway-pro.quang101182.workers.dev/api/click?page=dk';
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href*="play.google.com/store/apps/details?id=com.dictokey.app"]');
+      if (!link) return;
+      var btn = 'other';
+      if (link.id === 'btnPlaystore') btn = 'hero';
+      else if (link.classList.contains('nav-cta')) btn = 'nav';
+      else if (link.classList.contains('btn-pricing')) btn = 'pricing';
+      else if (link.classList.contains('btn-primary')) btn = 'cta';
+      navigator.sendBeacon(CLICK_URL + '&btn=' + btn);
+    });
+
     // ====== i18n ======
     const LANGS = {
         en: { flag: '\u{1F1EC}\u{1F1E7}', code: 'EN' },
