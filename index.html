@@ -71,7 +71,7 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.5.0
+           DictoKey Landing Page v1.6.0
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -264,16 +264,37 @@
         }
         /* v1.3.0 — Testimonials hidden by default (FR-only). Shown via JS when lang=fr. */
         #testimonialsSection { display: none; }
-        /* Simple social proof (shown when testimonials are hidden) */
-        .hero-proof {
-            display: none; /* default hidden, JS shows it outside FR */
-            margin: 1.5rem auto 0;
+        /* Social proof — always visible (v1.6.0) */
+        .hero-proof-always {
+            display: block;
+            margin: .75rem auto 1rem;
             font-size: .95rem; color: var(--text-dim);
             text-align: center;
         }
+        .hero-proof-always .stars { color: #ffcc33; font-size: 1.1rem; letter-spacing: 2px; }
+        .hero-proof-always strong { color: var(--text-bright); }
+        .hero-proof-always a { color: var(--accent); font-weight: 600; }
+        /* Legacy .hero-proof class (kept for JS compat) */
+        .hero-proof { display: none; }
         .hero-proof .stars { color: #ffcc33; font-size: 1.1rem; letter-spacing: 2px; }
         .hero-proof strong { color: var(--text-bright); }
-        .hero-proof a { color: var(--accent); font-weight: 600; }
+
+        /* v1.6.0 — Sticky CTA mobile (appears on scroll) */
+        .sticky-cta {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+            background: rgba(8,8,16,.95);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            padding: 10px 1rem;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            transform: translateY(100%);
+            transition: transform .3s ease;
+        }
+        .sticky-cta.visible { transform: translateY(0); }
+        .sticky-cta .sticky-text { font-size: .85rem; color: var(--text); font-weight: 600; white-space: nowrap; }
+        .sticky-cta .btn-playstore { width: 160px; height: 54px; animation: none; }
+        .sticky-cta .btn-playstore img { border-radius: 8px; }
+        @media (min-width: 769px) { .sticky-cta { display: none; } }
 
         /* Video embed */
         .hero-video {
@@ -501,8 +522,8 @@
             .nav-hamburger { display: block; }
             .lang-switcher { order: -1; }
             .lang-dropdown { right: auto; left: 0; }
-            .hero { padding: 80px 0 40px; }
-            .hero-logo svg { width: 64px; height: 64px; }
+            .hero { padding: 72px 0 32px; }
+            .hero-logo svg { width: 56px; height: 56px; }
             .btn-playstore img { height: 66px; }
             /* QR code useless on mobile — user is already on phone */
             .hero-qr { display: none; }
@@ -554,7 +575,7 @@
 <section class="hero">
     <div class="container">
         <!-- Logo DictoKey (v1.3.0) -->
-        <div class="hero-logo fade-in">
+        <div class="hero-logo">
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DictoKey logo">
                 <defs>
                     <linearGradient id="dk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -571,25 +592,23 @@
             </svg>
         </div>
 
-        <span class="hero-badge fade-in" data-i18n="hero_badge">Add a voice keyboard to your Android</span>
-        <h1 class="fade-in"><span data-i18n="hero_title_1">Speak instead of typing.</span><br><span class="gradient-text" data-i18n="hero_title_2">In any Android app.</span></h1>
-        <p class="hero-sub fade-in" data-i18n="hero_sub">DictoKey adds a voice keyboard to your phone. Open WhatsApp, Gmail, Notes — tap the mic, speak, your words appear. In 52 languages.</p>
+        <span class="hero-badge" data-i18n="hero_badge">Add a voice keyboard to your Android</span>
+        <h1><span data-i18n="hero_title_1">Speak instead of typing.</span><br><span class="gradient-text" data-i18n="hero_title_2">In any Android app.</span></h1>
 
-        <!-- Gros badge Google Play officiel (v1.5.0: pulse + CTA label + no "learn more") -->
-        <div class="hero-ctas fade-in">
-            <p class="cta-label" data-i18n="hero_cta_label">Download the app for free &darr;</p>
-            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-playstore" id="btnPlaystore" target="_blank" rel="noopener" data-i18n-aria="hero_btn_primary" aria-label="Get it on Google Play">
-                <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="playstoreBadge" alt="Get it on Google Play" width="228" height="76" loading="eager" decoding="async">
-            </a>
-        </div>
-        <p class="hero-note fade-in" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
-
-        <!-- Social proof simple (affiché JS si lang != FR, cf. script bas de page) -->
-        <div class="hero-proof fade-in" id="heroProof">
+        <!-- Social proof (v1.6.0: remontée above CTA pour visibilité mobile) -->
+        <div class="hero-proof-always" id="heroProof">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <strong>5.0</strong>
             <span data-i18n="hero_proof_label">on Google Play</span>
         </div>
+
+        <!-- Badge Google Play (v1.6.0: above-the-fold, no fade-in, no cta-label) -->
+        <div class="hero-ctas">
+            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-playstore" id="btnPlaystore" target="_blank" rel="noopener" data-i18n-aria="hero_btn_primary" aria-label="Get it on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="playstoreBadge" alt="Get it on Google Play" width="228" height="76" loading="eager" decoding="async">
+            </a>
+        </div>
+        <p class="hero-note" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
 
         <!-- QR Code Play Store (desktop only — hidden on mobile via media query) -->
         <div class="hero-qr fade-in" style="margin:2rem auto;text-align:center">
@@ -870,6 +889,14 @@
     </div>
 </section>
 
+<!-- ====== STICKY CTA MOBILE (v1.6.0) ====== -->
+<div class="sticky-cta" id="stickyCta">
+    <span class="sticky-text" data-i18n="hero_btn_primary">Download Free on Google Play</span>
+    <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-playstore" target="_blank" rel="noopener">
+        <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="stickyBadge" alt="Get it on Google Play" width="160" height="54" loading="lazy">
+    </a>
+</div>
+
 <!-- ====== FOOTER ====== -->
 <footer>
     <div class="container">
@@ -930,6 +957,20 @@
       })
       .catch(() => {});
 
+    // Sticky CTA — show when hero Play Store badge scrolls out of view (mobile only)
+    (function() {
+      const heroBtn = document.getElementById('btnPlaystore');
+      const sticky = document.getElementById('stickyCta');
+      if (!heroBtn || !sticky) return;
+      const stickyObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) sticky.classList.remove('visible');
+          else sticky.classList.add('visible');
+        });
+      }, { threshold: 0 });
+      stickyObs.observe(heroBtn);
+    })();
+
     // Play Store click tracking (sendBeacon, non-blocking)
     const CLICK_URL = 'https://api-gateway-pro.quang101182.workers.dev/api/click?page=dk';
     document.addEventListener('click', function(e) {
@@ -940,6 +981,7 @@
       else if (link.classList.contains('nav-cta')) btn = 'nav';
       else if (link.classList.contains('btn-pricing')) btn = 'pricing';
       else if (link.classList.contains('btn-primary')) btn = 'cta';
+      else if (link.closest('.sticky-cta')) btn = 'sticky';
       navigator.sendBeacon(CLICK_URL + '&btn=' + btn);
     });
 
@@ -984,11 +1026,10 @@
             document.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
             try { localStorage.setItem('dictokey-lang', lang); } catch(_) {}
 
-            // v1.3.0 — Testimonials FR only. Display the section only when lang=fr, swap to lightweight social proof otherwise.
+            // v1.3.0 — Testimonials FR only.
             const testiSection = document.getElementById('testimonialsSection');
-            const heroProof = document.getElementById('heroProof');
             if (testiSection) testiSection.style.display = (lang === 'fr') ? 'block' : 'none';
-            if (heroProof) heroProof.style.display = (lang === 'fr') ? 'none' : 'block';
+            // v1.6.0 — hero-proof is always visible (CSS), no JS toggle needed
 
             // v1.3.0 — Localize Google Play badge image + aria-label + alt for accessibility.
             const badgeMap = {
@@ -1014,6 +1055,9 @@
             const btnLink = document.getElementById('btnPlaystore');
             if (btnLink) btnLink.setAttribute('aria-label', ctaLabel);
             if (badgeImg) badgeImg.setAttribute('alt', ctaLabel);
+            // v1.6.0 — Localize sticky CTA badge
+            const stickyBadge = document.getElementById('stickyBadge');
+            if (stickyBadge && stickyBadge.src !== newBadgeSrc) stickyBadge.src = newBadgeSrc;
         } catch(err) {
             console.warn('[setLang] error:', err && err.message);
         }
