@@ -185,13 +185,15 @@ body {
   font-family: var(--sans);
   line-height: 1.7;
   overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
 }
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   background:
     radial-gradient(ellipse 70% 55% at 10% 10%, rgba(124,106,255,.12) 0%, transparent 65%),
     radial-gradient(ellipse 60% 50% at 90% 85%, rgba(0,212,170,.09) 0%, transparent 60%);
