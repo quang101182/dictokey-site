@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DictoKey — AI Voice Keyboard for Android | Dictate & Translate in 52 Languages</title>
-    <meta name="description" content="Free AI voice keyboard for Android. Dictate with Whisper accuracy, translate in 52 languages, rewrite with AI. €4.99/mo Premium. Download on Google Play.">
+    <meta name="description" content="Floating voice bubble for Android. Tap the bubble to dictate anywhere, long press to translate in 52 languages. Free, GDPR-compliant.">
     <link rel="canonical" href="https://dictokey.com">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dictokey.com">
-    <meta property="og:title" content="DictoKey — AI Voice Keyboard for Android">
-    <meta property="og:description" content="Dictate, translate, and rewrite in 52 languages. Free AI-powered voice keyboard for Android.">
+    <meta property="og:title" content="DictoKey — Floating Voice Bubble for Android">
+    <meta property="og:description" content="Dictate anywhere with one tap on the bubble. 52 languages, AI translation. Free voice keyboard for Android.">
     <meta property="og:image" content="https://dictokey.com/og-image.png">
     <meta property="og:site_name" content="DictoKey">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DictoKey — AI Voice Keyboard for Android">
-    <meta name="twitter:description" content="Dictate, translate, and rewrite in 52 languages. Free AI-powered voice keyboard.">
+    <meta name="twitter:title" content="DictoKey — Floating Voice Bubble for Android">
+    <meta name="twitter:description" content="Dictate anywhere with one tap on the bubble. 52 languages, AI translation. Free.">
     <meta name="twitter:image" content="https://dictokey.com/og-image.png">
 
     <!-- JSON-LD -->
@@ -71,7 +71,7 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.6.0
+           DictoKey Landing Page v1.7.0 — Hero bulle flottante
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -188,6 +188,76 @@
             font-size: .8rem; font-weight: 600; color: var(--accent);
             margin-bottom: 1.5rem;
             font-family: var(--font-mono);
+        }
+        /* v1.7.0 — badge NEW hero (gradient) */
+        .hero-badge-new {
+            background: var(--gradient-accent);
+            border-color: transparent;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(124,106,255,.35);
+        }
+        /* v1.7.0 — hero video loop (single, legacy) */
+        .hero-video-loop video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 32px;
+            box-shadow: var(--shadow-glow), 0 20px 60px rgba(0,0,0,.5);
+            display: block;
+            margin: 2rem auto 0;
+            background: var(--bg-card);
+        }
+        /* v1.7.0 — paire de vidéos (bulle + IME) côte à côte desktop, stack mobile */
+        .hero-video-pair {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem auto 0;
+        }
+        .hero-video-item {
+            flex: 0 1 300px;
+            margin: 0;
+            text-align: center;
+        }
+        .hero-video-item video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 28px;
+            box-shadow: var(--shadow-glow), 0 16px 48px rgba(0,0,0,.5);
+            display: block;
+            margin: 0 auto;
+            background: var(--bg-card);
+        }
+        .hero-video-item figcaption {
+            margin-top: .75rem;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+        }
+        @media (max-width: 640px) {
+            .hero-video-pair { gap: 1.5rem; }
+            .hero-video-item { flex: 0 1 260px; }
+            .hero-video-item video { max-width: 260px; border-radius: 24px; }
+        }
+        /* v1.7.0 — badge NEW sur feature-card "Floating bubble" */
+        .feature-card { position: relative; }
+        .feature-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            font-size: .7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--gradient-accent);
+            color: #fff;
+            letter-spacing: .5px;
+            box-shadow: 0 4px 12px rgba(124,106,255,.4);
+            z-index: 2;
         }
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -411,6 +481,33 @@
         }
         .price-features .check { color: var(--accent-green); font-weight: 700; flex-shrink: 0; }
         .price-features .dim { color: var(--text-dimmer); }
+        /* v1.7.0 — highlight Premium-only unlocks */
+        .price-features .premium-unlock {
+            background: linear-gradient(90deg, rgba(124,106,255,.12), transparent 90%);
+            border-left: 3px solid var(--accent);
+            padding-left: .75rem;
+            margin: .25rem -.75rem;
+            border-radius: 4px;
+        }
+        .price-features .premium-unlock strong {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .price-features .unlock-icon {
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+        .price-features .unlock-note {
+            color: var(--text-dim);
+            font-size: .85em;
+            font-style: italic;
+            margin-left: .2rem;
+        }
+        .price-features .premium-included {
+            opacity: .75;
+            font-size: .92em;
+        }
         .btn-pricing {
             display: block; width: 100%; text-align: center; padding: .85rem;
             border-radius: 50px; font-weight: 600; font-size: .95rem;
@@ -600,8 +697,8 @@
             </svg>
         </div>
 
-        <span class="hero-badge" data-i18n="hero_badge">Add a voice keyboard to your Android</span>
-        <h1><span data-i18n="hero_title_1">Speak instead of typing.</span><br><span class="gradient-text" data-i18n="hero_title_2">In any Android app.</span></h1>
+        <span class="hero-badge hero-badge-new" data-i18n="hero_badge">✨ NEW — Floating voice bubble</span>
+        <h1><span data-i18n="hero_title_1">Dictate anywhere,</span><br><span class="gradient-text" data-i18n="hero_title_2">with one tap on the bubble.</span></h1>
 
         <!-- Social proof (v1.6.0: remontée above CTA pour visibilité mobile) -->
         <div class="hero-proof-always" id="heroProof">
@@ -618,12 +715,23 @@
         </div>
         <p class="hero-note" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
 
-        <!-- App screenshot (v1.6.0) -->
-        <div class="hero-screenshot fade-in">
-            <picture>
-                <source srcset="screenshot-keyboard.webp" type="image/webp">
-                <img src="screenshot-keyboard.jpg" alt="DictoKey voice keyboard in WhatsApp — dictated text appears instantly" width="640" height="580" loading="lazy" decoding="async">
-            </picture>
+        <!-- App animations (v1.7.0 — floating bubble + IME keyboard side by side) -->
+        <div class="hero-screenshot hero-video-pair fade-in">
+            <figure class="hero-video-item">
+                <video autoplay loop muted playsinline preload="metadata" poster="assets/hero-v1.7.0/03_translate_hero.png" aria-label="DictoKey floating bubble — tap to dictate, long-press to translate">
+                    <source src="assets/hero-v1.7.0/hero-bubble-animation.webm" type="video/webm">
+                    <source src="assets/hero-v1.7.0/hero-bubble-animation.mp4" type="video/mp4">
+                    <img src="assets/hero-v1.7.0/03_translate_hero.png" alt="DictoKey floating bubble in WhatsApp — dictated text appears instantly" width="540" height="1127" loading="lazy" decoding="async">
+                </video>
+                <figcaption data-i18n="hero_caption_bubble">🫧 Floating bubble</figcaption>
+            </figure>
+            <figure class="hero-video-item">
+                <video autoplay loop muted playsinline preload="metadata" aria-label="DictoKey IME keyboard with Dictate and Translate buttons">
+                    <source src="assets/hero-v1.7.0/hero-ime-animation.webm" type="video/webm">
+                    <source src="assets/hero-v1.7.0/hero-ime-animation.mp4" type="video/mp4">
+                </video>
+                <figcaption data-i18n="hero_caption_ime">⌨️ Voice IME keyboard</figcaption>
+            </figure>
         </div>
 
         <!-- QR Code Play Store (desktop only — hidden on mobile via media query) -->
@@ -635,7 +743,35 @@
         </div>
 
         <div class="hero-video fade-in">
-            <iframe src="https://www.youtube.com/embed/0l8Ui_kEHmo" title="DictoKey — AI Voice Keyboard" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/D3-eF5Bh92U" title="DictoKey — Floating Voice Bubble Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ====== 3 WAYS TO DICTATE (v1.7.0) ====== -->
+<section id="three-ways">
+    <div class="container text-center">
+        <p class="section-label fade-in" data-i18n="ways_label">3 ways to dictate</p>
+        <h2 class="section-title fade-in" data-i18n="ways_title">Your choice, every time.</h2>
+        <p class="section-desc fade-in" data-i18n="ways_desc">The same voice engine, three different ways to trigger it. Pick your favorite, or switch on the fly.</p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <span class="feature-badge" data-i18n="way_1_badge">NEW</span>
+                <span class="feature-icon">🫧</span>
+                <h3 data-i18n="way_1_title">Floating bubble</h3>
+                <p data-i18n="way_1_desc">Appears whenever you open a keyboard. Drag it anywhere. Short tap to dictate, long press to translate instantly.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <span class="feature-icon">⌨️</span>
+                <h3 data-i18n="way_2_title">Voice IME keyboard</h3>
+                <p data-i18n="way_2_desc">A full keyboard with built-in Dictate and Translate buttons, available in every app. AZERTY, QWERTY, QWERTZ, Dvorak.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <span class="feature-icon">🔔</span>
+                <h3 data-i18n="way_3_title">Notification shortcuts</h3>
+                <p data-i18n="way_3_desc">Quick access to languages, interpreter mode, and Clean rewriter from your notification shade. No app switching.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -725,11 +861,10 @@
                 <ul class="price-features">
                     <li data-i18n="price_free_1"><span class="check">&#10003;</span> 30 dictations per day</li>
                     <li data-i18n="price_free_2"><span class="check">&#10003;</span> 52 languages</li>
+                    <li data-i18n="price_free_8"><span class="check">&#10003;</span> Floating bubble + IME keyboard</li>
+                    <li data-i18n="price_free_5"><span class="check">&#10003;</span> All AI rewrite modes</li>
                     <li data-i18n="price_free_3"><span class="check">&#10003;</span> Clean mode (formatting)</li>
                     <li data-i18n="price_free_4"><span class="check">&#10003;</span> Whisper AI accuracy</li>
-                    <li data-i18n="price_free_5"><span class="dim">&mdash;</span> <span class="dim">AI Rewrite modes</span></li>
-                    <li data-i18n="price_free_6"><span class="dim">&mdash;</span> <span class="dim">Interpreter Mode</span></li>
-                    <li data-i18n="price_free_7"><span class="dim">&mdash;</span> <span class="dim">Voice Correction</span></li>
                 </ul>
                 <a href="https://play.google.com/store/apps/details?id=com.dictokey.app" class="btn-pricing secondary" target="_blank" rel="noopener" data-i18n="price_free_btn">Download Free</a>
             </div>
@@ -740,11 +875,10 @@
                 <div class="price-amount" data-i18n="price_prem_amount">€4.99 <span class="period">/month</span></div>
                 <p class="price-alt" data-i18n="price_prem_alt">or €34.99/year — save 42%</p>
                 <ul class="price-features">
-                    <li data-i18n="price_prem_1"><span class="check">&#10003;</span> <strong>Unlimited</strong> dictations</li>
-                    <li data-i18n="price_prem_2"><span class="check">&#10003;</span> 52 languages</li>
-                    <li data-i18n="price_prem_3"><span class="check">&#10003;</span> All rewrite modes</li>
-                    <li data-i18n="price_prem_4"><span class="check">&#10003;</span> Interpreter Mode</li>
-                    <li data-i18n="price_prem_5"><span class="check">&#10003;</span> Voice Correction</li>
+                    <li class="premium-unlock" data-i18n="price_prem_1"><span class="unlock-icon">&#x1F513;</span> <strong>1000</strong> dictations per day</li>
+                    <li class="premium-unlock" data-i18n="price_prem_4"><span class="unlock-icon">&#x1F513;</span> <strong>Interpreter Mode</strong> unlocked</li>
+                    <li class="premium-unlock" data-i18n="price_prem_5"><span class="unlock-icon">&#x1F513;</span> <strong>Voice Correction</strong> unlocked <em class="unlock-note">(via IME keyboard)</em></li>
+                    <li class="premium-included" data-i18n="price_prem_8"><span class="check">&#10003;</span> Everything in Free included</li>
                     <li data-i18n="price_prem_6"><span class="check">&#10003;</span> Priority processing</li>
                     <li data-i18n="price_prem_7"><span class="check">&#10003;</span> 7-day free trial</li>
                 </ul>
