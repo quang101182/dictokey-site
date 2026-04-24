@@ -116,7 +116,7 @@
       "name": "Are voice dictation apps free or do they require a subscription?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most voice dictation apps offer a free tier with limitations. DictoKey gives 30 free dictations per day. Google Voice Typing and Gboard are completely free but lack advanced features. Premium apps like Wispr Flow and Otter.ai charge $8-17/month. DictoKey Premium is €4.99/month and includes unlimited dictation, translation, and AI rewriting."
+        "text": "Most voice dictation apps offer a free tier with limitations. DictoKey gives 30 free dictations per day. Google Voice Typing and Gboard are completely free but lack advanced features. Wispr Flow is currently free on Android in Early Access (pricing on desktop is typically subscription-based). Otter.ai offers a free tier plus paid plans from around $17/month. DictoKey Premium is €4.99/month and includes unlimited dictation, translation, and AI rewriting."
       }
     }
   ]
@@ -124,7 +124,7 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- v1.0 | best-voice-dictation-apps-android-2026 -->
+<!-- v1.7.1 | best-voice-dictation-apps-android-2026 | 2026-04-24 wispr-fact-fix -->
 <style>
 :root {
   --bg: #080810;
@@ -623,12 +623,12 @@ footer a:hover { text-decoration: underline; }
     </tr>
     <tr>
       <td><strong>5. Wispr Flow</strong></td>
-      <td>5.8%</td>
-      <td>500ms</td>
-      <td>20</td>
+      <td>&mdash;</td>
+      <td>&mdash;</td>
+      <td>100+</td>
       <td><span class="cross">No</span></td>
       <td>Yes</td>
-      <td>$9.99/mo</td>
+      <td>Free (Android Early Access)</td>
     </tr>
     <tr>
       <td><strong>6. Otter.ai</strong></td>
@@ -889,50 +889,50 @@ footer a:hover { text-decoration: underline; }
   <div class="app-details">
     <div class="specs-grid">
       <div class="spec-item">
-        <div class="spec-label">WER (English)</div>
-        <div class="spec-value">5.8%</div>
+        <div class="spec-label">Android launch</div>
+        <div class="spec-value">23 Feb 2026</div>
       </div>
       <div class="spec-item">
-        <div class="spec-label">Latency</div>
-        <div class="spec-value">500ms</div>
+        <div class="spec-label">Play Store</div>
+        <div class="spec-value">~3.7&#9733; &middot; 500K+ installs</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Languages</div>
-        <div class="spec-value">20</div>
+        <div class="spec-value">100+</div>
       </div>
       <div class="spec-item">
-        <div class="spec-label">Price</div>
-        <div class="spec-value">$9.99/mo</div>
+        <div class="spec-label">Price (Android)</div>
+        <div class="spec-value">Free (Early Access)</div>
       </div>
     </div>
 
-    <p>Wispr Flow is a newer entrant to the dictation market, and it's specifically designed for <strong>long-form voice input</strong>. While most dictation apps are optimized for short messages, Wispr Flow shines when you're dictating paragraphs or entire documents.</p>
+    <p>Wispr Flow officially launched its <strong>Android app on 23 February 2026</strong> (package <code>com.wispr.flowapp</code>), after a long iOS/Mac-only run. It's purpose-built for <strong>English long-form voice input</strong> &mdash; paragraphs, emails, essays, entire documents. Where most dictation apps are tuned for short messages, Wispr Flow is tuned for continuous speech.</p>
 
-    <p>The app uses a Whisper-based model (similar to DictoKey) but adds its own post-processing layer that cleans up filler words, fixes run-on sentences, and adds paragraph breaks automatically. The result is impressively clean text from rambling speech.</p>
+    <p>The app uses a Whisper-based model (similar to DictoKey) plus an AI post-processing layer that removes filler words, fixes run-on sentences, and inserts paragraph breaks automatically. On Android it ships as a <strong>tap-and-hold floating bubble</strong> rather than a system keyboard &mdash; you hold the bubble to dictate, release (or tap close) to stop.</p>
 
     <h3>Strengths</h3>
 
     <ul>
-      <li><strong>Great accuracy:</strong> 5.8% WER is the second-best on this list, thanks to Whisper.</li>
-      <li><strong>Long-form optimization:</strong> Dictate for 5+ minutes straight and get well-structured text.</li>
-      <li><strong>Filler word removal:</strong> Automatically strips "um", "uh", "like", "you know" from output.</li>
-      <li><strong>AI reformatting:</strong> Converts stream-of-consciousness dictation into structured paragraphs.</li>
-      <li><strong>Works on desktop too:</strong> macOS app available, syncs with mobile.</li>
+      <li><strong>Strong long-form quality:</strong> the AI cleanup layer turns rambling speech into structured paragraphs better than most competitors.</li>
+      <li><strong>Free on Android (Early Access):</strong> currently unlimited and free while the Early Access program runs &mdash; a meaningful differentiator from the iOS/Mac paid tiers.</li>
+      <li><strong>Filler word removal:</strong> automatically strips "um", "uh", "like", "you know".</li>
+      <li><strong>AI reformatting:</strong> converts stream-of-consciousness dictation into structured paragraphs.</li>
+      <li><strong>Cross-platform brand:</strong> macOS, Windows, iPhone and Android apps, popular with writers and professionals.</li>
+      <li><strong>Broad language support:</strong> 100+ languages advertised on the website.</li>
     </ul>
 
-    <h3>Weaknesses</h3>
+    <h3>Weaknesses vs DictoKey on Android</h3>
 
     <ul>
-      <li><strong>Only 20 languages:</strong> Very limited compared to DictoKey (52) or Gboard (300+).</li>
-      <li><strong>No translation:</strong> Dictate in English, get English. That's it.</li>
-      <li><strong>Expensive:</strong> $9.99/month with no free tier (only a 7-day trial). Double the price of DictoKey Premium.</li>
-      <li><strong>Not a keyboard:</strong> It's a standalone app. You dictate in Wispr Flow, then copy-paste to your target app. Extra friction.</li>
-      <li><strong>Higher latency:</strong> 500ms feels sluggish compared to DictoKey's 280ms or Google's 350ms.</li>
-      <li><strong>Android version is newer:</strong> The macOS app is more polished; Android feels like a port.</li>
+      <li><strong>No inline translation:</strong> dictate in English, get English. DictoKey translates across 52 source languages inline, with an Interpreter Mode for two-way conversations.</li>
+      <li><strong>Bubble-only, no IME:</strong> Wispr Flow on Android is a floating bubble only. DictoKey offers both a bubble <em>and</em> a system keyboard, which matters in apps that block overlays (some banking and secure forms).</li>
+      <li><strong>English-first tuning:</strong> the AI cleanup and long-form formatting are most polished in English. For heavy non-English workflows, DictoKey's multilingual focus tends to feel more native.</li>
+      <li><strong>US cloud routing:</strong> DictoKey hosts audio processing in the EU (GDPR). Wispr routes through US infrastructure.</li>
+      <li><strong>Early Access on Android:</strong> it is a newly launched Android product (since Feb 2026). Pricing on Android will likely change once Early Access ends.</li>
     </ul>
 
     <div class="verdict-box">
-      <strong>Verdict:</strong> Wispr Flow is excellent for writers, journalists, and professionals who dictate long-form content in English. But the high price, limited languages, lack of translation, and standalone-app friction make it hard to recommend for general Android users.
+      <strong>Verdict:</strong> Wispr Flow is a serious Android competitor &mdash; especially compelling for English writers, journalists and professionals who dictate long-form content, and while it stays free in Early Access. Choose DictoKey if your priorities are multilingual input, inline translation, an IME fallback or EU data hosting.
     </div>
   </div>
 </div>
@@ -1102,7 +1102,7 @@ footer a:hover { text-decoration: underline; }
 
   <div class="faq-item">
     <div class="faq-question">Are voice dictation apps free or do they require a subscription?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">Most voice dictation apps offer a free tier with limitations. DictoKey gives 30 free dictations per day. Google Voice Typing and Gboard are completely free but lack advanced features. Premium apps like Wispr Flow and Otter.ai charge $8&ndash;17/month. DictoKey Premium is &euro;4.99/month and includes unlimited dictation, translation, and AI rewriting.</div></div>
+    <div class="faq-answer"><div class="faq-answer-inner">Most voice dictation apps offer a free tier with limitations. DictoKey gives 30 free dictations per day. Google Voice Typing and Gboard are completely free but lack advanced features. Wispr Flow is currently free on Android in Early Access (pricing on desktop is typically subscription-based). Otter.ai offers a free tier plus paid plans from around $17/month. DictoKey Premium is &euro;4.99/month and includes unlimited dictation, translation, and AI rewriting.</div></div>
   </div>
 </section>
 
