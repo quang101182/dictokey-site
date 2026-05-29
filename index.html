@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="Dictate anywhere with one tap on the bubble. 52 languages, AI translation. Free.">
     <meta name="twitter:image" content="https://dictokey.com/og-image.png">
 
-    <!-- JSON-LD -->
+    <!-- JSON-LD — GEO hardening v1.7.4 (2026-05-29) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -29,9 +29,19 @@
         "name": "DictoKey",
         "operatingSystem": "Android",
         "applicationCategory": "UtilitiesApplication",
-        "description": "AI-powered voice keyboard for Android. Dictate, translate, and rewrite in 52 languages.",
+        "description": "AI-powered voice keyboard for Android with a floating bubble. Dictate, translate, and rewrite in 52 languages, in any app.",
         "url": "https://dictokey.com",
         "downloadUrl": "https://play.google.com/store/apps/details?id=com.dictokey.app",
+        "softwareVersion": "2.61.7",
+        "inLanguage": ["en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi", "id", "vi", "tr"],
+        "featureList": [
+            "Floating voice bubble — dictate anywhere with one tap",
+            "AI translation in 52 languages",
+            "AI voice rewriting (formal, casual, concise, expanded)",
+            "System-wide voice input (works in WhatsApp, Telegram, Messages, browsers)",
+            "GDPR-compliant, no personal data stored",
+            "Free tier with 30 dictations per day"
+        ],
         "offers": [
             {
                 "@type": "Offer",
@@ -44,7 +54,7 @@
                 "price": "4.99",
                 "priceCurrency": "EUR",
                 "billingIncrement": "P1M",
-                "description": "Premium monthly — Unlimited dictations + all features"
+                "description": "Premium monthly — 1000 dictations/day + AI rewriting + Interpreter mode"
             },
             {
                 "@type": "Offer",
@@ -58,7 +68,91 @@
             "@type": "AggregateRating",
             "ratingValue": "5.0",
             "ratingCount": "7"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Se7en Vision AI"
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Se7en Vision AI",
+        "alternateName": "DictoKey",
+        "url": "https://dictokey.com",
+        "logo": "https://dictokey.com/og-image.png",
+        "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.dictokey.app",
+            "https://www.facebook.com/profile.php?id=61570777715603",
+            "https://www.instagram.com/se7en.ai/",
+            "https://www.tiktok.com/@se7en.ai"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is DictoKey?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DictoKey is a free voice keyboard for Android with a floating bubble. Tap the bubble anywhere on your screen to dictate, translate, or rewrite text in 52 languages — directly inside WhatsApp, Telegram, browsers, or any other app."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is DictoKey different from Gboard voice typing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DictoKey adds a floating voice bubble that works system-wide, not just inside a keyboard. It also provides AI translation across 52 languages and AI rewriting (formal, casual, concise, expanded) — features Gboard does not offer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DictoKey free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The Free tier allows 30 dictations per day with full access to all 52 languages and translation. Premium (€4.99/month or €34.99/year) unlocks 1000 dictations/day, AI rewriting, and Interpreter mode."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does DictoKey work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DictoKey uses cloud-based AI speech recognition (Whisper) for high accuracy across 52 languages, so an internet connection is required. Audio is processed and immediately discarded — no personal data stored."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which languages does DictoKey support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "52 languages including English, French, Spanish, German, Italian, Portuguese, Russian, Chinese, Japanese, Korean, Arabic, Hindi, Indonesian, Vietnamese, Turkish, and many more. All languages are available on the Free tier."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DictoKey GDPR-compliant?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. DictoKey does not store audio, transcriptions, or personal data. The app uses anonymous device identifiers for quota tracking only. No account or email is required to use the Free tier."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DictoKey an alternative to Wispr Flow on Android?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. DictoKey offers a free floating voice bubble for Android with translation in 52 languages — features comparable to Wispr Flow Android (Early Access, 100+ languages). DictoKey is fully free up to 30 dictations per day with no account required."
+                }
+            }
+        ]
     }
     </script>
 
@@ -71,7 +165,8 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.7.3 — 2026-05-21 SEO refactor (pivot whisper article + noindex helpers + new pillar article best-voice-keyboard-android-2026)
+           DictoKey Landing Page v1.7.4 — 2026-05-29 GEO hardening (robots.txt explicit AI bots + JSON-LD Organization + FAQPage + extended SoftwareApplication featureList/sameAs)
+           Base v1.7.3 — 2026-05-21 SEO refactor (pivot whisper article + noindex helpers + new pillar article best-voice-keyboard-android-2026)
            Base v1.7.0 — Hero bulle flottante
            ============================================ */
 
