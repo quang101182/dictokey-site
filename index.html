@@ -151,6 +151,38 @@
                     "@type": "Answer",
                     "text": "Yes. DictoKey offers a free floating voice bubble for Android with translation in 52 languages — features comparable to Wispr Flow Android (Early Access, 100+ languages). DictoKey is fully free up to 30 dictations per day with no account required."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DictoKey really free, or is it a freemium trap?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Genuinely free. The Free tier is 30 dictations per day, forever — no credit card, no account, no expiration. All 52 languages and the AI translation feature are included on the Free tier. Most casual users (chats, short messages, occasional emails) never hit the daily cap. Premium (€4.99/month or €34.99/year) is for power users who want unlimited dictations and AI rewriting — it is optional, not required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will I outgrow the 30 dictations per day Free tier?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most users do not. 30 dictations per day covers daily chats, WhatsApp messages, short emails, and quick translations — the most common use cases. Heavy users (professionals dictating long emails or content creators producing notes) typically hit the cap within 2-3 weeks and switch to Premium. The Free tier resets every day at midnight, so you always start fresh."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does DictoKey need internet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DictoKey uses Whisper, OpenAI's state-of-the-art speech recognition model, hosted in our EU infrastructure under GDPR. Running Whisper Large in the cloud means you always get the latest accuracy improvements without downloading multi-gigabyte model updates, and translation across 52 languages happens in under 300ms — fast enough to feel instant. Audio is processed in memory and immediately deleted. No stored audio, no account, no tracking."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is DictoKey different from Gboard voice typing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gboard is excellent for clean English dictation in a quiet room and is completely free. DictoKey adds three things Gboard does not offer: a system-wide floating bubble that works in any app without switching keyboards, inline AI translation across 52 languages, and Whisper-grade accuracy on accented or noisy speech. Many DictoKey users keep Gboard installed for emoji and swipe typing, and switch to DictoKey for voice dictation and translation."
+                }
             }
         ]
     }
@@ -165,7 +197,8 @@
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.7.4 — 2026-05-29 GEO hardening (robots.txt explicit AI bots + JSON-LD Organization + FAQPage + extended SoftwareApplication featureList/sameAs)
+           DictoKey Landing Page v1.7.5 — 2026-05-29 GEO Phase 2.c (GroqBoard marketing lessons applied: "Free forever" hero reframe, +4 verified Play Store testimonials FR, +4 frontal FAQ Q/A anticipating objections in HTML and JSON-LD schema)
+           Base v1.7.4 — 2026-05-29 GEO hardening (robots.txt explicit AI bots + JSON-LD Organization + FAQPage + extended SoftwareApplication featureList/sameAs)
            Base v1.7.3 — 2026-05-21 SEO refactor (pivot whisper article + noindex helpers + new pillar article best-voice-keyboard-android-2026)
            Base v1.7.0 — Hero bulle flottante
            ============================================ */
@@ -809,7 +842,7 @@
                 <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="playstoreBadge" alt="Get it on Google Play" width="228" height="76" loading="eager" decoding="async">
             </a>
         </div>
-        <p class="hero-note" data-i18n="hero_note"><strong>Free</strong> — 30 dictations/day &middot; No account required &middot; 7-day Premium trial</p>
+        <p class="hero-note" data-i18n="hero_note"><strong>Free forever</strong> — 30 dictations/day &middot; No card &middot; No account &middot; Premium optional</p>
 
         <!-- App animations (v1.7.0 — floating bubble + IME keyboard side by side) -->
         <div class="hero-screenshot hero-video-pair fade-in">
@@ -1034,6 +1067,30 @@
                 <p class="testimonial-author"><strong>Xavier B.</strong> — Samsung Galaxy A53 5G</p>
                 <p class="testimonial-source">Google Play &#9733; 5/5</p>
             </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Super pratique avec cette nouvelle option de bulle flottante pour activer ou pas la transcription."</blockquote>
+                <p class="testimonial-author"><strong>Utilisateur vérifié</strong> — Google Play (FR)</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5 &middot; 8 mai 2026</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Application géniale ! Reconnaissance vocale intelligente, traduction précise."</blockquote>
+                <p class="testimonial-author"><strong>Utilisateur vérifié</strong> — Google Play (FR)</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5 &middot; 5 avril 2026</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Mis en application d'une idée intéressante ! Ça me paraît intuitif, à essayer dans la durée."</blockquote>
+                <p class="testimonial-author"><strong>Utilisateur vérifié</strong> — Google Play (FR)</p>
+                <p class="testimonial-source">Google Play &#9733; 5/5 &middot; 15 mai 2026</p>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <blockquote>"Application bien pratique, le plan gratuit suffit au quotidien pour moi."</blockquote>
+                <p class="testimonial-author"><strong>Utilisateur vérifié</strong> — Google Play (FR)</p>
+                <p class="testimonial-source">Google Play &#9733; 4/5 &middot; 1er mai 2026</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1115,6 +1172,24 @@
                 <button class="faq-question"><span data-i18n="faq_6_q">What is Interpreter Mode?</span> <span class="faq-arrow">+</span></button>
                 <div class="faq-answer">
                     <p data-i18n="faq_6_a">Interpreter Mode is a Premium feature for face-to-face translation. It uses two microphones to enable real-time conversation between any two languages — like having a personal interpreter in your pocket.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question"><span data-i18n="faq_7_q">Is DictoKey a freemium trap?</span> <span class="faq-arrow">+</span></button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_7_a">Genuinely free. The Free tier is 30 dictations per day, forever — no credit card, no account, no expiration. All 52 languages and AI translation are included. Most casual users (chats, short messages, occasional emails) never hit the daily cap. Premium (€4.99/month) is for power users who want unlimited dictations and AI rewriting — it is optional, not required.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question"><span data-i18n="faq_8_q">Will I outgrow the 30 dictations per day?</span> <span class="faq-arrow">+</span></button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_8_a">Most users do not. 30 dictations per day covers daily chats, WhatsApp messages, short emails, and quick translations. Heavy users (professionals dictating long emails, content creators producing notes) typically hit the cap within 2-3 weeks and switch to Premium. The Free tier resets every day at midnight, so you always start fresh.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question"><span data-i18n="faq_9_q">How is DictoKey different from Gboard voice typing?</span> <span class="faq-arrow">+</span></button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_9_a">Gboard is excellent for clean English dictation in a quiet room and is completely free. DictoKey adds three things Gboard does not offer: a system-wide floating bubble that works in any app without switching keyboards, inline AI translation across 52 languages, and Whisper-grade accuracy on accented or noisy speech. Many users keep both installed.</p>
                 </div>
             </div>
         </div>
