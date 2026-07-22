@@ -37,4 +37,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# Dossier /review/ : materiel soumis a la revue Google Play (video de
+# declaration d'accessibilite). Non destine a la recherche publique --
+# equivalent d'une video YouTube non repertoriee.
+User-agent: *
+Disallow: /review/
+
 Sitemap: https://dictokey.com/sitemap.xml
