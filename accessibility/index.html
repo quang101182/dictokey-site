@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility — DictoKey</title>
+    <meta name="description" content="DictoKey is a voice-to-text accessibility tool for Android. Write with your voice when typing is painful, slow or impossible — motor impairments, tremors, RSI, dyslexia, low vision. Works with TalkBack.">
+    <link rel="canonical" href="https://dictokey.com/accessibility">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #080810;
+            --bg-card: #10101a;
+            --border: #1a1a2e;
+            --text: #e0e0e8;
+            --text-dim: #8888a0;
+            --accent: #7c6aff;
+            --accent-green: #00d4aa;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color .2s; }
+        a:hover { color: var(--accent-green); }
+        a:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 3px; border-radius: 2px; }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8, 8, 16, .85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            height: 64px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+        .nav-back { font-size: .95rem; color: var(--text-dim); }
+        .nav-back:hover { color: var(--accent); }
+
+        /* Content */
+        .a11y-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 1.5rem 80px;
+        }
+        .a11y-container h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .a11y-container .updated {
+            color: var(--text-dim);
+            font-size: .9rem;
+            margin-bottom: 2.5rem;
+        }
+        .a11y-container h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 2.5rem 0 .75rem;
+        }
+        .a11y-container p, .a11y-container li {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .a11y-container ul, .a11y-container ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .a11y-container li { margin-bottom: .5rem; }
+
+        .highlight-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .contact-box a { font-family: var(--font-mono); font-size: .95rem; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: .85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="nav-logo">DictoKey</span>
+    <a href="/" class="nav-back">&larr; Back to Home</a>
+</nav>
+
+<main class="a11y-container">
+    <h1>Accessibility</h1>
+    <p class="updated">Last updated: July 22, 2026</p>
+
+    <div class="highlight-box">
+        <p><strong>DictoKey is a voice-to-text accessibility tool for Android.</strong> It lets you write with your voice, in any app, when typing on a touchscreen is painful, slow, or impossible.</p>
+    </div>
+
+    <h2>Who DictoKey is for</h2>
+    <p>A touchscreen keyboard assumes steady hands, precise aim, and good eyesight. When any of those is missing, writing on a phone becomes exhausting — or simply out of reach. DictoKey replaces the keyboard with your voice.</p>
+    <p>DictoKey is built for people living with:</p>
+    <ul>
+        <li><strong>Motor impairments and limited hand mobility</strong> — when reaching small keys accurately is difficult</li>
+        <li><strong>Tremors, Parkinson's disease</strong> — when the finger does not land where it was aimed</li>
+        <li><strong>Arthritis, RSI, chronic pain</strong> — when repeated tapping hurts</li>
+        <li><strong>Blindness and low vision</strong> — used alongside a screen reader such as TalkBack</li>
+        <li><strong>Dyslexia, ADHD, stuttering</strong> — when spoken words come more easily than written ones</li>
+        <li><strong>Situational limitations</strong> — one hand on a steering wheel, an arm holding a child, a hand in a cast</li>
+    </ul>
+
+    <h2>What DictoKey actually does for accessibility</h2>
+    <p>These are implemented features, not intentions:</p>
+    <ul>
+        <li><strong>Two independent ways to write by voice.</strong> A standard Android keyboard (IME) and a floating bubble. If one is unavailable on your device, the other still works.</li>
+        <li><strong>Coexistence with TalkBack.</strong> The bubble filters accessibility events so that it does not fight the screen reader for control of the screen. A timing bug that specifically degraded the experience under TalkBack was identified and fixed.</li>
+        <li><strong>No typing required to correct text.</strong> Clean mode restores punctuation and capitalisation automatically, so a dictated message does not need manual editing on a keyboard.</li>
+        <li><strong>Adjustable bubble.</strong> Size, opacity, and anchored position (left or right) can be set to match your reach and your grip.</li>
+        <li><strong>52 languages,</strong> including real-time translation, so you can write in a language you speak better than you type.</li>
+        <li><strong>Works without an account.</strong> No sign-up form to fill in before you can use the app.</li>
+    </ul>
+
+    <h2>Why DictoKey needs the Accessibility Service permission</h2>
+    <p>Android does not provide a standard API that lets a third-party app know when and where you are typing. The <strong>AccessibilityService API is the only supported way</strong> for DictoKey to place the dictation bubble over the field you are writing in, and to insert your dictated text into it.</p>
+    <p>DictoKey uses that permission for one purpose only: to show the floating bubble on top of other applications, and to insert dictated text into the active field — <strong>only after you explicitly ask for it</strong>.</p>
+
+    <div class="highlight-box">
+        <p><strong>What DictoKey never does.</strong> It does not read or record screen content, does not log keystrokes, does not monitor background activity, and does not transmit accessibility data to third-party servers. It does not work around Android's built-in privacy controls, does not change system settings without your permission, and does not use deceptive interface practices. DictoKey never initiates, schedules, or performs actions on its own.</p>
+    </div>
+
+    <p>Banking apps, password managers, and crypto wallets are detected and blocked automatically: the bubble will not insert text there, even if you ask it to.</p>
+    <p>The permission can be revoked at any time in <strong>Android Settings &rsaquo; Accessibility &rsaquo; DictoKey</strong>. The app keeps working as a voice keyboard without the bubble. Full details in our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+    <h2>Getting started with a screen reader</h2>
+    <ol>
+        <li>Install DictoKey from <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Daccessibility%26utm_content%3Dsetup" target="_blank" rel="noopener">Google Play</a>.</li>
+        <li>Open the app. A disclosure screen explains exactly what the Accessibility permission allows before anything is enabled.</li>
+        <li>Enable <strong>DictoKey Voice</strong> in Android Settings &rsaquo; Languages &amp; input &rsaquo; On-screen keyboard. This alone is enough to dictate everywhere — the bubble is optional.</li>
+        <li>If you want the floating bubble as well, enable it in DictoKey's settings and follow the on-screen steps.</li>
+    </ol>
+
+    <h2>Known limits, stated honestly</h2>
+    <ul>
+        <li>Dictation requires an internet connection: speech is transcribed on a server, then immediately discarded.</li>
+        <li>On devices where <strong>Advanced Protection Mode</strong> is enabled, Android blocks the floating bubble system-wide. DictoKey detects this and tells you so directly, instead of failing silently — the voice keyboard remains fully available.</li>
+        <li>The in-app disclosure screen is currently available in English only.</li>
+    </ul>
+
+    <h2>Tell us what is missing</h2>
+    <p>If something in DictoKey does not work with your assistive setup, we want to hear about it. Please include your device, your Android version, and the assistive technology you use — it makes the problem reproducible, and reproducible problems get fixed.</p>
+
+    <div class="contact-box">
+        <p>Accessibility feedback</p>
+        <a href="mailto:quangapps.dev@gmail.com?subject=DictoKey%20accessibility">quangapps.dev@gmail.com</a>
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 DictoKey &middot; <a href="/">Home</a> &middot; <a href="/privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

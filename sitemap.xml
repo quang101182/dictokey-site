@@ -8,6 +8,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Accessibility -->
+  <url>
+    <loc>https://dictokey.com/accessibility</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Privacy -->
   <url>
     <loc>https://dictokey.com/privacy.html</loc>
