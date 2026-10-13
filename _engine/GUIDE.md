@@ -43,7 +43,8 @@
 8. `git add blog/<slug>.html blog/index.html sitemap.xml _engine/BACKLOG.md _engine/LOG.md` (rien d'autre), commit
    `Contenu : <titre>`, `git push` sur la branche par défaut (GitHub Pages publie en 1-2 min).
 9. **Signaler à Bing/IndexNow** : `python _engine/indexnow.py https://dictokey.com/blog/<slug>.html https://dictokey.com/blog/ https://dictokey.com/sitemap.xml`
-   (Bing alimente la recherche de ChatGPT). Noter le code HTTP dans `LOG.md` au commit suivant si besoin.
+   (Bing alimente la recherche de ChatGPT). Dans `LOG.md`, la colonne IndexNow vaut « après push » : le code HTTP figure
+   dans le résumé final de l'exécution (pas de commit supplémentaire pour le reporter).
 
 ## Règles de fond
 - **Tout fait sur DictoKey vient de `FACTS.md`.** Tout fait sur un concurrent vient d'une source vue ce jour-là.
