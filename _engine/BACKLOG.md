@@ -8,6 +8,26 @@
 - [x] `gboard-voice-typing-alternative` — « Gboard voice typing alternative » (Gboard, SwiftKey, FUTO Voice Input, Wispr Flow, DictoKey)
 - [x] `dictation-app-for-dyslexia-android` — « voice dictation app for dyslexia Android » (écrire en parlant, mode Clean, réécriture ; Gboard, Voice Access, DictoKey)
 - [x] `voice-typing-for-arthritis-hand-pain` — « voice typing for arthritis and hand pain on Android » (réduire la frappe ; bulle flottante ; Voice Access, Gboard, DictoKey)
+
+> 🎯 **Réorientation du 16/10/2026 — « attaque »** (forums Reddit/HN lus par sous-agent, vérifiés) : les gens cherchent
+> une app au **moment où leur outil les lâche**. Les 5 pages ci-dessous passent DEVANT le reste. Faits concurrents
+> datés du 16/10 : Wispr Flow Android gratuit = **1 000 mots/semaine** (wisprflow.ai/pricing + r/WisprFlow 1w9e26y,
+> 09/2026) et l'équipe Wispr reconnaît manquer de développeurs Android (« lack of bandwidth », même fil) ; Gboard
+> « saute les premiers mots / en ajoute » (r/GooglePixel 1ta90yi, 05/2026). ⛔ Toujours re-vérifier sur la source le
+> jour de la rédaction, et ne citer AUCUN pseudo Reddit (règle « aucun témoignage » de FACTS).
+
+- [ ] REFONTE `wispr-flow-alternative` — **PRIORITÉ 1** : viser aussi « Wispr Flow Android word limit » ; Free mobile =
+      1 000 mots/semaine (vérifier wisprflow.ai/pricing) vs DictoKey 30 dictées/jour (FACTS) ; état de l'app Android
+      Wispr factuel et sourcé, sans dénigrer ; corriger « works in every app » → « most apps » ; section Sources datée.
+- [ ] `gboard-voice-typing-not-working` — « Gboard voice typing not working / missing words » : page **dépannage
+      honnête d'abord** (réglages, langue hors ligne, micro, mise à jour — sources support.google.com), DictoKey en
+      dernière section comme alternative. ⚠️ ne pas cannibaliser `gboard-voice-typing-alternative` : lien croisé.
+- [ ] `samsung-voice-typing-not-working` — même schéma pour Samsung Keyboard voice input (sources samsung.com).
+- [ ] `typing-with-one-finger-android` — « typing with one finger / one hand on Android » : options Android (Gboard
+      glisse, clavier une main, Voice Access) + dictée par bulle. Ton accessibilité, aucun témoignage.
+- [ ] `voice-dictation-button-any-keyboard-android` — « voice dictation button over any keyboard on Android » : garder
+      son clavier (Gboard/Samsung/SwiftKey) et dicter par un bouton flottant ; c'est ce que des utilisateurs bricolent
+      avec MacroDroid. Comparer : micro du clavier, Wispr (bulle), Typeless (remplace le clavier), DictoKey (bulle + IME).
 - [ ] REFONTE `best-voice-keyboard-android-2026` — mettre à jour : Yaps, Typeless Android, Wispr Android, prix réels, essai 7 j annuel, date du jour
 - [ ] `futo-voice-input-vs-dictokey` — « FUTO Voice Input vs DictoKey » (FUTO : hors ligne, open source, gratuit — dire ses forces ; DictoKey : cloud, réécriture, traduction, bulle)
 - [ ] `swiftkey-voice-typing-alternative` — « SwiftKey voice typing alternative »
@@ -16,7 +36,7 @@
 - [ ] `yaps-alternative-android` — « Yaps alternative for Android »
 - [ ] `voice-typing-for-seniors-android` — « easiest voice typing app for seniors on Android »
 - [ ] `voice-typing-with-talkback-low-vision` — « voice typing with TalkBack / low vision Android »
-- [ ] REFONTE `wispr-flow-alternative` — rafraîchir (Wispr Android : version, prix, nouveautés 2026) + **corriger « works in every app » → « most apps »** (faux : apps sensibles bloquées) + section Sources datée + **prix Wispr périmés** : la page dit « unlimited words on Android », wisprflow.ai/pricing annonce maintenant Free = 1 000 mots/semaine sur mobile (vu le 13/10)
+- [!] (remontée en PRIORITÉ 1 le 16/10, voir en tête — ne pas la refaire deux fois) REFONTE `wispr-flow-alternative` — rafraîchir (Wispr Android : version, prix, nouveautés 2026) + **corriger « works in every app » → « most apps »** (faux : apps sensibles bloquées) + section Sources datée + **prix Wispr périmés** : la page dit « unlimited words on Android », wisprflow.ai/pricing annonce maintenant Free = 1 000 mots/semaine sur mobile (vu le 13/10)
 - [ ] `voice-typing-for-rsi-tendonitis` — « voice typing for RSI / tendonitis » (travail sur téléphone sans douleur)
 - [ ] `voice-to-text-whatsapp-android` — « voice to text for WhatsApp on Android » (dicter au lieu d'envoyer un vocal)
 - [ ] `dictate-emails-android-gmail` — « dictate emails on Android (Gmail, Outlook) »
