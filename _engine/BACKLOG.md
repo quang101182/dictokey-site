@@ -7,7 +7,7 @@
 - [x] `samsung-voice-typing-alternative` — « Samsung voice typing alternative » (frustration Samsung Keyboard voice input ; comparer Samsung voice input, Gboard, DictoKey, Wispr Flow Android) — ⚠️ ne pas cannibaliser `ai-voice-dictation-samsung-android.html` : celle-ci = « remplacer la dictée Samsung », l'autre = « IA sur Samsung »
 - [x] `gboard-voice-typing-alternative` — « Gboard voice typing alternative » (Gboard, SwiftKey, FUTO Voice Input, Wispr Flow, DictoKey)
 - [x] `dictation-app-for-dyslexia-android` — « voice dictation app for dyslexia Android » (écrire en parlant, mode Clean, réécriture ; Gboard, Voice Access, DictoKey)
-- [ ] `voice-typing-for-arthritis-hand-pain` — « voice typing for arthritis and hand pain on Android » (réduire la frappe ; bulle flottante ; Voice Access, Gboard, DictoKey)
+- [x] `voice-typing-for-arthritis-hand-pain` — « voice typing for arthritis and hand pain on Android » (réduire la frappe ; bulle flottante ; Voice Access, Gboard, DictoKey)
 - [ ] REFONTE `best-voice-keyboard-android-2026` — mettre à jour : Yaps, Typeless Android, Wispr Android, prix réels, essai 7 j annuel, date du jour
 - [ ] `futo-voice-input-vs-dictokey` — « FUTO Voice Input vs DictoKey » (FUTO : hors ligne, open source, gratuit — dire ses forces ; DictoKey : cloud, réécriture, traduction, bulle)
 - [ ] `swiftkey-voice-typing-alternative` — « SwiftKey voice typing alternative »
