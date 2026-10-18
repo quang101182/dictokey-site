@@ -44,3 +44,12 @@
 - [ ] REFONTE `best-voice-dictation-apps-android-2026` — mettre à jour (même méthode que la refonte n° 5)
 - [ ] `speech-to-text-translate-android-keyboard` — « speak in one language, type in another on Android »
 - [ ] REFONTE `whisper-speech-recognition-accuracy` — retirer ce qui est daté sur le moteur (ne pas nommer le fournisseur, cf FACTS)
+- [ ] **CORRECTIONS 18/10 (prioritaires, avant toute nouvelle page)** — pages en ligne qui contredisent FACTS :
+      « Whisper » / « Groq » / « OpenAI » comme moteur de DictoKey (faux depuis le 03/10), « 52 languages »,
+      « EU GDPR hosting », chiffres non sourcés présentés comme mesurés (« 4.2% word error rate in our tests »,
+      « 280ms in our testing », « 95-98% ») : `best-floating-voice-dictation-android-2026`, `best-voice-dictation-apps-android-2026`,
+      `best-voice-keyboard-android-2026`, `how-to-translate-text-on-android-keyboard`, `ai-keyboard-for-multilingual-users`,
+      `voice-typing-vs-keyboard-speed-test`, `whisper-speech-recognition-accuracy`, `blog/index`, FAQ de `index.html`.
+      Règle : retirer le fournisseur et tout chiffre qu'aucune mesure maison ne prouve ; 51 langues.
+- [ ] **À trancher par Quang (18/10)** : FACTS liste « basse vision (avec lecteur d'écran) » parmi les publics, alors que
+      la fiche Play (source déclarée de FACTS) ne le mentionne pas et que la page accessibilité l'a retiré le 24/07.

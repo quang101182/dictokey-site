@@ -2,7 +2,7 @@
 
 > Toute affirmation sur DictoKey dans une page DOIT venir de ce fichier. Si un fait manque ici : ne pas l'écrire.
 > Source : description Play en-US en ligne (approuvée par Google le 24/07/2026) + code de l'app v2.72.0 (13/10/2026).
-> Mis à jour : 13/10/2026. Ce dossier `_engine/` n'est PAS publié (Jekyll ignore les dossiers en `_`).
+> Mis à jour : 18/10/2026 (51 langues, moteur ; voir BACKLOG « CORRECTIONS 18/10 »). Ce dossier `_engine/` n'est PAS publié (Jekyll ignore les dossiers en `_`).
 
 ## Identité
 - Nom : **DictoKey** (fiche Play : « DictoKey: Voice Accessibility »). Éditeur affiché : « DictoKey Team ».
@@ -14,14 +14,15 @@
 - **Deux façons indépendantes de dicter** : un clavier Android standard (IME, navigable au lecteur d'écran) **et** une
   **bulle de dictée flottante** au-dessus de n'importe quelle app. Si l'une n'est pas disponible, l'autre fonctionne.
 - **Mode Clean** : ponctuation et majuscules rétablies automatiquement → un message dicté n'a pas besoin d'être retouché.
-- **Réécriture IA** du texte dicté et **traduction en temps réel**. **52 langues.**
+- **Réécriture IA** du texte dicté et **traduction en temps réel**. **51 langues** (vérifié 18/10/2026 : `data/Language.kt` liste 52 entrées dont « auto » ; l'app affiche « x/51 »). ⛔ Ne plus écrire « 52 ».
 - **Bulle réglable** : taille, opacité, position ancrée, activable app par app.
 - **Coexiste avec TalkBack** (la bulle ne dispute pas le contrôle de l'écran au lecteur d'écran).
 - **Sans compte** : aucun formulaire d'inscription pour commencer.
 - **Apps sensibles bloquées automatiquement** : banques, gestionnaires de mots de passe, portefeuilles crypto.
 - Fonctionne **dans la plupart des apps** (⛔ ne jamais écrire « toutes les apps » : les apps sensibles sont exclues).
 - Reconnaissance vocale **dans le cloud** (connexion internet nécessaire). ⛔ Ne jamais écrire « hors ligne »/« offline ».
-  ⛔ Ne pas nommer le fournisseur de transcription.
+  ⛔ Ne pas nommer le fournisseur de transcription. ⛔ Ne jamais écrire « Whisper », « Groq », « OpenAI » à propos de
+  DictoKey : faux depuis le 03/10/2026 (moteur Microsoft MAI-Transcribe-2 pour presque toutes les langues).
 
 ## Prix (au 13/10/2026)
 - **Gratuit** avec une limite quotidienne de dictées (**30 par jour** au moment de la rédaction).
