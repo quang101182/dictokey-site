@@ -38,7 +38,9 @@
 
 ## Publics (positionnement officiel = accessibilité d'abord)
 Motricité réduite / mains peu mobiles · tremblements, Parkinson · arthrite, tendinite (RSI), douleurs chroniques ·
-dyslexie, TDAH · basse vision (avec lecteur d'écran) · toute personne qui écrit plus vite en parlant.
+dyslexie, TDAH · toute personne qui écrit plus vite en parlant.
+⛔ Ne pas cibler « basse vision » / « malvoyants » / « aveugles » comme public (retiré du site le 24/07, absent de la fiche
+Play — décision 18/10/2026). Décrire la compatibilité TalkBack comme une FONCTION, jamais comme un public visé.
 
 ## Interdits absolus
 - ⛔ Aucun témoignage ou citation d'utilisateur (même anonymisé), aucune note/avis inventé, aucun chiffre d'installs.

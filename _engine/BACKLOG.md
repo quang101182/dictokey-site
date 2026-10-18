@@ -51,5 +51,5 @@
       `best-voice-keyboard-android-2026`, `how-to-translate-text-on-android-keyboard`, `ai-keyboard-for-multilingual-users`,
       `voice-typing-vs-keyboard-speed-test`, `whisper-speech-recognition-accuracy`, `blog/index`, FAQ de `index.html`.
       Règle : retirer le fournisseur et tout chiffre qu'aucune mesure maison ne prouve ; 51 langues.
-- [ ] **À trancher par Quang (18/10)** : FACTS liste « basse vision (avec lecteur d'écran) » parmi les publics, alors que
-      la fiche Play (source déclarée de FACTS) ne le mentionne pas et que la page accessibilité l'a retiré le 24/07.
+- [x] ~~« basse vision » dans FACTS~~ → retiré le 18/10 (aligné sur la fiche Play et la page accessibilité). Corriger aussi
+      toute page en ligne qui vise les malvoyants/aveugles comme public (la compatibilité TalkBack reste une fonction).
