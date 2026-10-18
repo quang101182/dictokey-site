@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — DictoKey</title>
-    <meta name="description" content="DictoKey Privacy Policy. No personal data collected. No account required. GDPR compliant.">
+    <meta name="description" content="DictoKey Privacy Policy: what the app sends, to whom, how long it is kept, and how to delete it. No account, no ads.">
     <link rel="canonical" href="https://dictokey.com/privacy.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,49 +125,48 @@
 
 <div class="privacy-container">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 22, 2026</p>
+    <p class="updated">Last updated: October 18, 2026</p>
 
     <div class="highlight-box">
-        <p><strong>TL;DR</strong> — DictoKey collects no personal data, requires no account, and does not track you. Your voice recordings are processed and immediately deleted.</p>
+        <p><strong>In short</strong> — No account, no ads. Your voice is sent to a speech-to-text service to be turned into text, then discarded: we never store your audio. We use Google Firebase to measure how the app is used and to detect crashes. You can delete your data from the app at any time.</p>
     </div>
 
-    <h2>1. No Personal Data Collection</h2>
-    <p>DictoKey does not collect, store, or share any personal information. We do not require:</p>
+    <h2>1. What we do not collect</h2>
+    <p>DictoKey does not require an account. We do not ask for or collect your name, email address, phone number, contacts or precise location. We do not show ads.</p>
+
+    <h2>2. Voice dictation</h2>
+    <p>When you dictate, the recording is sent over an encrypted connection (HTTPS) to our server, which forwards it to a speech-to-text service:</p>
     <ul>
-        <li>User accounts or registration</li>
-        <li>Email addresses</li>
-        <li>Names or phone numbers</li>
-        <li>Location data</li>
+        <li><strong>Microsoft Azure</strong> (MAI-Transcribe), on servers located in the European Union (North Europe region), for most languages;</li>
+        <li><strong>Groq</strong> (Whisper model, United States) for Croatian, Serbian and Lao, and for audio files you share to the app.</li>
     </ul>
+    <p>The audio is kept in memory only for the time of the request and is <strong>never written to storage</strong>, on your phone or on our server. If you added personal words ("My words"), they are sent with the recording to improve recognition.</p>
 
-    <h2>2. Voice & Audio Processing</h2>
-    <p>When you use DictoKey's voice dictation:</p>
+    <h2>3. Rewrite, correction and translation</h2>
+    <p>These features only run when you tap the corresponding button:</p>
     <ul>
-        <li>Your audio is sent to our secure servers for speech-to-text processing (powered by OpenAI Whisper).</li>
-        <li>The audio is processed in real time and <strong>immediately deleted</strong> after transcription — it is never stored.</li>
-        <li>Transcribed text is returned to your device and is not retained on our servers.</li>
+        <li><strong>Rewrite and correction</strong>: the text of the field you are typing in is sent to <strong>Groq</strong> (United States) to be rewritten, then returned to you.</li>
+        <li><strong>Translation</strong>: the text is sent to <strong>Microsoft Translator</strong> (Microsoft Azure).</li>
     </ul>
+    <p>Our server neither stores nor logs this text, nor the text of your dictations.</p>
 
-    <h2>3. Translation & AI Rewrite</h2>
-    <p>When you use translation or AI rewrite features:</p>
+    <h2>4. Device identifier and usage data</h2>
+    <p>On first launch, the app creates a <strong>device identifier</strong> derived from your phone's Android ID. It is used to apply the free daily limit, to unlock your subscription and to prevent abuse. With it, our server stores:</p>
     <ul>
-        <li>Your text is sent to Azure AI / OpenAI for processing.</li>
-        <li>The text is processed and returned — it is not stored or used for model training.</li>
+        <li>app version, phone model, Android version and country (deduced from the connection, not GPS), kept until you delete your data;</li>
+        <li>your plan (free or premium) and, if you subscribe, the Google Play purchase reference, so your subscription can be restored (kept up to 2 years);</li>
+        <li>usage counters per day — number of dictations and words, audio duration, languages and modes used, response time (kept 90 days).</li>
     </ul>
+    <p>When a new device registers, its IP address is kept for at most 25 hours to limit abuse. We do not sell or share this data.</p>
 
-    <h2>4. Anonymous Device Identifier</h2>
-    <p>DictoKey generates an <strong>anonymous device ID</strong> solely for the purpose of counting daily dictation usage (to enforce the free tier limit of 30 dictations/day). This ID:</p>
-    <ul>
-        <li>Cannot identify you personally</li>
-        <li>Is not linked to any personal information</li>
-        <li>Is not shared with third parties</li>
-        <li>Can be deleted at any time using the "Delete my data" button in the app settings</li>
-    </ul>
+    <h2>5. Analytics and crash reports (Google Firebase)</h2>
+    <p>The app uses <strong>Google Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>, provided by Google, to understand how the app is used and to fix crashes. They receive events such as the first dictation, the use of rewrite or translation, setup steps, purchases (plan, price), the store campaign that brought you to the app, crash reports and technical information about your device. Firebase may use your phone's advertising identifier; you can reset or delete it in your Android settings (Google &gt; Ads, or Privacy &gt; Ads). DictoKey contains no advertising and does not use this data for advertising.</p>
+    <p>Purchases are handled by <strong>Google Play</strong>; we never see your payment details.</p>
 
-    <h2>5. No Cookies or Third-Party Tracking</h2>
-    <p>DictoKey does not use cookies, analytics trackers, advertising SDKs, or any third-party tracking tools. We do not serve ads.</p>
+    <h2>6. Data stored on your phone</h2>
+    <p>The app keeps on your phone your settings, your personal words and a history of your last 50 dictations and translations. You can clear the history in the app. Like other app settings, they can be included in your Android backup if backup is enabled on your phone.</p>
 
-    <h2>6. Floating Bubble &amp; Accessibility Service (Optional)</h2>
+    <h2>7. Floating Bubble &amp; Accessibility Service (Optional)</h2>
     <p>DictoKey offers an <strong>optional</strong> floating bubble feature that lets you dictate or translate text and insert it directly into any app — without switching keyboards. This feature is <strong>disabled by default</strong> and must be explicitly activated from the app Settings.</p>
 
     <p>When you enable the floating bubble, DictoKey requests access to Android's <strong>Accessibility Service</strong>. Before granting this permission, the app displays a disclosure screen explaining exactly what the permission allows.</p>
@@ -188,26 +187,27 @@
     </ul>
 
     <div class="highlight-box">
-        <p><strong>Sensitive apps blocklist</strong> — DictoKey maintains an internal blocklist of 135+ sensitive apps (banks, password managers, crypto wallets, and payment apps across French, Indonesian, US, and UK markets). When any of these apps is in the foreground, the bubble refuses to insert text and displays a warning. This blocklist is baked into the app and cannot be bypassed.</p>
+        <p><strong>Sensitive apps blocklist</strong> — DictoKey maintains an internal blocklist of 95 sensitive apps (banks, password managers, crypto wallets, and payment apps across French, Indonesian, US, and UK markets). When any of these apps is in the foreground, the bubble refuses to insert text and displays a warning. This blocklist is built into the app and cannot be bypassed. It applies to the bubble; the DictoKey keyboard can still be used in these apps, like any keyboard.</p>
     </div>
 
     <p><strong>How to disable:</strong> You can disable the floating bubble at any time via the toggle in the app's Settings &gt; "Floating bubble" section. You can additionally revoke the Accessibility permission from Android's own Settings &gt; Accessibility &gt; DictoKey.</p>
 
-    <h2>7. Data Security</h2>
-    <p>All communications between DictoKey and our servers are encrypted using TLS (HTTPS). Audio data exists only transiently during processing and is never written to persistent storage.</p>
+    <p><strong>The DictoKey keyboard</strong> reads the text of the field you are typing in only when you tap Rewrite, Correct, Undo or Clear; only Rewrite and Correct send it to our server (section 3).</p>
 
-    <h2>8. GDPR Compliance</h2>
-    <p>DictoKey is fully compliant with the General Data Protection Regulation (GDPR). Since we do not collect personal data, there is minimal data to manage. However, you can:</p>
+    <h2>8. Security</h2>
+    <p>All communications between the app, our server and the services above are encrypted (HTTPS/TLS). Our server runs on Cloudflare.</p>
+
+    <h2>9. Your rights and deletion (GDPR)</h2>
     <ul>
-        <li>Use the <strong>"Delete my data"</strong> button in the app to remove your anonymous device ID</li>
-        <li>Contact us to request information about any data associated with your device</li>
-        <li>Uninstall the app at any time — no residual data remains on our servers</li>
+        <li><strong>"Delete my data"</strong> in the app settings deletes your device record on our server (identifier, plan, access token, daily limits) and the identifier stored on your phone.</li>
+        <li>Usage counters (section 4) are deleted automatically after 90 days. To have them deleted sooner, or to delete your Firebase analytics data, write to us with the code shown in the app (Home &gt; "Your code").</li>
+        <li>You can also ask us what data is linked to your device, or object to its use, at the address below.</li>
     </ul>
 
-    <h2>9. Children's Privacy</h2>
-    <p>DictoKey does not knowingly collect data from children under 13. Since no personal data is collected from any user, the app is safe for all ages.</p>
+    <h2>10. Children</h2>
+    <p>DictoKey is not intended for children under 13 and we do not knowingly collect their data.</p>
 
-    <h2>10. Changes to This Policy</h2>
+    <h2>11. Changes to This Policy</h2>
     <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date.</p>
 
     <div class="contact-box">
