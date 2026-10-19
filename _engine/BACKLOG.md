@@ -55,7 +55,7 @@
       toute page en ligne qui vise les malvoyants/aveugles comme public (la compatibilité TalkBack reste une fonction).
 
 ## Relevé du 19/10 (correction site entier) — à traiter APRÈS les lignes ci-dessus, une par passage
-- [ ] FACTS : Quang doit trancher si « Interpreter Mode », « voice correction » et la détection automatique de langue
+- [x] ~~FACTS : Quang doit trancher si « Interpreter Mode », « voice correction » et la détection automatique de langue~~ → ✅ 19/10 : les trois ajoutées à FACTS (prouvées par le code + fiche Play fr), sans palier gratuit/Premium. Énoncé d'origine :
       (présents dans le code et sur des pages) entrent dans FACTS.md — sinon les retirer des pages.
 - [ ] Faits concurrents non re-vérifiés (laissés en place) dans les comparatifs : Otter (3 langues, 16,99 $), Speechnotes
       (1,99 $, 60+ langues), Floating Mic, Voice Access (~10 langues), Gboard (300+ langues) → sourcer ou retirer.
