@@ -1,0 +1,19 @@
+# Garde-fou : aucune page publiée de dictokey.com ne doit contredire _engine/FACTS.md.
+# Rouge = GitHub envoie un mail d'échec au propriétaire du dépôt. Né de la récidive des 18-19/10/2026
+# (FACTS corrigé, 31 pages en ligne restées fausses faute de contrôle du site entier).
+name: Garde-fou FACTS (site entier)
+on:
+  push:
+  schedule:
+    - cron: "30 5 * * *"   # chaque jour 05:30 UTC, avant le passage du moteur de contenu (06:00 UTC, lun-ven)
+  workflow_dispatch:
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: check_site.py (toutes les pages publiées)
+        run: PYTHONIOENCODING=utf-8 python _engine/check_site.py --detail

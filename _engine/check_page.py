@@ -136,6 +136,13 @@ def main(path):
     if f'href="{slug}"' not in idx:
         errs.append("page absente de blog/index.html")
 
+    # mêmes règles que le garde-fou du site entier (UNE seule liste à tenir à jour : check_site.REGLES)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import check_site
+    rel = os.path.relpath(os.path.abspath(path), ROOT).replace("\\", "/")
+    for raison, ctx in check_site.violations(rel):
+        errs.append(f"garde-fou FACTS : {raison} — « …{ctx[40:140]}… »")
+
     if errs:
         fail(errs)
     print(f"OK : {slug} — {mots} mots, {len(faq_ld)} questions FAQ, {valides} liens internes")

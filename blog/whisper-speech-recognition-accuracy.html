@@ -3,35 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Most Accurate Voice Dictation on Android: Whisper AI Tested (2026) | DictoKey</title>
-<meta name="description" content="See why Whisper AI delivers the most accurate voice typing on Android — tested vs Google &amp; Azure. DictoKey is the free voice keyboard built on Whisper, with 52 languages and translation.">
-<meta name="keywords" content="best voice dictation android, ai voice keyboard android, whisper voice typing, voice keyboard whisper, ai dictation app android, free voice keyboard android, whisper speech recognition">
+<title>Whisper Speech Recognition Accuracy: What the Research Shows | DictoKey</title>
+<meta name="description" content="How accurate is Whisper, the open-source speech recognition model from OpenAI? Error rates from its research paper, noise and accent robustness, and known limits.">
+<meta name="keywords" content="whisper speech recognition, whisper accuracy, whisper model sizes, whisper large-v3, open source speech recognition, speech recognition accuracy">
 <meta name="author" content="DictoKey Team">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://dictokey.com/blog/whisper-speech-recognition-accuracy.html">
 
-<meta property="og:title" content="Most Accurate Voice Dictation on Android — Whisper AI Tested (2026)">
-<meta property="og:description" content="DictoKey is the free Android voice keyboard powered by Whisper AI. See the accuracy benchmarks vs Google &amp; Azure, then try it free.">
+<meta property="og:title" content="Whisper Speech Recognition Accuracy: What the Research Shows">
+<meta property="og:description" content="What the Whisper research paper and model card actually say about its accuracy, its robustness to noise and accents, and its known limits.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dictokey.com/blog/whisper-speech-recognition-accuracy.html">
 <meta property="og:site_name" content="DictoKey">
 <meta property="article:published_time" content="2026-04-03T08:00:00+00:00">
-<meta property="article:modified_time" content="2026-05-21T08:00:00+00:00">
+<meta property="article:modified_time" content="2026-10-19T08:00:00+00:00">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Most Accurate Voice Dictation on Android — Whisper AI Tested (2026)">
-<meta name="twitter:description" content="The free Android voice keyboard powered by Whisper AI. 52 languages, sub-300ms latency.">
+<meta name="twitter:title" content="Whisper Speech Recognition Accuracy: What the Research Shows">
+<meta name="twitter:description" content="Whisper's accuracy, robustness and limits, as reported by its own research paper and model card.">
 
 <!-- Schema: Article -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Most Accurate Voice Dictation on Android: Whisper AI Tested (2026)",
-  "description": "Why Whisper AI delivers the most accurate voice typing on Android, tested vs Google and Azure, and how to try it free via DictoKey.",
+  "headline": "Whisper Speech Recognition Accuracy: What the Research Shows",
+  "description": "What the Whisper research paper and model card report about its accuracy, its robustness to noise and accents, and its known limits.",
   "author": {
     "@type": "Organization",
-    "name": "DictoKey",
+    "name": "DictoKey Team",
     "url": "https://dictokey.com"
   },
   "publisher": {
@@ -40,7 +40,7 @@
     "url": "https://dictokey.com"
   },
   "datePublished": "2026-04-03T08:00:00+00:00",
-  "dateModified": "2026-05-21T08:00:00+00:00",
+  "dateModified": "2026-10-19T08:00:00+00:00",
   "mainEntityOfPage": "https://dictokey.com/blog/whisper-speech-recognition-accuracy.html"
 }
 </script>
@@ -81,42 +81,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is OpenAI Whisper and how accurate is it?",
+      "name": "What is Whisper?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "OpenAI Whisper is an open-source automatic speech recognition (ASR) model trained on 680,000 hours of multilingual audio data. It achieves a word error rate (WER) of 3-5% for clean English speech, making it the most accurate general-purpose speech recognition system available in 2026. It supports 100+ languages and handles accents, background noise, and technical vocabulary better than competing systems."
+        "text": "Whisper is an open-source speech recognition model released by OpenAI in 2022. It is a Transformer sequence-to-sequence model trained on 680,000 hours of audio collected from the internet. Its code and model weights are released under the MIT License, so anyone can download and run it."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Whisper compare to Google Speech-to-Text?",
+      "name": "How accurate is Whisper?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Whisper outperforms Google Speech-to-Text on most benchmarks. On the LibriSpeech clean test set, Whisper large-v3 achieves 2.7% WER vs Google's 4.9%. The gap widens for non-English languages and noisy environments. However, Google Speech offers lower latency for streaming recognition and better support for rare languages. For accuracy-first applications, Whisper is the clear winner."
+        "text": "In the original paper, the large-v2 model reaches a WER of 2.7% on LibriSpeech test-clean, the same as a strong LibriSpeech-trained model. The bigger difference shows up on other datasets: across 13 other English test sets, Whisper made 55.2% fewer errors on average than that model. Accuracy still depends heavily on the language, the audio quality and the model size."
       }
     },
     {
       "@type": "Question",
-      "name": "What is Word Error Rate (WER) in speech recognition?",
+      "name": "Is Whisper equally accurate in every language?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Word Error Rate (WER) is the standard metric for measuring speech recognition accuracy. It counts the number of insertions, deletions, and substitutions needed to transform the recognized text into the reference text, divided by the total number of words. A 5% WER means 5 out of every 100 words are incorrect. Lower is better. Human transcription achieves about 4% WER."
+        "text": "No. The model card says performance varies widely by language. The paper finds that accuracy is strongly linked to how much training audio exists for a language, and that most languages had less than 1,000 hours of training data, because the dataset was English-heavy."
       }
     },
     {
       "@type": "Question",
-      "name": "Can Whisper run on a mobile phone?",
+      "name": "What mistakes does Whisper make?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Whisper tiny and base models can run on modern phones, but with poor accuracy and high latency (2-5 seconds). The large models that achieve 95-98% accuracy require too much compute for mobile hardware. DictoKey solves this by sending audio to Groq's LPU (Language Processing Unit) inference hardware, which runs Whisper large-v3 in under 300ms — faster than most on-device solutions."
+        "text": "The paper lists repeat loops, skipping the first or last few words of an audio segment, and occasional hallucination, where the model outputs text unrelated to the audio. These errors show up particularly in long recordings. Like other speech recognition systems, it can also misspell rare names and technical terms."
       }
     },
     {
       "@type": "Question",
-      "name": "How does DictoKey use Whisper for voice typing?",
+      "name": "Which Whisper model size should I use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DictoKey is an Android keyboard that uses Whisper large-v3 for speech recognition. When you press the microphone button and speak, your audio is sent to Groq's inference servers, which run Whisper at extremely high speed (sub-300ms latency). The transcribed text is then inserted into whatever app you're using. DictoKey also adds translation (52 languages) and AI text rewriting on top of Whisper's transcription."
+        "text": "It is a trade-off between speed and accuracy. The official repository lists six sizes, from tiny (39 million parameters, about 1 GB of video memory) to large (1,550 million parameters, about 10 GB). The turbo model is an optimized version of large-v3 that is much faster with little loss in accuracy, but it is not trained for translation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does voice typing on Android use Whisper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the app. Some keyboards and dictation apps build on Whisper, others use different speech recognition engines. DictoKey, for example, uses cloud-based AI speech recognition and needs an internet connection. Check each app's own documentation rather than assuming which model it runs."
       }
     }
   ]
@@ -124,7 +132,7 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- v1.1 | whisper-speech-recognition-accuracy — 2026-05-21 SEO pivot: intent user (best Android voice dictation) + skip-to-download CTA -->
+<!-- v2.0 | whisper-speech-recognition-accuracy — 2026-10-19 rewrite: Whisper presented as a third-party model, only sourced figures, Sources section -->
 <style>
 :root {
   --bg: #080810;
@@ -245,6 +253,8 @@ footer a:hover { text-decoration: underline; }
   .cta-block { padding: 28px 16px; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
+.sources { margin: 0 0 20px 24px; font-size: 14px; }
+.disclaimer { font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -269,40 +279,36 @@ footer a:hover { text-decoration: underline; }
 
 <article>
 
-<h1>Most Accurate Voice Dictation on Android: Whisper AI Tested (2026)</h1>
+<h1>Whisper Speech Recognition Accuracy: What the Research Shows</h1>
 
 <div class="article-meta">
-  Published <time datetime="2026-04-03">April 3, 2026</time> &middot; Updated <time datetime="2026-05-21">May 21, 2026</time> &mdash; 10 min read
+  By DictoKey Team &middot; Published <time datetime="2026-04-03">April 3, 2026</time> &middot; Updated <time datetime="2026-10-19">October 19, 2026</time> &mdash; 7 min read
 </div>
 
 <div class="highlight-box" style="margin: 0 0 32px;">
-  <p style="font-size: 15px;"><strong>TL;DR &mdash;</strong> If you want the most accurate voice typing experience available on Android in 2026, you want a keyboard that uses <strong>Whisper AI</strong> for transcription. <strong>DictoKey</strong> is the free voice keyboard that does exactly that &mdash; 52 languages, sub-300ms latency, no setup hassle.<br>
-  <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dblog%26utm_content%3Dwhisper-tldr" style="display: inline-block; margin-top: 12px; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Download DictoKey free &rarr;</a>
-  <span style="display: block; margin-top: 8px; font-size: 12px; color: var(--muted);">Or keep reading for the full benchmark breakdown.</span></p>
+  <p style="font-size: 15px;"><strong>Short answer &mdash;</strong> Whisper is an open-source speech recognition model from OpenAI. Its research paper reports a WER of 2.7% on clean, read English (LibriSpeech test-clean) for the large-v2 model, and, more importantly, far fewer errors than a comparable model on noisier, more varied recordings. Its accuracy still varies a lot by language, and it has known failure modes such as hallucinated text. Every figure below comes from the paper or the official repository, listed in the Sources section.</p>
 </div>
 
-<p>If you've used voice dictation on your phone recently and noticed it's gotten remarkably good, there's a good chance you were using <strong>Whisper AI</strong> &mdash; either directly or through a voice keyboard that runs it under the hood. On Android specifically, this matters a lot: the difference between a keyboard built on Whisper and one built on legacy speech recognition is the difference between "this is magic" and "this is frustrating."</p>
+<p>Whisper comes up in almost every conversation about speech-to-text: it is free to download, it handles dozens of languages, and many tools build on it. But "Whisper is very accurate" is a vague claim. This article looks at what its authors actually measured, what those numbers mean, and where the model falls short.</p>
 
-<p>Whisper has quietly become the gold standard for voice typing in 2026. Released as an open-source model in 2022, it now powers a new generation of Android voice keyboards (including <strong>DictoKey</strong>) that finally deliver the dictation experience users were promised a decade ago: accurate, fast, multilingual, and free.</p>
-
-<p>In this article, we'll show you exactly why Whisper outperforms Google Speech, Azure, and AssemblyAI on Android &mdash; with real WER benchmarks &mdash; and how DictoKey delivers it at sub-300ms latency on any phone. If you'd rather skip the benchmarks and just try it, <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dblog%26utm_content%3Dwhisper-intro">download DictoKey on Google Play</a>.</p>
+<p>A note on scope: this is an article about Whisper as a third-party model. DictoKey is a separate Android app; it uses cloud-based AI speech recognition, and this article makes no claim about which model any particular app runs.</p>
 
 <div class="stat-grid">
   <div class="stat-card">
-    <div class="stat-number">2.7%</div>
-    <div class="stat-label">WER on LibriSpeech (clean)</div>
+    <div class="stat-number">680K</div>
+    <div class="stat-label">Hours of training audio</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">100+</div>
-    <div class="stat-label">Languages supported</div>
+    <div class="stat-number">96</div>
+    <div class="stat-label">Languages besides English in the training data</div>
   </div>
   <div class="stat-card accent">
-    <div class="stat-number">680K</div>
-    <div class="stat-label">Hours of training data</div>
+    <div class="stat-number">55.2%</div>
+    <div class="stat-label">Fewer errors on average than a comparable model, on 13 other test sets</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">&lt;300ms</div>
-    <div class="stat-label">Latency via Groq (DictoKey)</div>
+    <div class="stat-number">MIT</div>
+    <div class="stat-label">License for code and model weights</div>
   </div>
 </div>
 
@@ -310,489 +316,184 @@ footer a:hover { text-decoration: underline; }
   <div class="toc-title">Table of Contents</div>
   <ol>
     <li><a href="#what-is-whisper">What Is Whisper?</a></li>
-    <li><a href="#why-accurate">Why Whisper Is So Accurate</a></li>
-    <li><a href="#benchmarks">WER Benchmarks: Whisper vs Competition</a></li>
-    <li><a href="#multilingual">Multilingual Accuracy</a></li>
-    <li><a href="#noise">Performance in Noisy Environments</a></li>
-    <li><a href="#groq">Groq LPU: Making Whisper Real-Time</a></li>
-    <li><a href="#dictokey">How DictoKey Uses Whisper</a></li>
-    <li><a href="#limitations">Whisper's Limitations</a></li>
+    <li><a href="#how-measured">How Speech Recognition Accuracy Is Measured</a></li>
+    <li><a href="#benchmarks">What the Paper Reports</a></li>
+    <li><a href="#languages">Accuracy Across Languages</a></li>
+    <li><a href="#noise">Noise and Real-World Audio</a></li>
+    <li><a href="#sizes">Model Sizes: Speed vs Accuracy</a></li>
+    <li><a href="#limitations">Known Limitations</a></li>
+    <li><a href="#android">What This Means for Voice Typing on Android</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ol>
 </nav>
 
-<!-- ═══════════════════════════════════════════════ -->
 <h2 id="what-is-whisper">What Is Whisper?</h2>
 
-<p>Whisper is an <strong>automatic speech recognition (ASR) model</strong> developed by OpenAI. Unlike traditional speech recognition systems that are trained on curated datasets of clean, read-aloud speech, Whisper was trained on a massive, diverse dataset scraped from the internet.</p>
+<p>Whisper is an automatic speech recognition (ASR) model released by OpenAI in 2022 and described in the paper <em>Robust Speech Recognition via Large-Scale Weak Supervision</em> (Radford et al.). According to its official repository, it is a Transformer sequence-to-sequence model trained on several speech tasks at once: multilingual transcription, translation of speech into English, and spoken language identification.</p>
 
-<h3>Key Facts</h3>
+<p>Its main idea is scale with "weak supervision". Instead of a small set of carefully transcribed recordings, the authors collected 680,000 hours of audio paired with transcripts found on the internet. Of those hours, 117,000 cover 96 languages other than English, and 125,000 hours are translation data into English. The transcripts are imperfect, but the sheer amount and variety of audio is what the paper credits for the model's robustness.</p>
 
-<ul>
-  <li><strong>Training data:</strong> 680,000 hours of multilingual audio-text pairs from the internet. For context, that's 77 years of continuous audio.</li>
-  <li><strong>Architecture:</strong> Encoder-decoder Transformer. The audio is converted to mel spectrograms, processed by the encoder, and the decoder generates text tokens autoregressively.</li>
-  <li><strong>Model sizes:</strong> Tiny (39M parameters), Base (74M), Small (244M), Medium (769M), Large (1.55B), Large-v2, Large-v3, and Large-v3 Turbo.</li>
-  <li><strong>Open source:</strong> Released under MIT license. Anyone can download, use, and modify it.</li>
-  <li><strong>Capabilities:</strong> Speech-to-text transcription, language detection, translation (any language to English), and timestamp generation.</li>
-</ul>
+<p>The code and model weights are released under the MIT License, which is why Whisper appears in so many open-source tools, research projects and commercial products.</p>
 
-<h3>What Makes It Different from Google/Siri/Alexa</h3>
+<h2 id="how-measured">How Speech Recognition Accuracy Is Measured</h2>
 
-<p>Traditional ASR systems (Google Speech, Apple Siri, Amazon Alexa) are typically trained on carefully curated datasets: professional recordings, audiobooks, and scripted speech. They work well for their target language and accent, but performance degrades quickly for:</p>
+<p>The standard metric is the word error rate, usually shortened to WER. It counts the words that were substituted, deleted or inserted compared with a reference transcript, divided by the number of words in the reference. Lower is better: a WER of 5% means roughly one wrong word in twenty.</p>
 
-<ul>
-  <li>Accented speech (non-native speakers)</li>
-  <li>Background noise (caf&eacute;s, streets, wind)</li>
-  <li>Overlapping speech</li>
-  <li>Technical jargon and domain-specific vocabulary</li>
-  <li>Code-switching (mixing languages in one sentence)</li>
-</ul>
+<p>Two cautions apply to any WER figure. First, it depends on the test set: clean audiobook narration is far easier than a phone call in a busy room. Second, it depends on text normalization, since punctuation, casing and spelled-out numbers can count as errors or not. The Whisper paper uses its own text normalizer, so its numbers are not directly comparable with figures computed differently.</p>
 
-<p>Whisper's internet-scale training data naturally includes all of these scenarios. It has "heard" thousands of hours of accented speech, noisy recordings, YouTube videos with background music, and multilingual conversations. This diversity is what gives it robustness that purpose-built systems lack.</p>
+<h2 id="benchmarks">What the Paper Reports</h2>
 
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="why-accurate">Why Whisper Is So Accurate</h2>
+<p>The most quoted result is on LibriSpeech test-clean, a benchmark of read English audiobooks. There, the large-v2 Whisper model reaches a WER of 2.7%, exactly the same as a wav2vec 2.0 model trained specifically on LibriSpeech.</p>
 
-<p>Three factors explain Whisper's accuracy advantage:</p>
-
-<h3>1. Scale of Training Data</h3>
-
-<p>Whisper was trained on <strong>680,000 hours</strong> of audio. For comparison:</p>
-
-<ul>
-  <li>LibriSpeech (a standard ASR benchmark dataset): 960 hours</li>
-  <li>Common Voice (Mozilla's crowdsourced dataset): ~18,000 hours across all languages</li>
-  <li>Google's proprietary training data: estimated at 10,000-50,000 hours (Google hasn't disclosed exact numbers)</li>
-</ul>
-
-<p>Whisper has 10-70x more training data than any competing system. In deep learning, more diverse data almost always leads to better generalization.</p>
-
-<h3>2. Weak Supervision (Learning from Noisy Data)</h3>
-
-<p>Most ASR systems require perfectly aligned audio-text pairs for training. This limits the amount of usable data. Whisper uses a "weak supervision" approach: it uses audio from the internet paired with imperfect transcripts (subtitles, captions, etc.). The model learns to produce better transcripts than its training labels, a phenomenon called "training on noisy labels."</p>
-
-<p>This approach lets Whisper use orders of magnitude more data, at the cost of some noise in the training signal. But with 680K hours, the noise averages out, and the model learns the underlying patterns of human speech across languages, accents, and conditions.</p>
-
-<h3>3. Multitask Training</h3>
-
-<p>Whisper is trained simultaneously on multiple tasks:</p>
-
-<ul>
-  <li><strong>Transcription:</strong> Audio in language X &rarr; text in language X</li>
-  <li><strong>Translation:</strong> Audio in any language &rarr; text in English</li>
-  <li><strong>Language detection:</strong> Identify the spoken language</li>
-  <li><strong>Timestamp prediction:</strong> Align text to audio timestamps</li>
-  <li><strong>Voice activity detection:</strong> Determine if speech is present</li>
-</ul>
-
-<p>Multitask training creates a shared representation that captures deeper linguistic structure than single-task models. The translation task, in particular, forces the model to understand semantics, not just phonetics.</p>
-
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="benchmarks">WER Benchmarks: Whisper vs the Competition</h2>
-
-<p>Word Error Rate (WER) is the standard metric for ASR accuracy. It measures the percentage of words that are wrong (insertions + deletions + substitutions). Lower is better. Human professional transcriptionists achieve about 4% WER on clean speech.</p>
-
-<h3>LibriSpeech Benchmark (Clean English)</h3>
-
-<div class="data-bar-container">
-  <div class="data-bar-item">
-    <div class="data-bar-label">Whisper large-v3 <span>2.7% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 27%; background: linear-gradient(90deg, var(--accent2), var(--accent));"></div></div>
-  </div>
-  <div class="data-bar-item">
-    <div class="data-bar-label">AssemblyAI Universal-2 <span>3.8% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 38%; background: var(--accent);"></div></div>
-  </div>
-  <div class="data-bar-item">
-    <div class="data-bar-label">Human Transcriber <span>4.0% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 40%; background: rgba(240,240,248,.3);"></div></div>
-  </div>
-  <div class="data-bar-item">
-    <div class="data-bar-label">Google Speech-to-Text v2 <span>4.9% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 49%; background: rgba(124,106,255,.5);"></div></div>
-  </div>
-  <div class="data-bar-item">
-    <div class="data-bar-label">Azure Speech Service <span>5.3% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 53%; background: rgba(124,106,255,.35);"></div></div>
-  </div>
-  <div class="data-bar-item">
-    <div class="data-bar-label">Amazon Transcribe <span>6.1% WER</span></div>
-    <div class="data-bar"><div class="data-bar-fill" style="width: 61%; background: rgba(124,106,255,.25);"></div></div>
-  </div>
-</div>
-
-<p>Whisper large-v3 achieves <strong>2.7% WER on LibriSpeech clean</strong> &mdash; better than human transcribers (4.0%). This is remarkable: the AI makes fewer errors than a professional human listening to the same audio.</p>
-
-<h3>Real-World Benchmark (Noisy, Diverse Audio)</h3>
-
-<p>LibriSpeech is clean, read-aloud speech. Real-world audio is messier. Here's how the systems perform on more challenging datasets:</p>
+<p>The interesting part is what happens outside that benchmark. The authors evaluated both models, without any fine-tuning, on a range of other English datasets: podcasts, meetings, phone calls, accented speech and more. Here is an extract of the paper's Table 2 (WER in %, lower is better):</p>
 
 <div style="overflow-x: auto;">
 <table class="compare-table">
   <thead>
     <tr>
       <th>Dataset</th>
-      <th class="pro-col">Whisper large-v3</th>
-      <th>Google v2</th>
-      <th>Azure</th>
-      <th>AssemblyAI</th>
+      <th>wav2vec 2.0 Large (no LM)</th>
+      <th class="pro-col">Whisper large-v2</th>
+      <th>Relative error reduction</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><strong>LibriSpeech (clean)</strong></td>
-      <td class="pro-col"><span class="check">2.7%</span></td>
-      <td>4.9%</td>
-      <td>5.3%</td>
-      <td>3.8%</td>
-    </tr>
-    <tr>
-      <td><strong>LibriSpeech (noisy)</strong></td>
-      <td class="pro-col"><span class="check">5.2%</span></td>
-      <td>8.7%</td>
-      <td>9.4%</td>
-      <td>6.1%</td>
-    </tr>
-    <tr>
-      <td><strong>Common Voice (English)</strong></td>
-      <td class="pro-col"><span class="check">8.1%</span></td>
-      <td>12.3%</td>
-      <td>13.8%</td>
-      <td>9.7%</td>
-    </tr>
-    <tr>
-      <td><strong>Earnings Calls</strong></td>
-      <td class="pro-col"><span class="check">6.4%</span></td>
-      <td>9.2%</td>
-      <td>10.1%</td>
-      <td>7.3%</td>
-    </tr>
-    <tr>
-      <td><strong>YouTube (mixed quality)</strong></td>
-      <td class="pro-col"><span class="check">9.3%</span></td>
-      <td>14.7%</td>
-      <td>16.2%</td>
-      <td>11.5%</td>
-    </tr>
+    <tr><td><strong>LibriSpeech Clean</strong></td><td>2.7</td><td class="pro-col">2.7</td><td>0.0%</td></tr>
+    <tr><td><strong>LibriSpeech Other</strong></td><td>6.2</td><td class="pro-col">5.2</td><td>16.1%</td></tr>
+    <tr><td><strong>Common Voice</strong></td><td>29.9</td><td class="pro-col">9.0</td><td>69.9%</td></tr>
+    <tr><td><strong>TED-LIUM</strong></td><td>10.5</td><td class="pro-col">4.0</td><td>61.9%</td></tr>
+    <tr><td><strong>CHiME-6</strong></td><td>65.8</td><td class="pro-col">25.5</td><td>61.2%</td></tr>
+    <tr><td><strong>Switchboard</strong></td><td>28.3</td><td class="pro-col">13.8</td><td>51.2%</td></tr>
+    <tr><td><strong>AMI SDM1</strong></td><td>67.6</td><td class="pro-col">36.4</td><td>46.2%</td></tr>
+    <tr><td><strong>Average (13 datasets, excluding LibriSpeech Clean)</strong></td><td>29.3</td><td class="pro-col">12.8</td><td>55.2%</td></tr>
   </tbody>
 </table>
 </div>
 
-<p>The pattern is clear: <strong>Whisper leads on every benchmark</strong>, and its advantage grows as audio quality decreases. On clean audio, it's 2 percentage points better than Google. On noisy YouTube audio, it's 5+ points better. This is because Whisper's training data included millions of hours of exactly this kind of messy, real-world audio.</p>
+<p>The takeaway is not that Whisper is "better than humans" or "the most accurate system". It is that two models that look identical on a clean benchmark can behave very differently on messy audio. Averaged over the other datasets, Whisper made 55.2% fewer errors. The paper also notes that its smallest model, with only 39 million parameters, is roughly competitive with the best supervised LibriSpeech model once you leave LibriSpeech.</p>
 
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="multilingual">Multilingual Accuracy</h2>
+<p>The authors also compared Whisper with commercial speech recognition services on long recordings, queried in September 2022, and found it performed better than the compared systems on most datasets. They add a fair caveat: some commercial systems may have been trained on those public datasets, so the comparison may not reflect true robustness. Those services have changed since, so treat that comparison as a snapshot.</p>
 
-<p>One of Whisper's most impressive capabilities is its multilingual performance. Unlike Google or Azure, which have separate models for each language (with wildly varying quality), Whisper uses a single model for all 100+ languages.</p>
+<h2 id="languages">Accuracy Across Languages</h2>
 
-<div style="overflow-x: auto;">
-<table class="compare-table">
-  <thead>
-    <tr>
-      <th>Language</th>
-      <th class="pro-col">Whisper large-v3</th>
-      <th>Google Speech v2</th>
-      <th>Azure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>English</strong></td>
-      <td class="pro-col"><span class="check">4.2%</span></td>
-      <td>7.1%</td>
-      <td>8.5%</td>
-    </tr>
-    <tr>
-      <td><strong>French</strong></td>
-      <td class="pro-col"><span class="check">5.8%</span></td>
-      <td>11.3%</td>
-      <td>10.7%</td>
-    </tr>
-    <tr>
-      <td><strong>Spanish</strong></td>
-      <td class="pro-col"><span class="check">5.1%</span></td>
-      <td>9.8%</td>
-      <td>9.2%</td>
-    </tr>
-    <tr>
-      <td><strong>German</strong></td>
-      <td class="pro-col"><span class="check">6.3%</span></td>
-      <td>10.5%</td>
-      <td>11.1%</td>
-    </tr>
-    <tr>
-      <td><strong>Mandarin</strong></td>
-      <td class="pro-col"><span class="check">7.8%</span></td>
-      <td>9.4%</td>
-      <td>10.8%</td>
-    </tr>
-    <tr>
-      <td><strong>Arabic</strong></td>
-      <td class="pro-col"><span class="check">9.2%</span></td>
-      <td>14.7%</td>
-      <td>15.3%</td>
-    </tr>
-    <tr>
-      <td><strong>Japanese</strong></td>
-      <td class="pro-col"><span class="check">7.1%</span></td>
-      <td>10.2%</td>
-      <td>11.6%</td>
-    </tr>
-    <tr>
-      <td><strong>Hindi</strong></td>
-      <td class="pro-col"><span class="check">10.4%</span></td>
-      <td>16.8%</td>
-      <td>17.5%</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p>Whisper is often described as multilingual, and it is, but unevenly. The official repository states plainly that performance "varies widely depending on the language", and publishes per-language error rates for large-v3 and large-v2 on the Common Voice 15 and Fleurs datasets.</p>
 
-<p>Whisper's multilingual advantage is even more pronounced than its English advantage. For Arabic, Whisper achieves <strong>9.2% WER vs Google's 14.7%</strong> &mdash; a 37% improvement. For Hindi, the gap is even wider: <strong>10.4% vs 16.8%</strong>.</p>
+<p>The paper explains why. Across languages, accuracy is strongly predicted by how much training audio existed for that language: the authors estimate that the error rate halves for every 16-fold increase in training data. Because the dataset came mostly from English-centric parts of the internet, most languages had less than 1,000 hours of training audio. Widely spoken languages with a lot of online content tend to do well; lower-resource languages do noticeably worse.</p>
 
-<p>This matters for DictoKey users because many of them are multilingual and dictate in languages other than English. A keyboard that can accurately transcribe French, Spanish, Arabic, or Mandarin speech is significantly more useful than one that only excels at English.</p>
+<p>The later large-v3 model, announced in November 2023, was trained on 1 million hours of weakly labeled audio plus 4 million hours of pseudo-labeled audio. Its announcement reports a 10% to 20% reduction of errors compared with large-v2, for the languages measured on Common Voice 15 and Fleurs.</p>
 
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="noise">Performance in Noisy Environments</h2>
+<h2 id="noise">Noise and Real-World Audio</h2>
 
-<p>Real-world voice typing rarely happens in a quiet room. You're in a caf&eacute;, on the street, in a car, or at a busy office. How does Whisper handle noise?</p>
+<p>The paper tested robustness by adding white noise or "pub noise" (ambient sound and indistinct chatter, like a crowded restaurant) to LibriSpeech recordings. Many LibriSpeech-trained models beat Whisper when the audio was barely noisy, but they all degraded quickly and performed worse than Whisper once pub noise reached a signal-to-noise ratio below 10 dB.</p>
 
-<div style="overflow-x: auto;">
-<table class="compare-table">
-  <thead>
-    <tr>
-      <th>Noise Level</th>
-      <th>Environment</th>
-      <th class="pro-col">Whisper (DictoKey)</th>
-      <th>Google Speech</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>30 dB</td>
-      <td>Quiet room</td>
-      <td class="pro-col"><span class="check">4.2% WER</span></td>
-      <td>7.1% WER</td>
-    </tr>
-    <tr>
-      <td>50 dB</td>
-      <td>Office with AC</td>
-      <td class="pro-col"><span class="check">5.1% WER</span></td>
-      <td>9.3% WER</td>
-    </tr>
-    <tr>
-      <td>65 dB</td>
-      <td>Caf&eacute;</td>
-      <td class="pro-col"><span class="check">7.1% WER</span></td>
-      <td>15.2% WER</td>
-    </tr>
-    <tr>
-      <td>75 dB</td>
-      <td>Busy street</td>
-      <td class="pro-col">12.8% WER</td>
-      <td>22.4% WER</td>
-    </tr>
-    <tr>
-      <td>85 dB</td>
-      <td>Construction site</td>
-      <td class="pro-col">21.5% WER</td>
-      <td>35.7% WER</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p>In practice, this means a robust model is more forgiving of everyday conditions, but no model is immune. A closer microphone, such as a headset, still makes a bigger difference than any model choice when you dictate somewhere loud.</p>
 
-<p>Key findings:</p>
+<h2 id="sizes">Model Sizes: Speed vs Accuracy</h2>
+
+<p>Whisper comes in several sizes. The official repository lists them as follows, with approximate memory needs and speed relative to the large model:</p>
 
 <ul>
-  <li><strong>At caf&eacute; noise (65 dB), Whisper achieves 7.1% WER</strong> &mdash; still usable for dictation. Google's 15.2% makes every 7th word wrong, which is frustrating.</li>
-  <li><strong>Whisper's advantage grows with noise:</strong> 3 points better in quiet, 8 points better at 65 dB, 10 points better at 75 dB. The noisier it gets, the more Whisper pulls ahead.</li>
-  <li><strong>Above 75 dB, both systems struggle.</strong> For very noisy environments, use a headset microphone to get the phone mic closer to your mouth.</li>
+  <li><strong>tiny</strong>: 39 million parameters, about 1 GB of video memory, about 10 times faster</li>
+  <li><strong>base</strong>: 74 million parameters, about 1 GB, about 7 times faster</li>
+  <li><strong>small</strong>: 244 million parameters, about 2 GB, about 4 times faster</li>
+  <li><strong>medium</strong>: 769 million parameters, about 5 GB, about 2 times faster</li>
+  <li><strong>large</strong>: 1,550 million parameters, about 10 GB, the reference speed</li>
+  <li><strong>turbo</strong>: 809 million parameters, about 6 GB, about 8 times faster</li>
 </ul>
 
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="groq">Groq LPU: Making Whisper Real-Time</h2>
+<p>The turbo model is an optimized version of large-v3 with faster transcription and little loss in accuracy, but it is not trained for translation. Smaller models are easier to run on modest hardware, at the cost of accuracy, so any accuracy figure only makes sense next to the model size it was measured with.</p>
 
-<p>Whisper's accuracy is unmatched, but there's a catch: <strong>the model is computationally expensive</strong>. Running Whisper large-v3 on a typical cloud GPU takes 1-3 seconds for a 10-second audio clip. That's too slow for a real-time keyboard experience.</p>
+<h2 id="limitations">Known Limitations</h2>
 
-<p>DictoKey solves this by running Whisper on <strong>Groq's Language Processing Units (LPUs)</strong>.</p>
-
-<h3>What Is a Groq LPU?</h3>
-
-<p>Groq is a semiconductor company that builds custom chips designed specifically for AI inference. Their LPU architecture is fundamentally different from GPUs:</p>
+<p>The paper is candid about what still goes wrong. Its limitations section lists errors that look "decidedly non-human":</p>
 
 <ul>
-  <li><strong>Deterministic execution:</strong> LPUs process data in a predictable, non-variable pipeline. No cache misses, no memory bottlenecks. This eliminates the latency spikes that GPUs suffer from.</li>
-  <li><strong>Stream processing:</strong> Data flows through the chip in a continuous stream, rather than being loaded and processed in batches.</li>
-  <li><strong>Optimized for inference:</strong> GPUs are designed for training AND inference. LPUs are designed ONLY for inference, so every transistor is optimized for running models fast.</li>
+  <li><strong>Repeat loops</strong>: the model gets stuck repeating the same phrase.</li>
+  <li><strong>Missing words</strong> at the start or end of an audio segment.</li>
+  <li><strong>Hallucination</strong>: a transcript entirely unrelated to the actual audio.</li>
+  <li><strong>Long recordings</strong>: the model processes 30-second chunks, so long-form transcription needs extra decoding strategies.</li>
+  <li><strong>Lower-resource languages</strong>: accuracy is still poor for many languages with little training data.</li>
 </ul>
 
-<h3>Groq + Whisper = Sub-300ms Latency</h3>
+<p>Like any speech recognition system, it can also stumble on rare names, brand names and technical vocabulary. None of this cancels its strengths, but it explains why you should read a dictated text before sending it.</p>
 
-<div class="info-box">
-  <h4>The DictoKey Voice Pipeline</h4>
-  <ol>
-    <li><strong>Audio capture</strong> (0ms): Your phone records audio via the microphone</li>
-    <li><strong>Audio upload</strong> (~50ms): Compressed audio sent to Groq's servers</li>
-    <li><strong>Whisper inference</strong> (~150ms): Groq's LPU runs Whisper large-v3</li>
-    <li><strong>Post-processing</strong> (~30ms): Text cleanup, punctuation, capitalization</li>
-    <li><strong>Response delivery</strong> (~50ms): Text sent back to your phone</li>
-    <li><strong>Total: ~280ms</strong> from end of speech to text on screen</li>
-  </ol>
-</div>
+<h2 id="android">What This Means for Voice Typing on Android</h2>
 
-<p>For comparison, here's what typical Whisper inference looks like on other hardware:</p>
+<p>For everyday dictation, the lessons from Whisper's research apply to any speech recognition engine: benchmark numbers on clean audio say little about your own voice, accent, language and room. The best test is to dictate a few real messages in the conditions you actually use.</p>
 
-<div style="overflow-x: auto;">
-<table class="compare-table">
-  <thead>
-    <tr>
-      <th>Hardware</th>
-      <th>Whisper large-v3 (10s audio)</th>
-      <th>Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Groq LPU</strong></td>
-      <td class="pro-col"><span class="check">~150ms</span></td>
-      <td class="pro-col">~$0.001</td>
-    </tr>
-    <tr>
-      <td><strong>NVIDIA A100 GPU</strong></td>
-      <td>800-1200ms</td>
-      <td>~$0.003</td>
-    </tr>
-    <tr>
-      <td><strong>NVIDIA T4 GPU</strong></td>
-      <td>2000-3000ms</td>
-      <td>~$0.002</td>
-    </tr>
-    <tr>
-      <td><strong>Apple M2 (on-device)</strong></td>
-      <td>3000-5000ms</td>
-      <td>Free (battery)</td>
-    </tr>
-    <tr>
-      <td><strong>Snapdragon 8 Gen 3 (phone)</strong></td>
-      <td>8000-15000ms</td>
-      <td>Free (battery drain)</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p>Accuracy is also only part of the experience. Automatic punctuation, how easily you can correct a word, and whether dictation is available where you type often matter just as much. Our <a href="best-voice-dictation-apps-android-2026.html">guide to voice dictation apps for Android</a> compares the options, and <a href="voice-typing-vs-keyboard-speed-test.html">voice typing vs keyboard</a> looks at when speaking beats typing.</p>
 
-<p>Groq is <strong>5-8x faster than a GPU</strong> and <strong>50-100x faster than running on a phone</strong>. This is why DictoKey feels instant while on-device solutions feel sluggish.</p>
+<p>DictoKey is one option: an Android voice keyboard and floating dictation bubble that uses cloud-based AI speech recognition (so it needs an internet connection), restores punctuation automatically, and can rewrite or translate what you dictate in 51 languages. It is built first for people for whom typing is painful, slow or unreliable; see our <a href="../accessibility/">accessibility page</a>.</p>
 
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="dictokey">How DictoKey Uses Whisper</h2>
-
-<p>DictoKey is an Android keyboard that integrates Whisper at its core. Here's how the full pipeline works:</p>
-
-<ol>
-  <li><strong>Voice capture:</strong> When you tap the microphone button, DictoKey records audio using your phone's microphone (or connected Bluetooth headset).</li>
-  <li><strong>Whisper transcription:</strong> Audio is sent to Groq, which runs Whisper large-v3 and returns the transcribed text in ~150ms.</li>
-  <li><strong>Optional translation:</strong> If you've selected a target language different from the source, the text is translated using an AI translation model.</li>
-  <li><strong>Optional AI rewriting:</strong> If you tap the AI button, the text can be rewritten in a different tone (formal, casual, concise, expanded).</li>
-  <li><strong>Text insertion:</strong> The final text is inserted into whatever text field is active &mdash; WhatsApp, Gmail, Slack, Notes, browser, anywhere.</li>
-</ol>
-
-<p>The entire process happens in under 300ms for transcription-only, or 500-800ms for transcription + translation + rewriting. It feels like magic.</p>
-
-<div class="highlight-box">
-  <p><strong>Why a keyboard, not an app?</strong> Most speech-to-text tools are standalone apps. You dictate in the app, then copy-paste to your target app. DictoKey works AS your keyboard, so there's zero context switching. Tap the microphone in WhatsApp, speak, and the text appears in WhatsApp. Tap the microphone in Gmail, speak, and the text appears in Gmail. It's the most natural voice typing experience possible.</p>
-</div>
-
-<!-- ═══════════════════════════════════════════════ -->
-<h2 id="limitations">Whisper's Limitations (Honest Assessment)</h2>
-
-<p>Whisper is the best general-purpose ASR model in 2026, but it's not perfect. Here are its known limitations:</p>
-
-<h3>1. Hallucinations</h3>
-
-<p>Like all transformer models, Whisper can "hallucinate" &mdash; generate text that wasn't spoken. This is rare (less than 0.1% of transcriptions) but can happen in:</p>
-
-<ul>
-  <li>Long silences (Whisper may fill silence with repeated text)</li>
-  <li>Very short audio clips (under 1 second)</li>
-  <li>Audio with music and no speech</li>
-</ul>
-
-<p>DictoKey mitigates this with post-processing that detects and removes common hallucination patterns.</p>
-
-<h3>2. No Streaming (Batch Only)</h3>
-
-<p>Whisper processes audio in batches, not streams. You can't see text appear word-by-word as you speak. You speak, stop, and then the full text appears. For DictoKey, this isn't a major issue because the batch latency is so low (280ms) that it feels nearly real-time. But it's different from Google Voice Typing's word-by-word streaming.</p>
-
-<h3>3. Requires Internet</h3>
-
-<p>Running Whisper large-v3 on a phone is impractical (too slow, too much battery). DictoKey requires an internet connection to send audio to Groq. This means no voice typing on an airplane or in areas with no signal. The tiny/base models can run on-device, but their accuracy is significantly worse (15-20% WER).</p>
-
-<h3>4. Proper Nouns and Technical Terms</h3>
-
-<p>Whisper sometimes struggles with proper nouns (especially uncommon names), brand names, acronyms, and highly technical vocabulary. "Kubernetes" might become "Cooper Netties." This is a common weakness in all ASR systems, though Whisper handles it better than most.</p>
-
-<h3>5. Code-Switching Edge Cases</h3>
-
-<p>While Whisper handles code-switching (mixing languages) better than competitors, it can still stumble on rapid language switches within a single sentence. For example: "I need to finish the rapport by vendredi" (English-French mix) may confuse the language detection.</p>
-
-<!-- CTA -->
 <div class="cta-block">
-  <h3>Experience Whisper Accuracy on Your Keyboard</h3>
-  <p>DictoKey &mdash; Whisper-powered AI voice keyboard for Android. 52 languages, real-time translation, sub-300ms latency.</p>
+  <h3>Try Voice Typing on Your Android Phone</h3>
+  <p>DictoKey: voice keyboard plus floating bubble, automatic punctuation, rewriting and translation in 51 languages, no account.</p>
   <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dblog%26utm_content%3Dwhisper" class="cta-btn">Download on Google Play</a>
-  <span class="cta-sub">Free &mdash; 30 dictations/day &mdash; Premium &euro;4.99/month</span>
+  <span class="cta-sub">Free plan with a daily dictation limit &mdash; Android 10+</span>
 </div>
 
-<!-- ═══════════════════════════════════════════════ -->
 <section class="faq-section" id="faq">
   <h2>Frequently Asked Questions</h2>
-
   <div class="faq-item">
-    <div class="faq-question">What is OpenAI Whisper and how accurate is it?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">OpenAI Whisper is an open-source automatic speech recognition (ASR) model trained on 680,000 hours of multilingual audio data. It achieves a word error rate (WER) of 3&ndash;5% for clean English speech, making it the most accurate general-purpose speech recognition system available in 2026. It supports 100+ languages and handles accents, background noise, and technical vocabulary better than competing systems.</div></div>
+    <div class="faq-question">What is Whisper?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">Whisper is an open-source speech recognition model released by OpenAI in 2022. It is a Transformer sequence-to-sequence model trained on 680,000 hours of audio collected from the internet. Its code and model weights are released under the MIT License, so anyone can download and run it.</div></div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">How does Whisper compare to Google Speech-to-Text?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">Whisper outperforms Google Speech-to-Text on most benchmarks. On the LibriSpeech clean test set, Whisper large-v3 achieves 2.7% WER vs Google's 4.9%. The gap widens for non-English languages and noisy environments. However, Google Speech offers lower latency for streaming recognition and better support for rare languages. For accuracy-first applications, Whisper is the clear winner.</div></div>
+    <div class="faq-question">How accurate is Whisper?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">In the original paper, the large-v2 model reaches a WER of 2.7% on LibriSpeech test-clean, the same as a strong LibriSpeech-trained model. The bigger difference shows up on other datasets: across 13 other English test sets, Whisper made 55.2% fewer errors on average than that model. Accuracy still depends heavily on the language, the audio quality and the model size.</div></div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">What is Word Error Rate (WER) in speech recognition?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">Word Error Rate (WER) is the standard metric for measuring speech recognition accuracy. It counts the number of insertions, deletions, and substitutions needed to transform the recognized text into the reference text, divided by the total number of words. A 5% WER means 5 out of every 100 words are incorrect. Lower is better. Human transcription achieves about 4% WER.</div></div>
+    <div class="faq-question">Is Whisper equally accurate in every language?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">No. The model card says performance varies widely by language. The paper finds that accuracy is strongly linked to how much training audio exists for a language, and that most languages had less than 1,000 hours of training data, because the dataset was English-heavy.</div></div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">Can Whisper run on a mobile phone?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">Whisper tiny and base models can run on modern phones, but with poor accuracy and high latency (2&ndash;5 seconds). The large models that achieve 95&ndash;98% accuracy require too much compute for mobile hardware. DictoKey solves this by sending audio to Groq's LPU (Language Processing Unit) inference hardware, which runs Whisper large-v3 in under 300ms &mdash; faster than most on-device solutions.</div></div>
+    <div class="faq-question">What mistakes does Whisper make?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">The paper lists repeat loops, skipping the first or last few words of an audio segment, and occasional hallucination, where the model outputs text unrelated to the audio. These errors show up particularly in long recordings. Like other speech recognition systems, it can also misspell rare names and technical terms.</div></div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">How does DictoKey use Whisper for voice typing?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><div class="faq-answer-inner">DictoKey is an Android keyboard that uses Whisper large-v3 for speech recognition. When you press the microphone button and speak, your audio is sent to Groq's inference servers, which run Whisper at extremely high speed (sub-300ms latency). The transcribed text is then inserted into whatever app you're using. DictoKey also adds translation (52 languages) and AI text rewriting on top of Whisper's transcription.</div></div>
+    <div class="faq-question">Which Whisper model size should I use?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">It is a trade-off between speed and accuracy. The official repository lists six sizes, from tiny (39 million parameters, about 1 GB of video memory) to large (1,550 million parameters, about 10 GB). The turbo model is an optimized version of large-v3 that is much faster with little loss in accuracy, but it is not trained for translation.</div></div>
   </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Does voice typing on Android use Whisper?<span class="faq-icon">+</span></div>
+    <div class="faq-answer"><div class="faq-answer-inner">It depends on the app. Some keyboards and dictation apps build on Whisper, others use different speech recognition engines. DictoKey, for example, uses cloud-based AI speech recognition and needs an internet connection. Check each app's own documentation rather than assuming which model it runs.</div></div>
+  </div>
+
 </section>
 
-<!-- RELATED POSTS -->
+<h2>Sources</h2>
+<p>Checked on 2026-10-19.</p>
+<ul class="sources">
+  <li><a href="https://arxiv.org/abs/2212.04356" rel="noopener" target="_blank">Radford et al. &mdash; Robust Speech Recognition via Large-Scale Weak Supervision (arXiv:2212.04356)</a> &mdash; training data, Table 2, noise robustness, languages, limitations</li>
+  <li><a href="https://github.com/openai/whisper" rel="noopener" target="_blank">openai/whisper on GitHub</a> &mdash; architecture, model sizes, turbo, MIT License, per-language performance</li>
+  <li><a href="https://github.com/openai/whisper/discussions/1762" rel="noopener" target="_blank">openai/whisper &mdash; large-v3 announcement (November 2023)</a> &mdash; large-v3 training data and error reduction</li>
+</ul>
+
+<p class="disclaimer">Whisper and OpenAI are trademarks of their respective owner. DictoKey is an independent app and is not affiliated with or endorsed by OpenAI.</p>
+
 <div class="related-posts">
   <h2>Related Posts</h2>
   <div class="related-grid">
     <a href="best-voice-dictation-apps-android-2026.html" class="related-card">
-      <h4>7 Best Voice Dictation Apps for Android in 2026</h4>
-      <p>Tested and ranked: the top dictation apps compared.</p>
+      <h4>Best Voice Dictation Apps for Android in 2026</h4>
+      <p>The main dictation apps compared.</p>
     </a>
     <a href="voice-typing-vs-keyboard-speed-test.html" class="related-card">
-      <h4>Voice Typing vs Keyboard: Speed Test [2026]</h4>
-      <p>Data proves voice is 3x faster than typing.</p>
+      <h4>Voice Typing vs Keyboard</h4>
+      <p>When speaking is faster than typing.</p>
     </a>
     <a href="how-to-translate-text-on-android-keyboard.html" class="related-card">
       <h4>How to Translate Text From Your Android Keyboard</h4>
       <p>Inline translation without switching apps.</p>
     </a>
-    <a href="ai-keyboard-for-multilingual-users.html" class="related-card">
-      <h4>Best AI Keyboard for Multilingual Users</h4>
-      <p>Switch languages instantly with voice dictation.</p>
+    <a href="gboard-voice-typing-alternative.html" class="related-card">
+      <h4>Gboard Voice Typing Alternatives</h4>
+      <p>Other ways to dictate on Android.</p>
     </a>
   </div>
 </div>
@@ -806,7 +507,7 @@ footer a:hover { text-decoration: underline; }
     <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dblog%26utm_content%3Dwhisper">Google Play</a>
     <a href="mailto:support@dictokey.com">Contact</a>
   </div>
-  <p>DictoKey &mdash; AI Voice Keyboard &mdash; Built by <a href="https://nocode-flow.com">NoCodeFlow</a></p>
+  <p>DictoKey &mdash; AI Voice Keyboard &mdash; DictoKey Team</p>
 </footer>
 
 <script>

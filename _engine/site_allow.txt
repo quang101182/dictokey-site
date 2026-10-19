@@ -1,0 +1,12 @@
+# Exceptions RELUES À LA MAIN au garde-fou check_site.py (une ligne = une décision, avec sa raison en commentaire).
+# Format : fichier | extrait exact du contexte   — ou —   fichier | regle:<motif exact de REGLES>
+# Ne jamais ajouter une ligne pour « faire passer » le contrôle : corriger la page d'abord.
+
+# 19/10/2026 — article SUR Whisper, modèle open source tiers (réécrit le 19/10) : il cite Whisper/OpenAI et des taux
+# d'erreur du papier arXiv 2212.04356 (sources datées dans la page) ; il dit explicitement ne rien affirmer du modèle
+# utilisé par DictoKey et n'être pas affilié à OpenAI. Les AUTRES règles (52, offline, Groq, Azure…) restent actives.
+blog/whisper-speech-recognition-accuracy.html | regle:whisper
+blog/whisper-speech-recognition-accuracy.html | regle:open\s?ai
+blog/whisper-speech-recognition-accuracy.html | regle:\bword error rate\b[^.]{0,40}\d|\bWER\b[^.]{0,25}\d|\d(\.\d)?\s?% (WER|word error)
+# 19/10/2026 — carte de l'index du blog : c'est le TITRE de l'article sur Whisper (modèle tiers), pas une affirmation sur DictoKey.
+blog/index.html | Whisper Speech Recognition Accuracy: What the Research Shows

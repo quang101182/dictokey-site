@@ -7,6 +7,11 @@
 ## Une exécution = exactement ceci, dans l'ordre
 
 1. `git pull`. Lire `FACTS.md` (seule source sur DictoKey), ce guide, `BACKLOG.md`, `LOG.md`.
+1 bis. **Garde-fou site entier** : `PYTHONIOENCODING=utf-8 python _engine/check_site.py --detail`. S'il échoue sur des pages
+   `blog/` ou `tools/` : la tâche du jour devient **leur correction** (pas de nouvelle page), en appliquant FACTS.md,
+   puis étapes 6 à 9 avec ces fichiers. S'il échoue UNIQUEMENT sur des fichiers que tu n'as pas le droit de toucher
+   (accueil, accessibility, translations.js) : le noter en tête de `LOG.md` (« GARDE-FOU : … ») et continuer.
+   ⛔ Ne jamais ajouter une ligne à `_engine/site_allow.txt` (réservé à l'humain).
 2. Prendre la **première ligne `[ ]`** de `BACKLOG.md` (ignorer les `[!]`). Une seule page par exécution. Si tout est
    coché : ne rien publier, écrire « backlog vide » dans `LOG.md`, commit, fin.
 3. **Recherche concurrents (si la page en cite)** : WebSearch/WebFetch pour chaque concurrent cité. Ne retenir QUE des
@@ -35,7 +40,8 @@
 5. **Ajouter la page** : une carte en tête de `blog/index.html` (même format que les cartes existantes) et une entrée
    `<url>` dans `sitemap.xml` **juste avant `</urlset>`** (`lastmod` = date du jour, `changefreq` monthly, `priority` 0.8).
    Pour une **refonte** : modifier la page en place, mettre à jour `dateModified` + `article:modified_time` + `lastmod`.
-6. **Contrôle** : `PYTHONIOENCODING=utf-8 python _engine/check_page.py blog/<slug>.html`. S'il échoue → corriger → relancer. **Ne jamais
+6. **Contrôle** : `PYTHONIOENCODING=utf-8 python _engine/check_page.py blog/<slug>.html` **puis** `python _engine/check_site.py`
+   (ta page ne doit y laisser aucune ligne). S'il échoue → corriger → relancer. **Ne jamais
    publier une page qui échoue.** Après 3 échecs : abandonner la page, la marquer `[!]` dans le BACKLOG avec la raison,
    ne rien publier, commit du BACKLOG + LOG seulement.
 7. Cocher la ligne `[x]` dans `BACKLOG.md`, ajouter une ligne à `LOG.md` (toutes les colonnes, dont **Sources**).

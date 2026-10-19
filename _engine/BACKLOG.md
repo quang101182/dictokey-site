@@ -43,8 +43,8 @@
 - [ ] `voice-typing-for-adhd` — « voice typing for ADHD — capture thoughts fast »
 - [ ] REFONTE `best-voice-dictation-apps-android-2026` — mettre à jour (même méthode que la refonte n° 5)
 - [ ] `speech-to-text-translate-android-keyboard` — « speak in one language, type in another on Android »
-- [ ] REFONTE `whisper-speech-recognition-accuracy` — retirer ce qui est daté sur le moteur (ne pas nommer le fournisseur, cf FACTS)
-- [ ] **CORRECTIONS 18/10 (prioritaires, avant toute nouvelle page)** — pages en ligne qui contredisent FACTS :
+- [x] ~~REFONTE `whisper-speech-recognition-accuracy`~~ → ✅ réécrite le 19/10 (Whisper = modèle tiers, sources arXiv datées, exemptée des seules règles whisper/openai/WER dans `site_allow.txt`) — retirer ce qui est daté sur le moteur (ne pas nommer le fournisseur, cf FACTS)
+- [x] ~~**CORRECTIONS 18/10**~~ → ✅ **FAIT le 19/10 (Claude en session)** sur **35 fichiers** (et non 9 : accueil, translations.js 7 langues, 16 pages tools, 13 pages blog, accessibilité) + notes inventées (`aggregateRating`) et signature NoCodeFlow retirées. Garde-fou permanent `_engine/check_site.py` (CI GitHub + étape 1 bis du GUIDE). Énoncé d'origine : — pages en ligne qui contredisent FACTS :
       « Whisper » / « Groq » / « OpenAI » comme moteur de DictoKey (faux depuis le 03/10), « 52 languages »,
       « EU GDPR hosting », chiffres non sourcés présentés comme mesurés (« 4.2% word error rate in our tests »,
       « 280ms in our testing », « 95-98% ») : `best-floating-voice-dictation-android-2026`, `best-voice-dictation-apps-android-2026`,
@@ -53,3 +53,12 @@
       Règle : retirer le fournisseur et tout chiffre qu'aucune mesure maison ne prouve ; 51 langues.
 - [x] ~~« basse vision » dans FACTS~~ → retiré le 18/10 (aligné sur la fiche Play et la page accessibilité). Corriger aussi
       toute page en ligne qui vise les malvoyants/aveugles comme public (la compatibilité TalkBack reste une fonction).
+
+## Relevé du 19/10 (correction site entier) — à traiter APRÈS les lignes ci-dessus, une par passage
+- [ ] FACTS : Quang doit trancher si « Interpreter Mode », « voice correction » et la détection automatique de langue
+      (présents dans le code et sur des pages) entrent dans FACTS.md — sinon les retirer des pages.
+- [ ] Faits concurrents non re-vérifiés (laissés en place) dans les comparatifs : Otter (3 langues, 16,99 $), Speechnotes
+      (1,99 $, 60+ langues), Floating Mic, Voice Access (~10 langues), Gboard (300+ langues) → sourcer ou retirer.
+- [ ] Pages anciennes qui échouent à `check_page.py` pour la STRUCTURE (pas pour FACTS) : best-floating (FAQ 10, pas de
+      Sources, 3631 mots), best-voice-dictation-apps (pas de Sources, 2980), best-voice-keyboard (title, Sources, 3711),
+      how-to-translate (title/meta), ai-keyboard-multilingual (title, Sources), ai-voice-dictation-samsung (title, meta, auteur, Sources).

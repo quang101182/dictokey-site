@@ -1,2 +1,3 @@
 # Local backups — never publish (public repo)
 *.bak*
+__pycache__/
