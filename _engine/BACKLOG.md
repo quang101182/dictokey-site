@@ -16,7 +16,7 @@
 > « saute les premiers mots / en ajoute » (r/GooglePixel 1ta90yi, 05/2026). ⛔ Toujours re-vérifier sur la source le
 > jour de la rédaction, et ne citer AUCUN pseudo Reddit (règle « aucun témoignage » de FACTS).
 
-- [ ] REFONTE `wispr-flow-alternative` — **PRIORITÉ 1** : viser aussi « Wispr Flow Android word limit » ; Free mobile =
+- [x] REFONTE `wispr-flow-alternative` — **PRIORITÉ 1** : viser aussi « Wispr Flow Android word limit » ; Free mobile =
       1 000 mots/semaine (vérifier wisprflow.ai/pricing) vs DictoKey 30 dictées/jour (FACTS) ; état de l'app Android
       Wispr factuel et sourcé, sans dénigrer ; corriger « works in every app » → « most apps » ; section Sources datée.
 - [ ] `gboard-voice-typing-not-working` — « Gboard voice typing not working / missing words » : page **dépannage
