@@ -19,7 +19,7 @@
 - [x] REFONTE `wispr-flow-alternative` — **PRIORITÉ 1** : viser aussi « Wispr Flow Android word limit » ; Free mobile =
       1 000 mots/semaine (vérifier wisprflow.ai/pricing) vs DictoKey 30 dictées/jour (FACTS) ; état de l'app Android
       Wispr factuel et sourcé, sans dénigrer ; corriger « works in every app » → « most apps » ; section Sources datée.
-- [ ] `gboard-voice-typing-not-working` — « Gboard voice typing not working / missing words » : page **dépannage
+- [x] `gboard-voice-typing-not-working` — « Gboard voice typing not working / missing words » : page **dépannage
       honnête d'abord** (réglages, langue hors ligne, micro, mise à jour — sources support.google.com), DictoKey en
       dernière section comme alternative. ⚠️ ne pas cannibaliser `gboard-voice-typing-alternative` : lien croisé.
 - [ ] `samsung-voice-typing-not-working` — même schéma pour Samsung Keyboard voice input (sources samsung.com).
