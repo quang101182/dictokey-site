@@ -8,7 +8,21 @@
 - Nom : **DictoKey** (fiche Play : « DictoKey: Voice Accessibility »). Éditeur affiché : « DictoKey Team ».
 - Play Store : `https://play.google.com/store/apps/details?id=com.dictokey.app`
 - Site : `https://dictokey.com` · page accessibilité : `https://dictokey.com/accessibility`
-- Plateforme : **Android 10 et plus, toutes marques**. Pas d'iOS, pas de version ordinateur dans ces pages.
+- Plateforme : **Android 10 et plus, toutes marques**, et **DictoKey for Windows** (Windows 10/11 64 bits, page
+  `https://dictokey.com/windows/`, depuis le 20/10/2026). Pas d'iOS, pas de Mac.
+
+## DictoKey for Windows (vérifié dans le code dictokey-pc v1.11.0 et sa passerelle, 20/10/2026)
+- Raccourci **Ctrl+Alt+Espace** : dicter là où est le curseur (sinon presse-papiers) ; **Ctrl+Alt+T** : dicter + traduire ;
+  raccourcis modifiables. Arrêt au 2ᵉ appui ou après quelques secondes de silence.
+- Mêmes moteurs et mêmes 51 langues que l'Android (cloud, internet nécessaire), détection auto, traduction, réécriture IA,
+  dictionnaire personnel, historique LOCAL (jamais envoyé), zone de notification, démarrage avec Windows, mises à jour auto.
+- Interface **anglais et français** (suit la langue de Windows, réglable).
+- **Gratuit** : 2 000 mots/semaine, sans compte. **Premium** : **9,99 €/mois TTC**, essai 7 j (carte demandée), sans
+  limite de mots par semaine (« fair use »). ⛔ Ne JAMAIS chiffrer le plafond d'audio mensuel : c'est un garde-fou de coût
+  volontairement non annoncé (`dictokey-pc/gateway/src/quota.js`, « l'annoncer inviterait à le longer »). Abonnement **séparé** de l'Android. Paiement **Polar**, clé par e-mail.
+- Installeur **non signé** par un certificat Microsoft → SmartScreen « Windows a protégé votre PC » (Informations
+  complémentaires → Exécuter quand même). Les MISES À JOUR sont signées et vérifiées par l'app.
+- ⛔ Pas de Firebase ni de statistiques dans l'app Windows : ne pas lui attribuer les données Firebase de l'Android.
 
 ## Ce que fait l'app (fonctions réelles)
 - **Deux façons indépendantes de dicter** : un clavier Android standard (IME, navigable au lecteur d'écran) **et** une
