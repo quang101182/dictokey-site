@@ -219,4 +219,10 @@
     <loc>https://dictokey.com/windows/</loc>
     <lastmod>2026-10-20</lastmod>
   </url>
+  <url>
+    <loc>https://dictokey.com/blog/samsung-voice-typing-not-working.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
