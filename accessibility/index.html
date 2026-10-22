@@ -126,7 +126,7 @@
 
 <main class="a11y-container">
     <h1>Accessibility</h1>
-    <p class="updated">Last updated: July 22, 2026</p>
+    <p class="updated">Last updated: October 22, 2026</p>
 
     <div class="highlight-box">
         <p><strong>DictoKey is a voice-to-text accessibility tool for Android.</strong> It lets you write with your voice, in most apps, when typing on a touchscreen is painful, slow, or impossible.</p>
@@ -155,7 +155,7 @@
 
     <h2>Why DictoKey needs the Accessibility Service permission</h2>
     <p>Android does not provide a standard API that lets a third-party app know when and where you are typing. The <strong>AccessibilityService API is the only supported way</strong> for DictoKey to place the dictation bubble over the field you are writing in, and to insert your dictated text into it.</p>
-    <p>DictoKey uses that permission for one purpose only: to show the floating bubble on top of other applications, and to insert dictated text into the active field — <strong>only after you explicitly ask for it</strong>.</p>
+    <p>DictoKey uses that permission to show the floating bubble on top of other applications, to insert dictated text into the active field — <strong>only after you explicitly ask for it</strong> — and to read that field on your phone so that Previous / Next and the space before a dictation work.</p>
 
     <div class="highlight-box">
         <p><strong>What DictoKey never does.</strong> It does not record the screen, does not log keystrokes and does not monitor background activity. It reads the active text field on your phone (for Previous / Next and the space before a dictation) and sends that text only when you drop the bubble on Translate, Correct or Emojis; it is not stored. It does not work around Android's built-in privacy controls, does not change system settings without your permission, and does not use deceptive interface practices. DictoKey never initiates, schedules, or performs actions on its own.</p>
@@ -167,9 +167,9 @@
     <h2>Getting started with a screen reader</h2>
     <ol>
         <li>Install DictoKey from <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Daccessibility%26utm_content%3Dsetup" target="_blank" rel="noopener">Google Play</a>.</li>
-        <li>Open the app. A disclosure screen explains exactly what the Accessibility permission allows before anything is enabled.</li>
-        <li>Enable <strong>DictoKey Voice</strong> in Android Settings &rsaquo; Languages &amp; input &rsaquo; On-screen keyboard. This alone is enough to dictate everywhere — the bubble is optional.</li>
-        <li>If you want the floating bubble as well, enable it in DictoKey's settings and follow the on-screen steps.</li>
+        <li>Open the app. A short guided setup lets you try a dictation, then choose the voice keyboard or the floating bubble. Before the Accessibility permission is requested, a disclosure screen explains exactly what it allows.</li>
+        <li>Keyboard path: enable <strong>DictoKey Keyboard</strong> in Android Settings &rsaquo; Languages &amp; input &rsaquo; On-screen keyboard. This alone is enough to dictate in most apps — the bubble is optional.</li>
+        <li>Bubble path (or later, from the app's main screen): allow “Display over other apps” and the Accessibility permission, following the on-screen steps.</li>
     </ol>
 
     <h2>Known limits, stated honestly</h2>
