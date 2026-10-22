@@ -23,7 +23,7 @@
       honnête d'abord** (réglages, langue hors ligne, micro, mise à jour — sources support.google.com), DictoKey en
       dernière section comme alternative. ⚠️ ne pas cannibaliser `gboard-voice-typing-alternative` : lien croisé.
 - [x] `samsung-voice-typing-not-working` — même schéma pour Samsung Keyboard voice input (sources samsung.com).
-- [ ] `typing-with-one-finger-android` — « typing with one finger / one hand on Android » : options Android (Gboard
+- [x] `typing-with-one-finger-android` — « typing with one finger / one hand on Android » : options Android (Gboard
       glisse, clavier une main, Voice Access) + dictée par bulle. Ton accessibilité, aucun témoignage.
 - [ ] `voice-dictation-button-any-keyboard-android` — « voice dictation button over any keyboard on Android » : garder
       son clavier (Gboard/Samsung/SwiftKey) et dicter par un bouton flottant ; c'est ce que des utilisateurs bricolent
