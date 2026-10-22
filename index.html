@@ -333,7 +333,9 @@
             background: var(--bg-card);
         }
         /* v1.7.0 — paire de vidéos (bulle + IME) côte à côte desktop, stack mobile */
+        .hero-screenshot.hero-video-pair { max-width: 680px; border: none; box-shadow: none; overflow: visible; }
         .hero-video-pair {
+            /* v2.74 (22/10) : le bloc portait le max-width 380 px de .hero-screenshot -> les 2 captures s'empilaient sur PC */
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -345,7 +347,7 @@
             margin: 0;
             text-align: center;
         }
-        .hero-video-item video {
+        .hero-video-item video, .hero-video-item img {
             width: 100%;
             max-width: 300px;
             height: auto;
@@ -365,7 +367,9 @@
         @media (max-width: 640px) {
             .hero-video-pair { gap: 1.5rem; }
             .hero-video-item { flex: 0 1 260px; }
-            .hero-video-item video { max-width: 260px; border-radius: 24px; }
+            .hero-video-item video, .hero-video-item img { max-width: 260px; border-radius: 24px; }
+            /* smartphone : la bulle seule (la section « 2 façons de dicter » présente le clavier) — un écran de défilement en moins avant l'appel à télécharger */
+            .hero-video-item + .hero-video-item { display: none; }
         }
         /* v1.7.0 — badge NEW sur feature-card "Floating bubble" */
         .feature-card { position: relative; }
@@ -773,7 +777,6 @@
             <a href="#features" data-i18n="nav_features">Features</a>
             <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
             <a href="#faq" data-i18n="nav_faq">FAQ</a>
-            <a href="#tutorials" data-i18n="nav_tutorials">Tutorials</a>
             <a href="windows/?utm_source=home-nav" data-i18n="nav_windows">Windows</a>
             <a href="blog/">Blog</a>
             <a href="tools/">Tools</a>
@@ -841,21 +844,20 @@
         <p class="hero-note" data-i18n="hero_note"><strong>Free forever</strong> — 30 dictations/day &middot; No card &middot; No account &middot; Premium optional</p>
         <p class="hero-note" style="margin-top:.4rem"><a href="windows/?utm_source=home-hero" data-i18n="hero_also_windows">💻 Also on Windows &rarr;</a></p>
 
-        <!-- App animations (v1.7.0 — floating bubble + IME keyboard side by side) -->
+        <!-- Captures de l'app (v2.74.10, 22/10/2026) : bulle et clavier vocal côte à côte -->
         <div class="hero-screenshot hero-video-pair fade-in">
             <figure class="hero-video-item">
-                <video autoplay loop muted playsinline preload="metadata" poster="assets/hero-v1.7.0/03_translate_hero.png" aria-label="DictoKey floating bubble — tap to dictate, long-press to translate">
-                    <source src="assets/hero-v1.7.0/hero-bubble-animation.webm" type="video/webm">
-                    <source src="assets/hero-v1.7.0/hero-bubble-animation.mp4" type="video/mp4">
-                    <img src="assets/hero-v1.7.0/03_translate_hero.png" alt="DictoKey floating bubble in WhatsApp — dictated text appears instantly" width="540" height="1127" loading="lazy" decoding="async">
-                </video>
+                <picture>
+                    <source srcset="assets/hero-v2.74/hero-bubble.webp" type="image/webp">
+                    <img src="assets/hero-v2.74/hero-bubble.png" alt="DictoKey floating bubble over a chat: tap the mic to dictate, the dictated reply is already in the message field" width="540" height="1014" decoding="async">
+                </picture>
                 <figcaption data-i18n="hero_caption_bubble">🫧 Floating bubble</figcaption>
             </figure>
             <figure class="hero-video-item">
-                <video autoplay loop muted playsinline preload="metadata" aria-label="DictoKey IME keyboard with Dictate and Translate buttons">
-                    <source src="assets/hero-v1.7.0/hero-ime-animation.webm" type="video/webm">
-                    <source src="assets/hero-v1.7.0/hero-ime-animation.mp4" type="video/mp4">
-                </video>
+                <picture>
+                    <source srcset="assets/hero-v2.74/hero-keyboard.webp" type="image/webp">
+                    <img src="assets/hero-v2.74/hero-keyboard.png" alt="DictoKey voice keyboard with large Translate and Stop buttons while listening" width="540" height="1014" loading="lazy" decoding="async">
+                </picture>
                 <figcaption data-i18n="hero_caption_ime">⌨️ Voice IME keyboard</figcaption>
             </figure>
         </div>
@@ -868,18 +870,15 @@
             <p style="font-size:.8rem;color:var(--text-dim);margin-top:.5rem" data-i18n="hero_qr">Scan to download on Android</p>
         </div>
 
-        <div class="hero-video fade-in">
-            <iframe src="https://www.youtube.com/embed/D3-eF5Bh92U" title="DictoKey — Floating Voice Bubble Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
     </div>
 </section>
 
 <!-- ====== 3 WAYS TO DICTATE (v1.7.0) ====== -->
 <section id="three-ways">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="ways_label">3 ways to dictate</p>
+        <p class="section-label fade-in" data-i18n="ways_label">2 ways to dictate, plus shortcuts</p>
         <h2 class="section-title fade-in" data-i18n="ways_title">Your choice, every time.</h2>
-        <p class="section-desc fade-in" data-i18n="ways_desc">The same voice engine, three different ways to trigger it. Pick your favorite, or switch on the fly.</p>
+        <p class="section-desc fade-in" data-i18n="ways_desc">The same voice engine, two independent ways to use it: if one is not available, the other still works. Notification shortcuts are a bonus.</p>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
@@ -1097,42 +1096,6 @@
                 <blockquote>"Application bien pratique, le plan gratuit suffit au quotidien pour moi."</blockquote>
                 <p class="testimonial-author"><strong>Utilisateur vérifié</strong> — Google Play (FR)</p>
                 <p class="testimonial-source">Google Play &#9733; 4/5 &middot; 1er mai 2026</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====== TUTORIALS ====== -->
-<section id="tutorials">
-    <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="tut_label">Tutorials</p>
-        <h2 class="section-title fade-in" data-i18n="tut_title">Watch DictoKey in Action</h2>
-        <p class="section-desc fade-in" data-i18n="tut_desc">Short video guides to get the most out of every feature.</p>
-
-        <div class="videos-scroll">
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/0tPXtzEaz-c" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/22q0PT3Ii7U" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/Lr7Syxpp0sE" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/pgd-SSLb7-w" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/ABTsi8SjnNs" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/SPdtGYJA2Sw" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/0CqYS-IDyEs" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-thumb fade-in">
-                <iframe src="https://www.youtube.com/embed/H6gpTj3OAa8" title="DictoKey Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
