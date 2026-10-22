@@ -53,8 +53,17 @@
 ## Confidentialité (formulations AUTORISÉES uniquement)
 - « Conforme RGPD » / « GDPR compliant » · « aucun enregistrement conservé » / « no recordings stored » · « no ads ».
 - ⛔ **Ne jamais écrire « no tracking »** (l'app embarque des statistiques d'usage anonymes).
-- Accessibilité : la permission Accessibility sert UNIQUEMENT à afficher la bulle et insérer le texte dicté ; elle
-  ne lit pas l'écran, n'enregistre pas les frappes.
+- Accessibilité (corrigé le 22/10/2026, app 2.74.10 — l'ancienne formule « sert UNIQUEMENT à afficher la bulle et
+  insérer le texte ; ne lit pas l'écran » est FAUSSE depuis la 2.74.4) : la permission sert à afficher la bulle, à
+  insérer le texte dicté et à LIRE LE CHAMP ACTIF sur le téléphone (Précédent / Suivant, espace avant une dictée).
+  Ce texte ne quitte le téléphone que si l'utilisateur lâche la bulle sur Traduire, Corriger ou Emojis, et n'est pas
+  conservé. Elle n'enregistre pas les frappes et ne surveille pas l'activité. Champs mot de passe et apps sensibles
+  (banque, gestionnaires de mots de passe, portefeuilles crypto) : bloqués.
+  Formulation EN autorisée : « The Accessibility permission shows the bubble, inserts your dictated text and reads the
+  active field on your phone (for Previous / Next and spacing); that text is sent only when you drop the bubble on
+  Translate, Correct or Emojis, and it is not stored. »
+  ⛔ Ne plus écrire : « only to show the bubble and insert », « does not read the screen / screen content »,
+  « does not transmit accessibility data » (`check_site.py` les refuse).
 
 ## Publics (positionnement officiel = accessibilité d'abord)
 Motricité réduite / mains peu mobiles · tremblements, Parkinson · arthrite, tendinite (RSI), douleurs chroniques ·

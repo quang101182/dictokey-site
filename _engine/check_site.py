@@ -41,6 +41,14 @@ REGLES = [
     (r"\bmillions? of users\b|\b\d[\d,.]*\+? (downloads|installs)\b", "aucun chiffre d'installs"),
     (r'"aggregateRating"|"reviewCount"|"ratingValue"', "note déclarée dans le JSON-LD : figée ou inventée (FACTS : aucune note)"),
     (r"nocode-?flow", "signature = « DictoKey Team » (NoCodeFlow arrêté le 16/09/2026)"),
+    # 22/10/2026 : depuis l'app 2.74.4 la bulle LIT le champ actif (Précédent / Suivant, espace) et l'envoie sur
+    # Traduire / Corriger / Emojis -> ces formules sont devenues fausses (FACTS § Confidentialité).
+    (r"accessibility (permission|service)[^.]{0,40}\b(only|solely)\b[^.]{0,30}\b(show|display)|"
+     r"\b(only|solely) (used )?to (show|display) the bubble and insert|"
+     r"(does not|doesn't|never) read(s)? (or record )?(the )?screen( content)?|"
+     r"(does not|doesn't|never) transmit(s)? accessibility data|"
+     r"sert uniquement à afficher la bulle|ne lit (pas|jamais) (l'|le contenu de l')écran",
+     "accessibilité : la bulle lit le champ actif depuis 2.74.4 (FACTS § Confidentialité)"),
 ]
 # Règles dont une QUESTION (« Does it work offline? ») ou une phrase NÉGATIVE (« No. DictoKey needs internet ») est juste.
 REGLES_NUANCEES = {r"\boffline\b|hors[- ]ligne"}
