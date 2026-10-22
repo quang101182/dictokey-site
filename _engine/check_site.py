@@ -49,6 +49,12 @@ REGLES = [
      r"(does not|doesn't|never) transmit(s)? accessibility data|"
      r"sert uniquement à afficher la bulle|ne lit (pas|jamais) (l'|le contenu de l')écran",
      "accessibilité : la bulle lit le champ actif depuis 2.74.4 (FACTS § Confidentialité)"),
+    # 22/10/2026 : contredit privacy.html §4-5 (identifiant d'appareil pour le quota, statistiques d'usage anonymes).
+    (r"(collects?|stores?|stored|collected) no personal data|no personal data (is )?(stored|collected)|"
+     r"aucune donnée personnelle|keine personenbezogenen Daten|ningún dato personal|nenhum dado pessoal",
+     "« aucune donnée personnelle » : faux (privacy.html §4-5) — écrire « no recordings stored »"),
+    (r"\bQWERTZ\b|\bDvorak\b|\bAZERTY\b", "le clavier DictoKey n'a pas de touches lettres (keyboard_dictokey.xml)"),
+    (r"\bformal,\s*casual\b|\bcasual,\s*(concise|expanded)\b|décontracté","styles de réécriture : clean / formal / concise / expanded (pas « casual »)"),
 ]
 # Règles dont une QUESTION (« Does it work offline? ») ou une phrase NÉGATIVE (« No. DictoKey needs internet ») est juste.
 REGLES_NUANCEES = {r"\boffline\b|hors[- ]ligne"}

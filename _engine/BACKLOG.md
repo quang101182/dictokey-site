@@ -28,6 +28,17 @@
 - [ ] `voice-dictation-button-any-keyboard-android` — « voice dictation button over any keyboard on Android » : garder
       son clavier (Gboard/Samsung/SwiftKey) et dicter par un bouton flottant ; c'est ce que des utilisateurs bricolent
       avec MacroDroid. Comparer : micro du clavier, Wispr (bulle), Typeless (remplace le clavier), DictoKey (bulle + IME).
+      ➕ (22/10) Décrire la bulle de la 2.74 telle que FACTS la donne : menu par la moitié langue, **glisser sur
+      Traduire / Corriger / Emojis**, Précédent / Suivant — c'est l'argument « garder son clavier ET retravailler son texte ».
+
+> 🧹 **Corrections du 22/10/2026** (audit du site vs app 2.74.10 ; le reste a été corrigé en session) : faits CONCURRENTS
+> périmés — « Wispr Flow (Early Access) », « free and unlimited », « 100+ languages ». Une page par exécution, comme
+> une refonte : re-vérifier Wispr Flow Android AUJOURD'HUI (wisprflow.ai/pricing, docs.wisprflow.ai), corriger
+> seulement ces passages (et la FAQ JSON-LD qui les répète), ajouter la source datée dans la section Sources.
+
+- [ ] CORRECTION `best-voice-keyboard-android-2026` — Wispr « Free / Early Access » (lignes ~103, 748, 911-919, 1122, 1155).
+- [ ] CORRECTION `best-floating-voice-dictation-android-2026` — Wispr « Early Access / free and unlimited » (~159, 744, 1033, 1048, 1131).
+- [ ] CORRECTION `best-voice-dictation-apps-android-2026` — Wispr « Early Access » (~119, 618, 887-916, 1086).
 - [ ] REFONTE `best-voice-keyboard-android-2026` — mettre à jour : Yaps, Typeless Android, Wispr Android, prix réels, essai 7 j annuel, date du jour
 - [ ] `futo-voice-input-vs-dictokey` — « FUTO Voice Input vs DictoKey » (FUTO : hors ligne, open source, gratuit — dire ses forces ; DictoKey : cloud, réécriture, traduction, bulle)
 - [ ] `swiftkey-voice-typing-alternative` — « SwiftKey voice typing alternative »
