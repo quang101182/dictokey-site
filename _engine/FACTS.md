@@ -30,12 +30,22 @@
 - **Mode Clean** : ponctuation et majuscules rétablies automatiquement → un message dicté n'a pas besoin d'être retouché.
 - **Réécriture IA** du texte dicté et **traduction en temps réel**. **51 langues** (vérifié 18/10/2026 : `data/Language.kt` liste 52 entrées dont « auto » ; l'app affiche « x/51 »). ⛔ Ne plus écrire « 52 ».
 - **Bulle réglable** : taille, opacité, position ancrée, activable app par app.
+- **La bulle (refonte de l'app 2.74, vérifiée sur la 2.74.10 le 22/10/2026)** : une pilule à deux moitiés, langue | micro.
+  Toucher le micro = dicter ; appui long = dicter puis traduire (réglable). Toucher la moitié langue = un menu : langue de
+  dictée et de traduction (inversion en un geste), style, Emojis, copier la dernière dictée, Interprète, traduire le
+  presse-papiers. **Glisser la bulle** fait apparaître un panneau : Précédent · Traduire · Corriger · Emojis · Suivant —
+  lâcher la bulle dessus agit sur le texte déjà écrit dans le champ (Précédent / Suivant = retour arrière comme au clavier).
+  EN : « Drag the bubble onto Translate, Correct or Emojis to rework what you already wrote, and step back like on the keyboard. »
+- **Notification : FACULTATIVE**, pas nécessaire pour dicter (raccourcis : langues, afficher/masquer la bulle, Interprète,
+  traduire le presse-papiers, recopier la dernière dictée). ⛔ Ne pas la présenter comme une 3ᵉ façon de dicter.
 - **Mode Interprète** : pour une conversation orale entre deux langues (écran dédié, `ui/InterpreterActivity.kt` ; cité
   dans la fiche Play fr-FR « un mode Interprète pour les conversations orales »). Ajouté le 19/10/2026.
 - **Correction vocale** : dans le clavier, un appui long sur le bouton de dictée permet de DIRE la correction à apporter
   au texte (`api/CorrectApi.kt`, `ime/DictoKeyIME.kt`). Ajouté le 19/10/2026.
 - **Détection automatique de la langue** : option « Auto-detect » dans le choix de langue (`data/Language.kt`). Ajouté le 19/10/2026.
 - ⛔ Pour ces trois fonctions, ne PAS écrire si elles sont gratuites ou Premium (non vérifié au 19/10/2026).
+  → **Exception vérifiée le 22/10/2026 pour l'Interprète** (passerelle v1.10.0, app 2.74) : les utilisateurs gratuits ont
+  un **essai de 3 échanges par jour** ; au-delà, Premium. EN : « Free users can try the Interpreter 3 times a day. »
 - **Coexiste avec TalkBack** (la bulle ne dispute pas le contrôle de l'écran au lecteur d'écran).
 - **Sans compte** : aucun formulaire d'inscription pour commencer.
 - **Apps sensibles bloquées automatiquement** : banques, gestionnaires de mots de passe, portefeuilles crypto.
