@@ -125,7 +125,7 @@
 
 <div class="privacy-container">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 20, 2026</p>
+    <p class="updated">Last updated: October 22, 2026</p>
 
     <div class="highlight-box">
         <p><strong>In short</strong> — No account, no ads. Your voice is sent to a speech-to-text service to be turned into text, then discarded: we never store your audio. We use Google Firebase to measure how the app is used and to detect crashes. You can delete your data from the app at any time.</p>
@@ -143,7 +143,7 @@
     <p>The audio is kept in memory only for the time of the request and is <strong>never written to storage</strong>, on your phone or on our server. If you added personal words ("My words"), they are sent with the recording to improve recognition.</p>
 
     <h2>3. Rewrite, correction and translation</h2>
-    <p>These features only run when you tap the corresponding button:</p>
+    <p>These features only run when you ask for them — by tapping the corresponding keyboard button, or by dropping the floating bubble on <em>Rewrite</em>, <em>Translate</em> or <em>Correct</em> (section 7):</p>
     <ul>
         <li><strong>Rewrite and correction</strong>: the text of the field you are typing in is sent to <strong>Groq</strong> (United States) to be rewritten, then returned to you.</li>
         <li><strong>Translation</strong>: the text is sent to <strong>Microsoft Translator</strong> (Microsoft Azure).</li>
@@ -174,16 +174,17 @@
     <p><strong>What the Accessibility Service is used for:</strong></p>
     <ul>
         <li>Inserting your dictated or translated text into the focused text field of the app you're currently using.</li>
-        <li>Reading the state of the focused field (empty, filled, password-type) to choose the right action — no text content is read or stored.</li>
+        <li>Reading the state of the focused field (empty, filled, password-type) to choose the right action.</li>
+        <li>Reading the text of the focused field <strong>only when you drop the bubble on <em>Rewrite</em>, <em>Translate</em> or <em>Correct</em></strong>, to transform it as described in section 3 — the same processing as the keyboard buttons. The bubble asks for your consent before the first use. Its undo history (<em>Previous</em> / <em>Next</em>) stays in memory on your phone and is never sent.</li>
         <li>Detecting when a sensitive app is in the foreground and automatically blocking insertion to protect you.</li>
     </ul>
 
     <p><strong>What DictoKey never does with this permission:</strong></p>
     <ul>
-        <li>We do <strong>not</strong> record, log, or transmit anything you type on your system keyboard.</li>
-        <li>We do <strong>not</strong> read or store the content of messages, emails, screens, or any app content outside the bubble's own dictation flow.</li>
+        <li>We do <strong>not</strong> record or log anything you type on your system keyboard, and we transmit nothing you type except the field text you explicitly send to <em>Rewrite</em>, <em>Translate</em> or <em>Correct</em>.</li>
+        <li>We do <strong>not</strong> read or store the content of messages, emails, screens, or any app content outside the bubble's own dictation flow and the field text you choose to transform.</li>
         <li>We do <strong>not</strong> access content from passwords, banking apps, or any app in our sensitive-apps blocklist.</li>
-        <li>We do <strong>not</strong> send any app content to external services.</li>
+        <li>We do <strong>not</strong> send any app content to external services, except the field text you choose to transform (section 3), which we do not keep.</li>
     </ul>
 
     <div class="highlight-box">
