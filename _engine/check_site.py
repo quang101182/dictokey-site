@@ -54,6 +54,12 @@ REGLES = [
      r"aucune donnée personnelle|keine personenbezogenen Daten|ningún dato personal|nenhum dado pessoal",
      "« aucune donnée personnelle » : faux (privacy.html §4-5) — écrire « no recordings stored »"),
     (r"\bQWERTZ\b|\bDvorak\b|\bAZERTY\b", "le clavier DictoKey n'a pas de touches lettres (keyboard_dictokey.xml)"),
+    # 23/10/2026 : prix réel 4,79 €/mois (affiché par Google Play) ; Premium = 1 000 dictées/jour, jamais « illimité ».
+    # Ciblé sur DictoKey / Premium / Interprète : les pages comparatives citent légitimement l'offre illimitée d'un concurrent.
+    (r"4[.,]99\s?(€|eur)|€\s?4[.,]99|-\s?42\s?%", "prix DictoKey : 4,79 €/mois et -39 % (FACTS § Prix)"),
+    (r"(premium|dictokey)\W+(\w+\W+){0,6}?(unlimited|illimit\w*|ilimitad\w*|unbegrenzt\w*)|"
+     r"(?<!free )unlimited (dictations?|interpreter)|(dictées?|interprète) illimit|illimit\w* (dictées?|interprète)",
+     "Premium = 1 000 dictées/jour, jamais « illimité » (FACTS § Prix)"),
     (r"\bformal,\s*casual\b|\bcasual,\s*(concise|expanded)\b|décontracté","styles de réécriture : clean / formal / concise / expanded (pas « casual »)"),
 ]
 # Règles dont une QUESTION (« Does it work offline? ») ou une phrase NÉGATIVE (« No. DictoKey needs internet ») est juste.

@@ -54,9 +54,13 @@
   ⛔ Ne pas nommer le fournisseur de transcription. ⛔ Ne jamais écrire « Whisper », « Groq », « OpenAI » à propos de
   DictoKey : faux depuis le 03/10/2026 (moteur Microsoft MAI-Transcribe-2 pour presque toutes les langues).
 
-## Prix (au 13/10/2026)
+## Prix (vérifié le 23/10/2026 : « Premium — 4,79 €/mois » affiché par Google Play dans l'app 2.75.0 installée depuis Play)
 - **Gratuit** avec une limite quotidienne de dictées (**30 par jour** au moment de la rédaction).
-- **Premium** : **4,99 €/mois** ou **34,99 €/an** (≈ -42 %), **7 jours d'essai gratuit** sur les deux formules
+- **Premium** : **4,79 €/mois** ou **34,99 €/an** (≈ -39 %), **7 jours d'essai gratuit** sur les deux formules
+  ⛔ Ne plus écrire « 4,99 € » ni « -42 % » (ancien prix, faux depuis octobre 2026).
+- **Premium = 1 000 dictées par jour**, et le Mode Interprète est inclus. ⛔ Ne JAMAIS écrire « illimité » / « unlimited »
+  à propos de DictoKey (dictées ou Interprète) : il y a une limite quotidienne, même en Premium (passerelle :
+  `TIERS.premium.daily = 1000`). EN : « Premium: 1,000 dictations a day, Interpreter Mode included. »
   pour les nouveaux abonnés. Le Play Store affiche le prix dans la monnaie locale : écrire « about $5/month » en anglais,
   jamais un prix en dollars présenté comme exact.
 
