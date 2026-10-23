@@ -25,7 +25,7 @@
 - [x] `samsung-voice-typing-not-working` — même schéma pour Samsung Keyboard voice input (sources samsung.com).
 - [x] `typing-with-one-finger-android` — « typing with one finger / one hand on Android » : options Android (Gboard
       glisse, clavier une main, Voice Access) + dictée par bulle. Ton accessibilité, aucun témoignage.
-- [ ] `voice-dictation-button-any-keyboard-android` — « voice dictation button over any keyboard on Android » : garder
+- [x] `voice-dictation-button-any-keyboard-android` — « voice dictation button over any keyboard on Android » : garder
       son clavier (Gboard/Samsung/SwiftKey) et dicter par un bouton flottant ; c'est ce que des utilisateurs bricolent
       avec MacroDroid. Comparer : micro du clavier, Wispr (bulle), Typeless (remplace le clavier), DictoKey (bulle + IME).
       ➕ (22/10) Décrire la bulle de la 2.74 telle que FACTS la donne : menu par la moitié langue, **glisser sur
@@ -73,3 +73,5 @@
 - [ ] Pages anciennes qui échouent à `check_page.py` pour la STRUCTURE (pas pour FACTS) : best-floating (FAQ 10, pas de
       Sources, 3631 mots), best-voice-dictation-apps (pas de Sources, 2980), best-voice-keyboard (title, Sources, 3711),
       how-to-translate (title/meta), ai-keyboard-multilingual (title, Sources), ai-voice-dictation-samsung (title, meta, auteur, Sources).
+
+> Note 23/10 : wisprflow.ai/pricing affiche désormais « Limited weekly use on mobile » (plus « 1 000 mots/semaine ») ; Pro 15 $/mois ou 12 $/mois annuel. À reporter dans la refonte `wispr-flow-alternative` si elle cite 1 000 mots.
