@@ -54,9 +54,9 @@ REGLES = [
      r"aucune donnée personnelle|keine personenbezogenen Daten|ningún dato personal|nenhum dado pessoal",
      "« aucune donnée personnelle » : faux (privacy.html §4-5) — écrire « no recordings stored »"),
     (r"\bQWERTZ\b|\bDvorak\b|\bAZERTY\b", "le clavier DictoKey n'a pas de touches lettres (keyboard_dictokey.xml)"),
-    # 23/10/2026 : prix réel 4,79 €/mois (affiché par Google Play) ; Premium = 1 000 dictées/jour, jamais « illimité ».
+    # 23/10/2026 : prix 7,99 €/mois et 59,99 €/an depuis la hausse du 23/10 ; Premium = 1 000 dictées/jour, jamais « illimité ».
     # Ciblé sur DictoKey / Premium / Interprète : les pages comparatives citent légitimement l'offre illimitée d'un concurrent.
-    (r"4[.,]99\s?(€|eur)|€\s?4[.,]99|-\s?42\s?%", "prix DictoKey : 4,79 €/mois et -39 % (FACTS § Prix)"),
+    (r"(?<![\d.,])(4[.,][79]9|34[.,]99)\s?(€|eur|euros?)|€\s?(4[.,][79]9|34[.,]99)(?![\d])|-\s?(39|42)\s?%|about \$5(/| per | a )mo", "prix DictoKey : 7,99 €/mois et 59,99 €/an, -37 % (FACTS § Prix, hausse du 23/10)"),
     (r"(premium|dictokey)\W+(\w+\W+){0,6}?(unlimited|illimit\w*|ilimitad\w*|unbegrenzt\w*)|"
      r"(?<!free )unlimited (dictations?|interpreter)|(dictées?|interprète) illimit|illimit\w* (dictées?|interprète)",
      "Premium = 1 000 dictées/jour, jamais « illimité » (FACTS § Prix)"),
