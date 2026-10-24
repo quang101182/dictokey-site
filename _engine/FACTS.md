@@ -1,7 +1,7 @@
 # DictoKey — faits vérifiés (SEULE source autorisée pour parler de DictoKey)
 
 > Toute affirmation sur DictoKey dans une page DOIT venir de ce fichier. Si un fait manque ici : ne pas l'écrire.
-> Source : description Play en-US en ligne (approuvée par Google le 24/07/2026) + code de l'app v2.72.0 (13/10/2026).
+> Source : description Play en-US en ligne (approuvée par Google le 24/07/2026) + code de l'app v2.72.0 (13/10/2026) ; § « App 2.75 » : code 2.75.3 (24/10/2026).
 > Mis à jour : 18/10/2026 (51 langues, moteur ; voir BACKLOG « CORRECTIONS 18/10 »). Ce dossier `_engine/` n'est PAS publié (Jekyll ignore les dossiers en `_`).
 
 ## Identité
@@ -40,6 +40,17 @@
   traduire le presse-papiers, recopier la dernière dictée). ⛔ Ne pas la présenter comme une 3ᵉ façon de dicter.
 - **Mode Interprète** : pour une conversation orale entre deux langues (écran dédié, `ui/InterpreterActivity.kt` ; cité
   dans la fiche Play fr-FR « un mode Interprète pour les conversations orales »). Ajouté le 19/10/2026.
+- **App 2.75 (en production le 24/10/2026, vérifié dans le code 2.75.3)** :
+  - **Une dictée n'est plus perdue** : si elle ne peut pas être insérée (clavier baissé pendant la dictée, champ quitté,
+    réseau revenu après coup), le texte est gardé et une pastille « Insérer » apparaît au prochain champ touché ; un
+    toucher l'insère. Une dictée qui a échoué faute de réseau peut être réessayée. Gardé **en mémoire seulement, 5 minutes**
+    (`PendingDictationHolder.kt`, `RetryAudioHolder.kt`). Jamais pour un champ mot de passe ou une app sensible.
+    EN : « If a dictation can't be inserted, DictoKey keeps it for a few minutes and offers to insert it in the next field you tap. »
+    ⛔ Ne pas écrire « sauvegardée » / « saved forever » / « backed up » (5 min, en mémoire) ; jamais d'insertion automatique.
+  - **« Traduire avec DictoKey »** (EN « Translate with DictoKey ») : sélectionner un texte dans une app → menu de
+    sélection d'Android → la traduction s'affiche dans une carte posée sur l'app (copier, ou remplacer la sélection quand
+    l'app le permet) (`ui/ProcessTextTranslateActivity.kt`). ⛔ Ne pas dire si c'est gratuit ou Premium.
+  - Réglages de la bulle réorganisés (réglages plus clairs). ⛔ Ne pas nommer de réglage précis sans le vérifier dans l'app.
 - **Correction vocale** : dans le clavier, un appui long sur le bouton de dictée permet de DIRE la correction à apporter
   au texte (`api/CorrectApi.kt`, `ime/DictoKeyIME.kt`). Ajouté le 19/10/2026.
 - **Détection automatique de la langue** : option « Auto-detect » dans le choix de langue (`data/Language.kt`). Ajouté le 19/10/2026.
