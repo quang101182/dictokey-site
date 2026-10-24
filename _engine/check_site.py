@@ -37,6 +37,10 @@ REGLES = [
     (r"GDPR[- ]hosting|EU[- ]hosting|hosted in the EU|EU servers|servers? in the EU", "hébergement UE non garanti par FACTS"),
     (r"\bno[- ]tracking\b|sans (aucun )?suivi|kein Tracking", "« no tracking » interdit (statistiques anonymes)"),
     (r"\boffline\b|hors[- ]ligne", "DictoKey présenté comme hors ligne"),
+    # 24/10/2026 : le README publié disait « all processed locally on your device » (FACTS : reconnaissance dans le cloud).
+    (r"processed (locally|on[- ]device)|(audio|voice|speech)( is)? (processed|stays?) on[- ](your )?device|"
+     r"on[- ]device (processing|transcription|recognition)|traité(e)? (localement|sur (votre|ton) (téléphone|appareil))",
+     "traitement local : faux, la reconnaissance se fait dans le cloud (FACTS § Moteur)"),
     (r"\b(cures?|heals?|doctor[- ]recommended|clinically proven)\b", "affirmation médicale interdite"),
     (r"\bmillions? of users\b|\b\d[\d,.]*\+? (downloads|installs)\b", "aucun chiffre d'installs"),
     (r'"aggregateRating"|"reviewCount"|"ratingValue"', "note déclarée dans le JSON-LD : figée ou inventée (FACTS : aucune note)"),
@@ -56,9 +60,13 @@ REGLES = [
     (r"\bQWERTZ\b|\bDvorak\b|\bAZERTY\b", "le clavier DictoKey n'a pas de touches lettres (keyboard_dictokey.xml)"),
     # 23/10/2026 : prix 7,99 €/mois et 59,99 €/an depuis la hausse du 23/10 ; Premium = 1 000 dictées/jour, jamais « illimité ».
     # Ciblé sur DictoKey / Premium / Interprète : les pages comparatives citent légitimement l'offre illimitée d'un concurrent.
-    (r"(?<![\d.,])(4[.,][79]9|34[.,]99)\s?(€|eur|euros?)|€\s?(4[.,][79]9|34[.,]99)(?![\d])|-\s?(39|42)\s?%|about \$5(/| per | a )mo", "prix DictoKey : 7,99 €/mois et 59,99 €/an, -37 % (FACTS § Prix, hausse du 23/10)"),
+    # 24/10/2026 : trous mesurés par un audit (« save 39% », « −39 % » typographique, « $4.99/month » passaient).
+    (r"(?<![\d.,])(4[.,][79]9|34[.,]99)\s?(€|eur|euros?)|€\s?(4[.,][79]9|34[.,]99)(?![\d])|[-−–]\s?(39|42)\s?%|"
+     r"about \$5(/| per | a )mo|\$\s?4\.99|save (39|42)\s?%|(39|42)\s?% (off|de réduction|d'économie)",
+     "prix DictoKey : 7,99 €/mois et 59,99 €/an, -37 % (FACTS § Prix, hausse du 23/10)"),
     (r"(premium|dictokey)\W+(\w+\W+){0,6}?(unlimited|illimit\w*|ilimitad\w*|unbegrenzt\w*)|"
-     r"(?<!free )unlimited (dictations?|interpreter)|(dictées?|interprète) illimit|illimit\w* (dictées?|interprète)",
+     r"(?<!free )unlimited (dictations?|interpreter)|(dictées?|interprète) illimit|illimit\w* (dictées?|interprète)|"
+     r"(interpreter|interprète)( mode)? (is |est )?(unlimited|illimit\w*)",
      "Premium = 1 000 dictées/jour, jamais « illimité » (FACTS § Prix)"),
     (r"\bformal,\s*casual\b|\bcasual,\s*(concise|expanded)\b|décontracté","styles de réécriture : clean / formal / concise / expanded (pas « casual »)"),
 ]
@@ -82,7 +90,8 @@ def fichiers():
     except Exception:
         suivis = [os.path.relpath(os.path.join(d, f), ROOT).replace("\\", "/") for d, _, fs in os.walk(ROOT) for f in fs]
     for rel in suivis:
-        if not rel or rel in EXCLUS or rel.split("/")[0] in DOSSIERS_EXCLUS or not rel.endswith((".html", ".js")):
+        # .md aussi : GitHub Pages sert README.md tel quel (dictokey.com/README.md = 200, constaté le 24/10/2026)
+        if not rel or rel in EXCLUS or rel.split("/")[0] in DOSSIERS_EXCLUS or not rel.endswith((".html", ".js", ".md")):
             continue
         yield rel
 
