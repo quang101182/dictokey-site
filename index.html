@@ -1276,6 +1276,21 @@
       navigator.sendBeacon(CLICK_URL + '&btn=' + btn);
     });
 
+    // Pub (26/10/2026) : un visiteur arrivé par une annonce (utm_* ou gclid dans l'adresse) garde ce marquage jusqu'au
+    // Play Store ; sans ça l'installation serait comptée « dictokey-site » et le test publicitaire serait injugeable.
+    (function () {
+      var q = new URLSearchParams(location.search);
+      if (!q.get('utm_source') && !q.get('gclid')) return;
+      function v(k, d) { return (q.get(k) || d).slice(0, 64); }
+      var src = v('utm_source', 'google'), med = v('utm_medium', 'cpc'), camp = v('utm_campaign', 'ads');
+      document.querySelectorAll('a[href*="play.google.com/store/apps/details?id=com.dictokey.app"]').forEach(function (a) {
+        var u = new URL(a.href), old = new URLSearchParams(u.searchParams.get('referrer') || '');
+        var r = new URLSearchParams({ utm_source: src, utm_medium: med, utm_campaign: camp, utm_content: old.get('utm_content') || 'site' });
+        u.searchParams.set('referrer', r.toString());
+        a.href = u.toString();
+      });
+    })();
+
     // ====== i18n ======
     const LANGS = {
         en: { flag: '\u{1F1EC}\u{1F1E7}', code: 'EN' },
