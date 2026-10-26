@@ -36,7 +36,7 @@
 > une refonte : re-vérifier Wispr Flow Android AUJOURD'HUI (wisprflow.ai/pricing, docs.wisprflow.ai), corriger
 > seulement ces passages (et la FAQ JSON-LD qui les répète), ajouter la source datée dans la section Sources.
 
-- [ ] CORRECTION `best-voice-keyboard-android-2026` — Wispr « Free / Early Access » (lignes ~103, 748, 911-919, 1122, 1155).
+- [!] (26/10 : check_page échoue sur la STRUCTURE, pas sur les faits — page de 3773 mots ; même après correction Wispr + ajout Sources + titre court + suppression de 5 sections elle reste à 2601 mots (max 2200). Faits Wispr du 26/10 à reporter dans la REFONTE ci-dessous : Android listé « available » sans mention Early Access, Free Android = 1 000 mots/semaine (docs.wisprflow.ai « Flow plans and what's included »), Pro 15 $/mois ou 12 $/mois annuel, « over 100 languages » (wisprflow.ai/pricing, docs.wisprflow.ai supported-languages)) CORRECTION `best-voice-keyboard-android-2026` — Wispr « Free / Early Access » (lignes ~103, 748, 911-919, 1122, 1155).
 - [ ] CORRECTION `best-floating-voice-dictation-android-2026` — Wispr « Early Access / free and unlimited » (~159, 744, 1033, 1048, 1131).
 - [ ] CORRECTION `best-voice-dictation-apps-android-2026` — Wispr « Early Access » (~119, 618, 887-916, 1086).
 - [ ] REFONTE `best-voice-keyboard-android-2026` — mettre à jour : Yaps, Typeless Android, Wispr Android, prix réels, essai 7 j annuel, date du jour
