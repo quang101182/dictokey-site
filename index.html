@@ -373,6 +373,9 @@
         }
         /* v1.7.0 — badge NEW sur feature-card "Floating bubble" */
         .feature-card { position: relative; }
+        .guide-card { display:block; text-decoration:none; color:inherit; text-align:left; }
+        .guide-card:hover h3 { color: var(--accent-green); }
+        @media (max-width: 600px) { .feature-card.guide-card { padding: 14px 20px; } .feature-card.guide-card p { display: none; } #guides .features-grid { gap: 10px; } }
         .feature-badge {
             position: absolute;
             top: 14px;
@@ -1098,6 +1101,54 @@
                 <p class="testimonial-source">Google Play &#9733; 4/5 &middot; 1er mai 2026</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ====== GUIDES (v1.8.0, 28/10/2026 : maillage interne vers les articles) ====== -->
+<section id="guides">
+    <div class="container text-center">
+        <p class="section-label fade-in" data-i18n="guides_label">Guides</p>
+        <h2 class="section-title fade-in" data-i18n="guides_title">Voice Typing Help for Android</h2>
+        <p class="section-desc fade-in" data-i18n="guides_desc">Practical guides (in English) to fix your keyboard’s voice typing or compare the alternatives.</p>
+        <div class="features-grid">
+            <a class="feature-card guide-card fade-in" href="blog/gboard-voice-typing-not-working.html">
+                <h3>Gboard voice typing not working?</h3>
+                <p>Fixes to try first, and what to do if it still fails.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/samsung-voice-typing-not-working.html">
+                <h3>Samsung voice typing not working?</h3>
+                <p>Missing microphone or wrong language: step-by-step checks.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/gboard-voice-typing-alternative.html">
+                <h3>Gboard voice typing alternatives</h3>
+                <p>Gboard, SwiftKey, FUTO Voice Input, Wispr Flow and DictoKey compared.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/samsung-voice-typing-alternative.html">
+                <h3>Samsung voice typing alternatives</h3>
+                <p>Replacing Samsung Keyboard voice input on Galaxy phones.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/voice-dictation-button-any-keyboard-android.html">
+                <h3>A dictation button for any keyboard</h3>
+                <p>Keep Gboard or Samsung Keyboard and dictate from a floating bubble.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/wispr-flow-alternative.html">
+                <h3>Wispr Flow alternative for Android</h3>
+                <p>Free limits, languages and price, checked against official pages.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/typing-with-one-finger-android.html">
+                <h3>Typing with one finger on Android</h3>
+                <p>Glide typing, Voice Access and dictation compared.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/dictation-app-for-dyslexia-android.html">
+                <h3>Voice dictation for dyslexia</h3>
+                <p>Write by speaking, then clean up the text without retyping.</p>
+            </a>
+            <a class="feature-card guide-card fade-in" href="blog/voice-typing-for-arthritis-hand-pain.html">
+                <h3>Voice typing for arthritis and hand pain</h3>
+                <p>Type less on your phone: Android options and a floating bubble.</p>
+            </a>
+        </div>
+        <p class="fade-in" style="margin-top:24px"><a href="blog/" style="color:var(--accent-green)" data-i18n="guides_all">All guides →</a></p>
     </div>
 </section>
 
