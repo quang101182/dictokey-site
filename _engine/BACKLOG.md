@@ -46,7 +46,7 @@
 - [ ] `typeless-android-alternative` — « Typeless Android alternative »
 - [ ] `yaps-alternative-android` — « Yaps alternative for Android »
 - [ ] `voice-typing-for-seniors-android` — « easiest voice typing app for seniors on Android »
-- [ ] `voice-typing-with-talkback-low-vision` — « voice typing with TalkBack / low vision Android »
+- [!] (29/10, Claude en session : contredit FACTS § Publics — « basse vision / malvoyants » n'est plus un public visé depuis le 18/10 ; TalkBack = une fonction, pas un public. Ne pas la faire.) `voice-typing-with-talkback-low-vision` — « voice typing with TalkBack / low vision Android »
 - [!] (remontée en PRIORITÉ 1 le 16/10, voir en tête — ne pas la refaire deux fois) REFONTE `wispr-flow-alternative` — rafraîchir (Wispr Android : version, prix, nouveautés 2026) + **corriger « works in every app » → « most apps »** (faux : apps sensibles bloquées) + section Sources datée + **prix Wispr périmés** : la page dit « unlimited words on Android », wisprflow.ai/pricing annonce maintenant Free = 1 000 mots/semaine sur mobile (vu le 13/10)
 - [ ] `voice-typing-for-rsi-tendonitis` — « voice typing for RSI / tendonitis » (travail sur téléphone sans douleur)
 - [ ] `voice-to-text-whatsapp-android` — « voice to text for WhatsApp on Android » (dicter au lieu d'envoyer un vocal)

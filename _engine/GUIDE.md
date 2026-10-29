@@ -6,7 +6,8 @@
 
 ## Une exécution = exactement ceci, dans l'ordre
 
-1. `git pull`. Lire `FACTS.md` (seule source sur DictoKey), ce guide, `BACKLOG.md`, `LOG.md`.
+1. `git checkout -q main && git pull -q origin main` (le bac à sable de la routine démarre en HEAD détaché : un simple
+   `git pull` y échoue, constaté le 29/10). Lire `FACTS.md` (seule source sur DictoKey), ce guide, `BACKLOG.md`, `LOG.md`.
 1 bis. **Garde-fou site entier** : `PYTHONIOENCODING=utf-8 python _engine/check_site.py --detail`. S'il échoue sur des pages
    `blog/` ou `tools/` : la tâche du jour devient **leur correction** (pas de nouvelle page), en appliquant FACTS.md,
    puis étapes 6 à 9 avec ces fichiers. S'il échoue UNIQUEMENT sur des fichiers que tu n'as pas le droit de toucher
