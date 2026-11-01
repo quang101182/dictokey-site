@@ -18,8 +18,7 @@
   dictionnaire personnel, historique LOCAL (jamais envoyé), zone de notification, démarrage avec Windows, mises à jour auto.
 - Interface **anglais et français** (suit la langue de Windows, réglable).
 - **Gratuit** : 2 000 mots/semaine, sans compte. **Premium** : **9,99 €/mois TTC**, essai 7 j (carte demandée), sans
-  limite de mots par semaine (« fair use »). ⛔ Ne JAMAIS chiffrer le plafond d'audio mensuel : c'est un garde-fou de coût
-  volontairement non annoncé (`dictokey-pc/gateway/src/quota.js`, « l'annoncer inviterait à le longer »). Abonnement **séparé** de l'Android. Paiement **Polar**, clé par e-mail.
+  limite de mots par semaine, **20 h de dictée par mois** (publié sur décision de Quang du 01/11/2026, `/terms.html`). Abonnement **séparé** de l'Android. Paiement **Polar**, clé par e-mail.
 - Installeur **non signé** par un certificat Microsoft → SmartScreen « Windows a protégé votre PC » (Informations
   complémentaires → Exécuter quand même). Les MISES À JOUR sont signées et vérifiées par l'app.
 - ⛔ Pas de Firebase ni de statistiques dans l'app Windows : ne pas lui attribuer les données Firebase de l'Android.
@@ -73,6 +72,7 @@
   « about $7.50/month » / « about $55 per year », jamais un prix en dollars présenté comme exact.
   ⛔ Anciens prix, FAUX pour un nouvel abonné : 4,99 € / -42 % (avant octobre) et 4,79 € / 34,99 € / -39 % (jusqu'au
   23/10/2026). Les abonnés d'avant le 23/10 gardent leur ancien prix (Play) : ne pas en parler sur le site.
+- **Gratuit : 3 h par mois. Premium : 20 h par mois** (`/terms.html`, décision de Quang du 01/11/2026).
 - **Premium = 1 000 dictées par jour**, et le Mode Interprète est inclus. ⛔ Ne JAMAIS écrire « illimité » / « unlimited »
   à propos de DictoKey (dictées ou Interprète) : il y a une limite quotidienne, même en Premium (passerelle :
   `TIERS.premium.daily = 1000`). EN : « Premium: 1,000 dictations a day, Interpreter Mode included. »
