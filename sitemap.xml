@@ -244,4 +244,10 @@
     <priority>0.8</priority>
   </url>
   <url><loc>https://dictokey.com/terms.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url>
+    <loc>https://dictokey.com/blog/swiftkey-voice-typing-alternative.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
