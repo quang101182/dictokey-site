@@ -42,7 +42,7 @@
 - [x] REFONTE `best-voice-keyboard-android-2026` (29/10 : réécrite en 1174 mots, FAQ 5, Sources ; Wispr Free mobile « limited weekly use », Pro 15/12 $ ; Typeless Android Free « limited words », Pro 12 $ annuel/30 $ mensuel ; Yaps Android gratuit) — mettre à jour : Yaps, Typeless Android, Wispr Android, prix réels, essai 7 j annuel, date du jour
 - [x] `futo-voice-input-vs-dictokey` (30/10 : 1238 mots, FAQ 6, Sources) — « FUTO Voice Input vs DictoKey » (FUTO : hors ligne, open source, gratuit — dire ses forces ; DictoKey : cloud, réécriture, traduction, bulle)
 - [x] `swiftkey-voice-typing-alternative` (02/11 : 1295 mots, FAQ 6, Sources) — « SwiftKey voice typing alternative »
-- [ ] `voice-typing-for-parkinsons-tremors` — « voice typing app for Parkinson's and tremors » (frappe imprécise ; bulle réglable ; Voice Access, DictoKey)
+- [x] `voice-typing-for-parkinsons-tremors` (03/11 : 1534 mots, FAQ 6, Sources) — « voice typing app for Parkinson's and tremors » (frappe imprécise ; bulle réglable ; Voice Access, DictoKey)
 - [ ] `typeless-android-alternative` — « Typeless Android alternative »
 - [ ] `yaps-alternative-android` — « Yaps alternative for Android »
 - [ ] `voice-typing-for-seniors-android` — « easiest voice typing app for seniors on Android »
