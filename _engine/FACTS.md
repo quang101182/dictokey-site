@@ -65,7 +65,7 @@
   DictoKey : faux depuis le 03/10/2026 (moteur Microsoft MAI-Transcribe-2 pour presque toutes les langues).
 
 ## Prix (HAUSSE du 23/10/2026 ~23:00, décision Quang : alignement sur le marché — vérifié dans Play Console)
-- **Gratuit** avec une limite quotidienne de dictées (**30 par jour** au moment de la rédaction).
+- **Gratuit** avec une limite quotidienne de dictées : **100 par jour pendant les 7 premiers jours après l'installation (« semaine de bienvenue »), puis 30 par jour** (passerelle 1.17, appli 2.77, depuis le [DATE DE LANCEMENT]). EN : « 100 dictations a day during your first week, then 30 a day. » ⛔ Jamais « illimité ».
 - **Premium** : **7,99 €/mois** ou **59,99 €/an** (≈ -37 %), **7 jours d'essai gratuit** sur les deux formules
   pour les nouveaux abonnés. Play affiche le prix en monnaie locale (USA 7,49 $/mois et 54,99 $/an hors taxes,
   UK 6,49 £ / 49,99 £, Canada 9,99 CAD / 77,99 CAD, Australie 11,99 AUD / 86,99 AUD) : en anglais écrire
