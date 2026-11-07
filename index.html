@@ -188,40 +188,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- v1.3.0 — Preconnect Google Play CDN for faster badge load -->
     <link rel="preconnect" href="https://play.google.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
-           DictoKey Landing Page v1.7.5 — 2026-05-29 GEO Phase 2.c (GroqBoard marketing lessons applied: "Free forever" hero reframe, +4 verified Play Store testimonials FR, +4 frontal FAQ Q/A anticipating objections in HTML and JSON-LD schema)
-           Base v1.7.4 — 2026-05-29 GEO hardening (robots.txt explicit AI bots + JSON-LD Organization + FAQPage + extended SoftwareApplication featureList/sameAs)
-           Base v1.7.3 — 2026-05-21 SEO refactor (pivot whisper article + noindex helpers + new pillar article best-voice-keyboard-android-2026)
-           Base v1.7.0 — Hero bulle flottante
+           DictoKey Landing Page v1.8.0 — 2026-11-07 refonte visuelle : methode unslop (Damir Sokolovsky, @heydamir, CC BY 4.0) + scene generee gpt-image-2 + finition animations Emil Kowalski. PC et smartphone verifies de 320 a 1920 px
+           Direction : vif, attentif, conversationnel · monde : la conversation du soir sur l'ecran du telephone
+           Ramp ink sombre, un seul accent violet (couleur reelle de l'app), Instrument Sans, grille 4 px
+           Base v1.7.5 — 2026-05-29
            ============================================ */
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #080810;
-            --bg-subtle: #0c0c18;
-            --bg-card: #10101a;
-            --bg-card-hover: #14142a;
-            --border: #1a1a2e;
-            --border-light: #252540;
-            --text: #e0e0e8;
-            --text-bright: #ffffff;
-            --text-dim: #8888a0;
-            --text-dimmer: #555570;
-            --accent: #7c6aff;
-            --accent-hover: #9080ff;
-            --accent-green: #00d4aa;
-            --accent-green-hover: #00e8bb;
-            --gradient-accent: linear-gradient(135deg, #7c6aff 0%, #00d4aa 100%);
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-mono: 'Space Mono', 'Fira Code', monospace;
-            --radius: 12px;
+            /* Ramp ink, sombre */
+            --bg-deep: #07080d;
+            --bg: #0b0d14;
+            --bg-subtle: #0e1018;
+            --bg-card: #11141c;
+            --bg-raised: #1a1e28;
+            --hairline: rgba(238,240,245,.08);
+            --hairline-strong: rgba(238,240,245,.14);
+            --text-bright: #eef0f5;
+            --text: #eef0f5;
+            --text-dim: #a3a9b8;
+            --text-dimmer: #7a8296;
+            /* Un accent : le violet de l'app (bouton Envoyer, bulle) */
+            --accent: #8f80ff;        /* accent en texte sur fond sombre (contraste >= 4.5) */
+            --accent-fill: #5b49e0;   /* accent en fond, texte blanc (contraste >= 4.5) */
+            --accent-fill-hover: #6655ea;
+            --positive: #4cc38a;
+            --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-out: cubic-bezier(0.23, 1, 0.32, 1);      /* Emil : entrees, appuis */
+            --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);   /* Emil : panneaux qui glissent */
+            --radius: 16px;
             --radius-sm: 8px;
-            --shadow: 0 4px 24px rgba(0,0,0,.4);
-            --shadow-glow: 0 0 40px rgba(124,106,255,.15);
         }
 
         html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -230,543 +232,452 @@
             font-family: var(--font-sans);
             background: var(--bg);
             color: var(--text);
+            font-size: 15px;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
 
-        a { color: var(--accent); text-decoration: none; transition: color .2s; }
-        a:hover { color: var(--accent-green); }
+        a { color: var(--accent); text-decoration: none; transition: color .15s var(--ease); }
+        a:hover { color: var(--text-bright); }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-        .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+        .icon { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
         /* ---- NAV ---- */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(8,8,16,.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(11,13,20,.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--hairline);
             height: 64px;
         }
         .nav-inner {
-            max-width: 1120px; margin: 0 auto; padding: 0 1.5rem;
-            height: 100%; display: flex; align-items: center; justify-content: space-between;
-            box-sizing: border-box; width: 100%;
+            max-width: 1120px; margin: 0 auto; padding: 0 24px;
+            height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+            width: 100%;
         }
         .nav-logo {
-            font-family: var(--font-mono); font-weight: 700; font-size: 1.3rem;
-            color: var(--accent); letter-spacing: -0.5px;
+            display: inline-flex; align-items: center; gap: 8px;
+            font-weight: 600; font-size: 17px; line-height: 1;
+            color: var(--text-bright);
         }
-        .nav-links { display: flex; align-items: center; gap: 2rem; }
-        .nav-links a { color: var(--text-dim); font-size: .9rem; font-weight: 500; }
+        .nav-logo:hover { color: var(--text-bright); }
+        .nav-logo .mark { width: 24px; height: 24px; }
+        .nav-links { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+        .nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; }
         .nav-links a:hover { color: var(--text-bright); }
         .nav-cta {
-            background: var(--accent); color: #fff !important; padding: .5rem 1.25rem;
-            border-radius: 50px; font-size: .85rem; font-weight: 600;
-            transition: background .2s, transform .15s;
+            background: var(--accent-fill); color: #fff !important; height: 36px; padding: 0 16px;
+            display: inline-flex; align-items: center;
+            border-radius: 8px; font-size: 14px; font-weight: 500;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+            transition: background-color .15s var(--ease), transform 160ms var(--ease-out);
         }
-        .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .nav-cta:hover { background: var(--accent-fill-hover); }
+        .nav-cta:active { transform: scale(.97); }
 
-        .nav-hamburger {
-            display: none; background: none; border: none; cursor: pointer; padding: 4px;
-        }
-        .nav-hamburger span {
-            display: block; width: 22px; height: 2px; background: var(--text);
-            margin: 5px 0; border-radius: 2px; transition: .3s;
-        }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { display: block; width: 20px; height: 2px; background: var(--text); margin: 4px 0; border-radius: 2px; transition: transform 200ms var(--ease-out), opacity 150ms var(--ease-out); }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
         /* ---- LANG SWITCHER ---- */
         .lang-switcher { position: relative; display: flex; align-items: center; }
-        .lang-btn { display: flex; align-items: center; gap: .35rem; background: rgba(124,106,255,.1); border: 1px solid var(--border-light); color: var(--text); padding: .35rem .7rem; border-radius: var(--radius-sm); font-size: .82rem; font-weight: 600; cursor: pointer; font-family: var(--font-sans); transition: border-color .2s, background .2s; }
-        .lang-btn:hover { border-color: var(--accent); background: rgba(124,106,255,.18); }
-        .lang-btn .lang-flag { font-size: 1.1rem; line-height: 1; }
-        .lang-btn .lang-arrow { font-size: .6rem; color: var(--text-dim); margin-left: .15rem; transition: transform .2s; }
+        .lang-btn { display: flex; align-items: center; gap: 4px; background: transparent; border: 1px solid var(--hairline-strong); color: var(--text-dim); height: 32px; padding: 0 12px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); transition: border-color .15s var(--ease), color .15s var(--ease); }
+        .lang-btn:hover { border-color: var(--text-dimmer); color: var(--text-bright); }
+        .lang-flag { display: none; }
+        .lang-btn .lang-arrow { font-size: 8px; color: var(--text-dimmer); margin-left: 4px; transition: transform .15s var(--ease); }
         .lang-switcher.open .lang-arrow { transform: rotate(180deg); }
-        .lang-dropdown { display: none; position: absolute; top: calc(100% + 6px); right: 0; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); box-shadow: var(--shadow); min-width: 160px; z-index: 1001; overflow: hidden; }
-        .lang-switcher.open .lang-dropdown { display: block; }
-        .lang-option { display: flex; align-items: center; gap: .6rem; padding: .6rem 1rem; font-size: .88rem; color: var(--text); cursor: pointer; transition: background .15s; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-sans); }
-        .lang-option:hover { background: rgba(124,106,255,.12); color: var(--text-bright); }
-        .lang-option.active { background: rgba(124,106,255,.18); color: var(--accent); }
-        .lang-option .lang-flag { font-size: 1.15rem; }
+        .lang-dropdown { display: block; visibility: hidden; opacity: 0; transform: scale(.97); transform-origin: top right; pointer-events: none;
+            transition: opacity 150ms var(--ease-out), transform 150ms var(--ease-out), visibility 0s linear 150ms;
+            position: absolute; top: calc(100% + 8px); right: 0; background: var(--bg-card); border: 1px solid var(--hairline-strong); border-radius: 12px; padding: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.4); min-width: 160px; z-index: 1001; }
+        .lang-switcher.open .lang-dropdown { visibility: visible; opacity: 1; transform: none; pointer-events: auto; transition: opacity 150ms var(--ease-out), transform 150ms var(--ease-out), visibility 0s; }
+        .lang-option { display: flex; align-items: center; height: 36px; padding: 0 12px; font-size: 14px; color: var(--text-dim); cursor: pointer; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-sans); border-radius: 8px; transition: background-color .15s var(--ease), color .15s var(--ease); }
+        .lang-option:hover { background: var(--bg-raised); color: var(--text-bright); }
+        .lang-option.active { background: var(--bg-raised); color: var(--text-bright); }
 
-        /* ---- HERO ---- */
-        .hero {
-            padding: 140px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        /* ---- HERO : split asymetrique, texte a gauche, l'app a droite ---- */
+        .hero { padding: 128px 0 96px; position: relative; isolation: isolate; }
+        /* La scène : un téléphone sur un rebord de fenêtre, à l'heure bleue (image générée, passe 8) */
+        .hero-scene {
+            position: absolute; z-index: -1; left: 0; right: 0; top: 0;
+            height: 800px; overflow: hidden; pointer-events: none;
         }
-        .hero::before {
-            content: '';
-            position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(124,106,255,.08) 0%, transparent 70%);
-            pointer-events: none;
+        .hero-scene img {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: 70% 40%;
         }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(124,106,255,.12); border: 1px solid rgba(124,106,255,.25);
-            padding: .35rem 1rem; border-radius: 50px;
-            font-size: .8rem; font-weight: 600; color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-family: var(--font-mono);
+        .hero-scene::after {
+            content: ""; position: absolute; inset: 0;
+            background:
+                linear-gradient(90deg, var(--bg) 0%, rgba(11,13,20,.9) 30%, rgba(11,13,20,.3) 58%, rgba(11,13,20,0) 78%),
+                linear-gradient(0deg, var(--bg) 0%, rgba(11,13,20,0) 38%),
+                linear-gradient(180deg, rgba(11,13,20,.7) 0%, rgba(11,13,20,0) 18%);
         }
-        /* v1.7.0 — badge NEW hero (gradient) */
-        .hero-badge-new {
-            background: var(--gradient-accent);
-            border-color: transparent;
-            color: #fff;
-            font-weight: 700;
-            box-shadow: 0 4px 16px rgba(124,106,255,.35);
+        .hero-grid {
+            display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 64px; row-gap: 0; align-items: start;
         }
-        /* v1.7.0 — hero video loop (single, legacy) */
-        .hero-video-loop video {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 32px;
-            box-shadow: var(--shadow-glow), 0 20px 60px rgba(0,0,0,.5);
-            display: block;
-            margin: 2rem auto 0;
-            background: var(--bg-card);
+        .hero-text { grid-column: 1; min-height: 560px; }
+        .hero-visual { grid-column: 2; grid-row: 2; margin-top: -184px; } /* remonte jusque sous le telephone de la scene */
+        .hero-text { text-align: left; }
+        .hero-new {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 14px; color: var(--text-dim); margin-bottom: 24px;
         }
-        /* v1.7.0 — paire de vidéos (bulle + IME) côte à côte desktop, stack mobile */
-        .hero-screenshot.hero-video-pair { max-width: 680px; border: none; box-shadow: none; overflow: visible; }
-        .hero-video-pair {
-            /* v2.74 (22/10) : le bloc portait le max-width 380 px de .hero-screenshot -> les 2 captures s'empilaient sur PC */
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem auto 0;
-        }
-        .hero-video-item {
-            flex: 0 1 300px;
-            margin: 0;
-            text-align: center;
-        }
-        .hero-video-item video, .hero-video-item img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 28px;
-            box-shadow: var(--shadow-glow), 0 16px 48px rgba(0,0,0,.5);
-            display: block;
-            margin: 0 auto;
-            background: var(--bg-card);
-        }
-        .hero-video-item figcaption {
-            margin-top: .75rem;
-            font-size: .85rem;
-            font-weight: 600;
-            color: var(--text-dim);
-            font-family: var(--font-mono);
-        }
-        @media (max-width: 640px) {
-            .hero-video-pair { gap: 1.5rem; }
-            .hero-video-item { flex: 0 1 260px; }
-            .hero-video-item video, .hero-video-item img { max-width: 260px; border-radius: 24px; }
-            /* smartphone : la bulle seule (la section « 2 façons de dicter » présente le clavier) — un écran de défilement en moins avant l'appel à télécharger */
-            .hero-video-item + .hero-video-item { display: none; }
-        }
-        /* v1.7.0 — badge NEW sur feature-card "Floating bubble" */
-        .feature-card { position: relative; }
-        .guide-card { display:block; text-decoration:none; color:inherit; text-align:left; }
-        .guide-card:hover h3 { color: var(--accent-green); }
-        @media (max-width: 600px) { .feature-card.guide-card { padding: 14px 20px; } .feature-card.guide-card p { display: none; } #guides .features-grid { gap: 10px; } }
-        .feature-badge {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            font-size: .7rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: var(--gradient-accent);
-            color: #fff;
-            letter-spacing: .5px;
-            box-shadow: 0 4px 12px rgba(124,106,255,.4);
-            z-index: 2;
-        }
+        .hero-new .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            font-weight: 800; line-height: 1.1;
+            font-size: 60px; font-weight: 500; line-height: 1.04;
+            letter-spacing: -0.03em;
             color: var(--text-bright);
-            margin-bottom: 1.25rem;
-            letter-spacing: -1px;
+            margin-bottom: 24px;
         }
-        .hero h1 .gradient-text {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .hero h1 .soft { color: var(--text-dim); }
         .hero-sub {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-dim); max-width: 600px; margin: 0 auto 2rem;
-            line-height: 1.7;
+            font-size: 18px; line-height: 28px; color: var(--text-dim);
+            max-width: 36rem; margin-bottom: 32px;
         }
-        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: .6rem;
-            background: var(--accent); color: #fff; padding: .85rem 2rem;
-            border-radius: 50px; font-size: 1rem; font-weight: 600;
-            transition: all .2s; border: none; cursor: pointer;
-            box-shadow: 0 4px 20px rgba(124,106,255,.3);
-        }
-        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); color: #fff; box-shadow: 0 6px 30px rgba(124,106,255,.4); }
-        .btn-primary svg { width: 22px; height: 22px; }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: .5rem;
-            background: transparent; color: var(--text); padding: .85rem 2rem;
-            border-radius: 50px; font-size: 1rem; font-weight: 500;
-            border: 1px solid var(--border-light); transition: all .2s; cursor: pointer;
-        }
-        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-        .hero-note { font-size: .85rem; color: var(--text-dim); margin-top: .75rem; }
-        .hero-note strong { color: var(--accent-green); }
-
-        /* v1.3.0 — Hero logo + Google Play badge (mobile-first) */
-        .hero-logo {
-            display: flex; justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-        .hero-logo svg {
-            width: 96px; height: 96px;
-            filter: drop-shadow(0 8px 32px rgba(124,106,255,.35));
-        }
+        .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
         .btn-playstore {
             display: inline-flex; align-items: center; justify-content: center;
-            padding: 0; border: 0;
-            transition: transform .15s ease;
-            line-height: 0;
-            /* Fixed box to avoid CLS when badge src changes per locale */
-            width: 228px; height: 76px;
-            /* Fallback background matching the official Google Play badge (black) */
-            background: #000;
-            border-radius: 10px;
-            color: #fff; font-weight: 700; font-size: 1rem;
-            text-decoration: none;
+            padding: 0; border: 0; line-height: 0;
+            width: 204px; height: 68px;
+            background: #000; border-radius: 12px;
+            color: #fff; font-weight: 600; font-size: 16px;
             overflow: hidden;
+            transition: opacity .15s var(--ease), transform 160ms var(--ease-out);
         }
-        .btn-playstore:hover { transform: translateY(-2px) scale(1.03); }
-        /* v1.5.0 — Pulse animation on Play Store badge */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(124,106,255,.4); }
-            50% { box-shadow: 0 0 20px 6px rgba(124,106,255,.25); }
+        .btn-playstore:hover { opacity: .88; }
+        .btn-playstore:active { transform: scale(.97); }
+        .btn-playstore img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+        .hero-qr { display: flex; align-items: center; gap: 12px; }
+        .hero-qr .qr-box { background: #fff; padding: 4px; border-radius: 8px; line-height: 0; }
+        .hero-qr img { width: 60px; height: 60px; display: block; }
+        .hero-qr p { font-size: 13px; line-height: 20px; color: var(--text-dimmer); max-width: 128px; }
+        .hero-meta { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+        .hero-proof-always { font-size: 14px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; }
+        .hero-proof-always .stars { color: #e6b84f; font-size: 13px; letter-spacing: 1px; }
+        .hero-proof-always strong { color: var(--text-bright); font-weight: 500; font-variant-numeric: tabular-nums; }
+        .hero-note { font-size: 14px; color: var(--text-dim); }
+        .hero-note strong { color: var(--text-bright); font-weight: 500; }
+        .hero-note a { display: inline-flex; align-items: center; gap: 8px; color: var(--text-dim); }
+        .hero-note a:hover { color: var(--text-bright); }
+        .hero-proof { display: none; }
+
+        /* Le moment : l'app reelle, deux ecrans poses sur une surface calme */
+        .hero-visual {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--hairline);
+            border-radius: 20px;
+            padding: 32px 24px 24px;
         }
-        .btn-playstore { animation: pulse-glow 2.5s ease-in-out infinite; }
-        .cta-label { font-size: .95rem; color: var(--text-dim); margin-bottom: .5rem; font-weight: 500; letter-spacing: .02em; }
-        .btn-playstore img {
-            display: block; width: 100%; height: 100%;
-            object-fit: cover; /* fills the box, no violet gaps on aspect-ratio mismatch */
-            border-radius: 10px;
+        .hero-video-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+        .hero-video-item { margin: 0; }
+        .hero-video-item + .hero-video-item { margin-top: 48px; }
+        .hero-video-item img {
+            width: 100%; height: auto; display: block;
+            border-radius: 20px;
+            border: 1px solid var(--hairline-strong);
+            box-shadow: 0 16px 40px rgba(0,0,0,.45);
+            background: var(--bg-raised);
         }
+        .hero-video-item figcaption {
+            margin-top: 12px; font-size: 13px; color: var(--text-dimmer);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .hero-video-item figcaption .icon { width: 16px; height: 16px; }
+
         /* v1.3.0 — Testimonials hidden by default (FR-only). Shown via JS when lang=fr. */
         #testimonialsSection { display: none; }
-        /* Social proof — always visible (v1.6.0) */
-        .hero-proof-always {
-            display: block;
-            margin: .75rem auto 1rem;
-            font-size: .95rem; color: var(--text-dim);
-            text-align: center;
-        }
-        .hero-proof-always .stars { color: #ffcc33; font-size: 1.1rem; letter-spacing: 2px; }
-        .hero-proof-always strong { color: var(--text-bright); }
-        .hero-proof-always a { color: var(--accent); font-weight: 600; }
-        /* Legacy .hero-proof class (kept for JS compat) */
-        .hero-proof { display: none; }
-        .hero-proof .stars { color: #ffcc33; font-size: 1.1rem; letter-spacing: 2px; }
-        .hero-proof strong { color: var(--text-bright); }
 
-        /* v1.6.0 — Sticky CTA mobile (appears on scroll) */
+        /* Sticky CTA mobile */
         .sticky-cta {
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-            background: rgba(8,8,16,.95);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border-top: 1px solid var(--border);
-            padding: 10px 1rem;
+            background: rgba(11,13,20,.96);
+            border-top: 1px solid var(--hairline);
+            padding: 8px 16px;
             display: flex; align-items: center; justify-content: center; gap: 12px;
             transform: translateY(100%);
-            transition: transform .3s ease;
+            transition: transform 200ms var(--ease-out);
         }
-        .sticky-cta.visible { transform: translateY(0); }
-        .sticky-cta .btn-playstore { width: 180px; height: 60px; animation: none; }
+        .sticky-cta.visible { transform: translateY(0); transition: transform 280ms var(--ease-drawer); }
+        .sticky-cta .btn-playstore { width: 168px; height: 56px; }
         .sticky-cta .btn-playstore img { border-radius: 8px; }
         @media (min-width: 769px) { .sticky-cta { display: none; } }
 
-        /* App screenshot */
-        .hero-screenshot {
-            max-width: 380px; margin: 2rem auto 0;
-            border-radius: var(--radius); overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-glow);
-        }
-        .hero-screenshot img { display: block; width: 100%; height: auto; }
-
-        /* Video embed */
-        .hero-video {
-            max-width: 720px; margin: 3rem auto 0;
-            border-radius: var(--radius); overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-glow);
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-        }
-        .hero-video iframe {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; border: 0;
-        }
-
         /* ---- SECTIONS ---- */
-        section { padding: 80px 0; }
+        section { padding: 96px 0; }
+        .section-head { max-width: 640px; margin-bottom: 48px; text-align: left; }
         .section-label {
-            font-family: var(--font-mono); font-size: .8rem; font-weight: 700;
-            color: var(--accent); text-transform: uppercase; letter-spacing: 2px;
-            margin-bottom: .75rem;
+            font-size: 14px; font-weight: 500; color: var(--accent);
+            margin-bottom: 12px;
         }
         .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            font-weight: 700; color: var(--text-bright);
-            margin-bottom: 1rem; letter-spacing: -.5px;
+            font-size: 40px; line-height: 1.12; font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--text-bright);
+            margin-bottom: 16px;
         }
         .section-desc {
-            color: var(--text-dim); max-width: 560px;
-            margin: 0 auto 3rem; font-size: 1.05rem; line-height: 1.7;
+            color: var(--text-dim); max-width: 36rem;
+            font-size: 17px; line-height: 28px;
         }
-        .text-center { text-align: center; }
+        .text-center { text-align: left; }
 
-        /* ---- FEATURES ---- */
-        .features-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
+        /* ---- CARTES ---- */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .feature-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2rem 1.75rem;
-            transition: all .3s;
+            position: relative;
+            background: var(--bg-card); border: 1px solid var(--hairline);
+            border-radius: var(--radius); padding: 24px;
+            text-align: left;
+            transition: border-color .15s var(--ease), background-color .15s var(--ease);
         }
-        .feature-card:hover {
-            border-color: var(--accent);
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
-        }
-        .feature-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .feature-card h3 {
-            font-size: 1.1rem; font-weight: 600; color: var(--text-bright);
-            margin-bottom: .6rem;
-        }
-        .feature-card p { color: var(--text-dim); font-size: .92rem; line-height: 1.6; }
-
-        /* ---- HOW IT WORKS ---- */
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 1rem; }
-        .step { text-align: center; position: relative; }
-        .step-num {
-            width: 56px; height: 56px; border-radius: 50%;
-            background: rgba(124,106,255,.1); border: 2px solid var(--accent);
+        .feature-icon {
             display: inline-flex; align-items: center; justify-content: center;
-            font-family: var(--font-mono); font-weight: 700; font-size: 1.3rem;
-            color: var(--accent); margin-bottom: 1.25rem;
+            width: 36px; height: 36px; border-radius: 10px;
+            background: var(--bg-raised); color: var(--text-dim);
+            margin-bottom: 20px;
         }
-        .step h3 {
-            font-size: 1.05rem; font-weight: 600; color: var(--text-bright);
-            margin-bottom: .5rem;
-        }
-        .step p { color: var(--text-dim); font-size: .92rem; }
-        .step-connector {
-            display: none; position: absolute; top: 28px; right: -1rem;
-            width: calc(2rem); height: 2px; background: var(--border-light);
-        }
+        .feature-card h3 { font-size: 17px; line-height: 24px; font-weight: 500; color: var(--text-bright); margin-bottom: 8px; }
+        .feature-card p { color: var(--text-dim); font-size: 15px; line-height: 24px; }
+        .feature-tag { font-size: 13px; font-weight: 500; color: var(--accent); margin-left: 8px; }
 
-        /* ---- PRICING ---- */
-        .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto; }
+        /* La bulle prend la place qu'elle merite : carte large, les deux autres plus etroites */
+        .ways-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+        .ways-grid .feature-card:first-child { background: var(--bg-raised); border-color: var(--hairline-strong); }
+        .ways-grid .feature-card:first-child .feature-icon { background: var(--accent-fill); color: #fff; }
+
+        .guide-card { display: block; text-decoration: none; color: inherit; }
+        .guide-card:hover { border-color: var(--hairline-strong); background: var(--bg-raised); }
+        .guide-card:hover h3 { color: var(--text-bright); }
+        .guide-card h3 { font-size: 16px; }
+        .guides-all { margin-top: 24px; font-size: 15px; }
+        .guides-all a { color: var(--text-dim); }
+        .guides-all a:hover { color: var(--text-bright); }
+        @media (max-width: 600px) { .feature-card.guide-card { padding: 16px 20px; } .feature-card.guide-card p { display: none; } #guides .features-grid { gap: 8px; } }
+
+        /* ---- COMMENT CA MARCHE ---- */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .step { text-align: left; border-top: 1px solid var(--hairline-strong); padding-top: 24px; }
+        /* Signature : la bulle — le numero d'etape est une petite bulle ronde */
+        .step-num {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--bg-raised); border: 1px solid var(--hairline-strong);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-weight: 500; font-size: 15px; font-variant-numeric: tabular-nums;
+            color: var(--text-bright); margin-bottom: 20px;
+        }
+        .step h3 { font-size: 17px; line-height: 24px; font-weight: 500; color: var(--text-bright); margin-bottom: 8px; }
+        .step p { color: var(--text-dim); font-size: 15px; line-height: 24px; }
+
+        /* ---- WINDOWS ---- */
+        .win-row { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 48px; align-items: end; }
+        .win-row .section-head { margin-bottom: 0; }
+
+        /* ---- BOUTONS ---- */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent-fill); color: #fff; height: 48px; padding: 0 20px;
+            border-radius: 10px; font-size: 15px; font-weight: 500;
+            border: none; cursor: pointer;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+            transition: background-color .15s var(--ease), transform 160ms var(--ease-out);
+        }
+        .btn-primary:hover { background: var(--accent-fill-hover); color: #fff; }
+        .btn-primary:active { transform: scale(.97); }
+        .btn-primary svg { width: 18px; height: 18px; }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--bg-raised); color: var(--text-bright); height: 48px; padding: 0 20px;
+            border-radius: 10px; font-size: 15px; font-weight: 500;
+            border: 1px solid var(--hairline-strong); cursor: pointer;
+            transition: border-color .15s var(--ease), transform 160ms var(--ease-out);
+        }
+        .btn-secondary:hover { border-color: var(--text-dimmer); color: var(--text-bright); }
+        .btn-secondary:active { transform: scale(.97); }
+
+        /* ---- TARIFS ---- */
+        .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
         .price-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2.5rem 2rem;
-            transition: all .3s; position: relative;
+            background: var(--bg-card); border: 1px solid var(--hairline);
+            border-radius: var(--radius); padding: 32px;
+            position: relative; text-align: left;
+            display: flex; flex-direction: column;
         }
-        .price-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 0 40px rgba(124,106,255,.12);
-        }
+        .price-card.featured { background: var(--bg-raised); border-color: rgba(143,128,255,.4); }
         .price-card.featured::before {
-            content: var(--popular-text, 'Most Popular'); position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: #fff; padding: .3rem 1rem;
-            border-radius: 50px; font-size: .75rem; font-weight: 600;
+            content: var(--popular-text, 'Most Popular'); position: absolute; top: 32px; right: 32px;
+            font-size: 13px; font-weight: 500; color: var(--accent);
         }
-        .price-card h3 {
-            font-size: 1.2rem; font-weight: 600; color: var(--text-bright); margin-bottom: .5rem;
-        }
+        .price-card h3 { font-size: 17px; font-weight: 500; color: var(--text-dim); margin-bottom: 16px; }
         .price-amount {
-            font-size: 2.5rem; font-weight: 800; color: var(--text-bright);
-            font-family: var(--font-mono); margin-bottom: .25rem;
+            font-size: 40px; line-height: 1; font-weight: 500; color: var(--text-bright);
+            font-variant-numeric: tabular-nums; letter-spacing: -0.02em; margin-bottom: 8px;
         }
-        .price-amount .period { font-size: 1rem; font-weight: 400; color: var(--text-dim); }
-        .price-alt { font-size: .85rem; color: var(--text-dim); margin-bottom: 1.5rem; }
-        .price-features { list-style: none; margin-bottom: 2rem; }
+        .price-amount .period { font-size: 15px; font-weight: 400; color: var(--text-dim); letter-spacing: 0; margin-left: 4px; }
+        .price-alt { font-size: 14px; color: var(--text-dim); margin-bottom: 24px; font-variant-numeric: tabular-nums; }
+        .price-features { list-style: none; margin-bottom: 32px; border-top: 1px solid var(--hairline); padding-top: 16px; flex: 1; }
         .price-features li {
-            padding: .5rem 0; color: var(--text); font-size: .92rem;
-            display: flex; align-items: flex-start; gap: .6rem;
+            position: relative; padding: 8px 0 8px 26px; color: var(--text); font-size: 15px; line-height: 24px;
         }
-        .price-features .check { color: var(--accent-green); font-weight: 700; flex-shrink: 0; }
-        .price-features .dim { color: var(--text-dimmer); }
-        /* v1.7.0 — highlight Premium-only unlocks */
-        .price-features .premium-unlock {
-            background: linear-gradient(90deg, rgba(124,106,255,.12), transparent 90%);
-            border-left: 3px solid var(--accent);
-            padding-left: .75rem;
-            margin: .25rem -.75rem;
-            border-radius: 4px;
+        .price-features li::before {
+            content: ''; position: absolute; left: 0; top: 8px; width: 16px; height: 24px;
+            background: no-repeat center / 16px 16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8296' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
         }
-        .price-features .premium-unlock strong {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .price-features .premium-unlock::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238f80ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
         }
-        .price-features .unlock-icon {
-            font-size: 1.05rem;
-            flex-shrink: 0;
-        }
-        .price-features .unlock-note {
-            color: var(--text-dim);
-            font-size: .85em;
-            font-style: italic;
-            margin-left: .2rem;
-        }
-        .price-features .premium-included {
-            opacity: .75;
-            font-size: .92em;
-        }
+        .price-features .check { display: none; }
+        .price-features .premium-unlock strong { color: var(--text-bright); font-weight: 600; }
+        .price-features .unlock-note { color: var(--text-dimmer); font-size: 14px; font-style: normal; margin-left: 4px; }
+        .price-features .premium-included { color: var(--text-dim); }
         .btn-pricing {
-            display: block; width: 100%; text-align: center; padding: .85rem;
-            border-radius: 50px; font-weight: 600; font-size: .95rem;
-            transition: all .2s; cursor: pointer; border: none;
+            display: flex; align-items: center; justify-content: center; width: 100%; height: 48px;
+            border-radius: 10px; font-weight: 500; font-size: 15px;
+            cursor: pointer; border: none;
+            transition: background-color .15s var(--ease), border-color .15s var(--ease), transform 160ms var(--ease-out);
         }
-        .btn-pricing.primary { background: var(--accent); color: #fff; }
-        .btn-pricing.primary:hover { background: var(--accent-hover); color: #fff; }
-        .btn-pricing.secondary { background: transparent; border: 1px solid var(--border-light); color: var(--text); }
-        .btn-pricing.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        .pricing-note { text-align: center; margin-top: 1.5rem; color: var(--text-dim); font-size: .9rem; }
-        .pricing-note strong { color: var(--accent-green); }
+        .btn-pricing:active { transform: scale(.97); }
+        .btn-pricing.primary { background: var(--accent-fill); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
+        .btn-pricing.primary:hover { background: var(--accent-fill-hover); color: #fff; }
+        .btn-pricing.secondary { background: transparent; border: 1px solid var(--hairline-strong); color: var(--text-bright); }
+        .btn-pricing.secondary:hover { border-color: var(--text-dimmer); color: var(--text-bright); }
+        .pricing-note { margin-top: 24px; color: var(--text-dim); font-size: 14px; }
+        .pricing-note strong { color: var(--text-bright); font-weight: 500; }
 
-        /* ---- TESTIMONIALS ---- */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; justify-items: center; }
+        /* ---- TEMOIGNAGES : colonnes, hauteurs naturelles ---- */
+        .testimonials-grid { columns: 3 300px; column-gap: 16px; }
         .testimonial-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2rem 1.75rem; max-width: 420px; width: 100%;
+            break-inside: avoid; margin-bottom: 16px;
+            background: var(--bg-card); border: 1px solid var(--hairline);
+            border-radius: var(--radius); padding: 24px; text-align: left;
         }
-        .testimonial-stars { color: #fbbf24; font-size: .9rem; margin-bottom: 1rem; letter-spacing: 2px; }
-        .testimonial-card blockquote {
-            color: var(--text); font-size: .95rem; line-height: 1.7;
-            margin-bottom: 1.25rem; font-style: italic;
-        }
-        .testimonial-author { font-size: .85rem; color: var(--text-dim); }
-        .testimonial-author strong { color: var(--text); font-style: normal; }
-        .testimonial-source { font-size: .75rem; color: var(--text-dimmer); margin-top: .5rem; }
-
-        /* ---- VIDEOS ---- */
-        .videos-scroll {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-        }
-        .video-thumb {
-            border-radius: var(--radius-sm); overflow: hidden;
-            border: 1px solid var(--border); transition: all .3s;
-            position: relative; padding-bottom: 56.25%; height: 0;
-        }
-        .video-thumb:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .video-thumb iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
+        .testimonial-stars { color: #e6b84f; font-size: 13px; margin-bottom: 12px; letter-spacing: 1px; }
+        .testimonial-card blockquote { color: var(--text); font-size: 15px; line-height: 24px; margin-bottom: 16px; font-style: normal; }
+        .testimonial-author { font-size: 14px; color: var(--text-dim); }
+        .testimonial-author strong { color: var(--text-bright); font-weight: 500; }
+        .testimonial-source { font-size: 13px; color: var(--text-dimmer); margin-top: 4px; }
 
         /* ---- FAQ ---- */
-        .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
+        .faq-list { max-width: 720px; }
+        .faq-item { border-bottom: 1px solid var(--hairline); }
         .faq-question {
             width: 100%; text-align: left; background: none; border: none;
-            color: var(--text-bright); font-size: 1.05rem; font-weight: 600;
-            padding: 1.25rem 0; cursor: pointer;
+            color: var(--text-bright); font-size: 16px; font-weight: 500; line-height: 24px;
+            padding: 20px 0; cursor: pointer; gap: 16px;
             display: flex; justify-content: space-between; align-items: center;
             font-family: var(--font-sans);
+            transition: color .15s var(--ease);
         }
-        .faq-question:hover { color: var(--accent); }
-        .faq-arrow {
-            font-size: 1.2rem; transition: transform .3s; color: var(--text-dim); flex-shrink: 0;
-        }
+        .faq-question:hover { color: var(--text-dim); }
+        .faq-arrow { font-size: 18px; transition: transform .2s var(--ease); color: var(--text-dimmer); flex-shrink: 0; }
         .faq-item.open .faq-arrow { transform: rotate(45deg); }
-        .faq-answer {
-            max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s;
-        }
-        .faq-item.open .faq-answer { max-height: 200px; }
-        .faq-answer p {
-            color: var(--text-dim); font-size: .95rem; line-height: 1.7;
-            padding-bottom: 1.25rem;
-        }
+        .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 160ms var(--ease-out); }
+        .faq-answer > p { overflow: hidden; min-height: 0; opacity: 0; transition: opacity 120ms var(--ease-out); }
+        .faq-item.open .faq-answer { grid-template-rows: 1fr; transition-duration: 220ms; }
+        .faq-item.open .faq-answer > p { opacity: 1; transition: opacity 200ms var(--ease-out) 40ms; }
+        .faq-answer p { color: var(--text-dim); font-size: 15px; line-height: 24px; padding-bottom: 0; }
+        .faq-answer > p::after { content: ""; display: block; height: 20px; }
 
         /* ---- CTA FINAL ---- */
-        .cta-final {
-            text-align: center; padding: 80px 0;
-            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-subtle) 100%);
-            position: relative; overflow: hidden;
-        }
-        .cta-final::before {
-            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 600px; height: 400px;
-            background: radial-gradient(circle, rgba(0,212,170,.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .cta-final h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700;
-            color: var(--text-bright); margin-bottom: 1rem;
-        }
-        .cta-final p { color: var(--text-dim); margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta-final { padding: 96px 0; border-top: 1px solid var(--hairline); }
+        .cta-final .container { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 48px; align-items: center; }
+        .cta-final h2, .cta-final p { grid-column: 1; }
+        .cta-final .hero-ctas { grid-column: 2; grid-row: 1 / span 2; }
+        .cta-final h2 { font-size: 40px; line-height: 1.12; font-weight: 500; letter-spacing: -0.02em; color: var(--text-bright); margin-bottom: 12px; }
+        .cta-final p { color: var(--text-dim); font-size: 17px; line-height: 28px; }
+        .cta-final .hero-ctas { display: flex; }
 
         /* ---- FOOTER ---- */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2.5rem 0; text-align: center;
-        }
-        .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 1rem; }
-        .footer-links a { color: var(--text-dim); font-size: .9rem; }
-        .footer-links a:hover { color: var(--accent); }
-        .footer-copy { color: var(--text-dimmer); font-size: .85rem; }
+        footer { border-top: 1px solid var(--hairline); padding: 32px 0; }
+        footer .container { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-dim); font-size: 14px; }
+        .footer-links a:hover { color: var(--text-bright); }
+        .footer-copy { color: var(--text-dimmer); font-size: 13px; font-variant-numeric: tabular-nums; }
+        .footer-copy #visitCount { color: var(--text-dimmer) !important; }
 
-        /* ---- ANIMATIONS ---- */
-        .fade-in {
-            opacity: 0; transform: translateY(24px);
-            transition: opacity .6s ease, transform .6s ease;
+        /* ---- MOUVEMENT REDUIT (Emil) : garder les fondus, retirer les deplacements ---- */
+        @media (prefers-reduced-motion: reduce) {
+            .nav-cta:active, .btn-playstore:active, .btn-primary:active, .btn-secondary:active, .btn-pricing:active { transform: none; }
+            .lang-dropdown, .lang-switcher.open .lang-dropdown, .nav-links, .nav-links.open { transform: none !important; }
+            .faq-answer, .faq-item.open .faq-answer { transition: none; }
+            .sticky-cta { transform: none; opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+            .sticky-cta.visible { transform: none; opacity: 1; pointer-events: auto; transition: opacity 200ms ease; }
+            .nav-hamburger span { transition: opacity 150ms ease; }
         }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ---- MOUVEMENT : une seule entree, le visuel du hero ---- */
+        .fade-in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-visual { animation: rise .5s var(--ease) both .08s; }
+            @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        }
 
         /* ---- RESPONSIVE ---- */
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero-text { min-height: 0; }
+            .hero-visual { grid-column: 1; grid-row: auto; margin-top: 0; }
+            .hero h1 { font-size: 48px; }
+            .ways-grid { grid-template-columns: 1fr 1fr; }
+            .ways-grid .feature-card:first-child { grid-column: 1 / -1; }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonials-grid { grid-template-columns: 1fr; }
-            .videos-scroll { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .nav-links.open {
-                display: flex; flex-direction: column; position: absolute;
-                top: 64px; left: 0; right: 0; background: rgba(8,8,16,.95);
-                backdrop-filter: blur(20px); padding: 1.5rem;
-                border-bottom: 1px solid var(--border); gap: 1rem;
+            .nav-links {
+                display: flex; flex-direction: column; align-items: flex-start; position: absolute;
+                top: 64px; left: 0; right: 0; background: var(--bg-deep); padding: 24px;
+                border-bottom: 1px solid var(--hairline); gap: 16px;
+                visibility: hidden; opacity: 0; transform: translateY(-8px); pointer-events: none;
+                transition: opacity 150ms var(--ease-out), transform 150ms var(--ease-out), visibility 0s linear 150ms;
             }
+            .nav-links.open { visibility: visible; opacity: 1; transform: none; pointer-events: auto;
+                transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), visibility 0s; }
             .nav-hamburger { display: block; }
-            .lang-switcher { order: -1; }
-            .lang-dropdown { right: auto; left: 0; }
-            .hero { padding: 72px 0 32px; }
-            .hero-logo svg { width: 56px; height: 56px; }
-            .btn-playstore img { height: 66px; }
-            /* QR code useless on mobile — user is already on phone */
+            .lang-switcher { order: -1; margin-left: auto; }
+            .lang-dropdown { right: 0; left: auto; transform-origin: top right; } /* v1.8.0 : le selecteur est a droite (margin-left:auto), le menu s'ouvre vers la gauche */
+            .nav-logo { order: -2; }
+            .hero { padding: 104px 0 48px; }
+            /* Mobile : derriere le texte, la scene serait illisible. Elle devient le fond du panneau produit. */
+            .hero-scene { display: none; }
+            .hero-text { min-height: 0; }
+            .hero-visual {
+                grid-column: 1; margin-top: 40px;
+                background:
+                    linear-gradient(180deg, rgba(11,13,20,.1) 0%, rgba(11,13,20,.35) 55%, rgba(11,13,20,.85) 100%),
+                    url(assets/hero-scene/dusk-sill.webp) 72% 38% / cover var(--bg-card);
+            }
+            .hero h1 { font-size: 40px; line-height: 1.06; }
+            .hero-sub { font-size: 17px; line-height: 26px; margin-bottom: 24px; }
             .hero-qr { display: none; }
-            .features-grid { grid-template-columns: 1fr; }
-            .steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            /* v1.8.0 : sur smartphone, le badge Play passe juste sous le titre (visible sans defiler des 320x640) */
+            .hero-text { display: flex; flex-direction: column; }
+            .hero-actions { order: 1; margin-bottom: 24px; }
+            .hero-sub { order: 2; }
+            .hero-meta { order: 3; }
+            .hero-visual { padding: 20px 16px 16px; border-radius: 16px; }
+            .hero-video-pair { grid-template-columns: minmax(0, 260px); justify-content: center; }
+            /* smartphone : la bulle seule (la section « 2 facons » presente le clavier) */
+            .hero-video-item + .hero-video-item { display: none; }
+            section { padding: 64px 0; }
+            .section-title, .cta-final h2 { font-size: 30px; }
+            .section-head { margin-bottom: 32px; }
+            .features-grid, .ways-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; gap: 24px; }
             .pricing-grid { grid-template-columns: 1fr; }
-            .videos-scroll { grid-template-columns: 1fr; }
+            .win-row, .cta-final .container { grid-template-columns: 1fr; gap: 24px; }
+            .cta-final .hero-ctas { grid-column: 1; grid-row: auto; }
+            .price-card { padding: 24px; }
+            .price-card.featured::before { top: 24px; right: 24px; }
         }
     </style>
 </head>
@@ -775,7 +686,7 @@
 <!-- ====== NAV ====== -->
 <nav>
     <div class="nav-inner">
-        <a href="#" class="nav-logo">DictoKey</a>
+        <a href="#" class="nav-logo"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#5b49e0"/><g fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" transform="translate(5.4 5) scale(.55)"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></g></svg>DictoKey</a>
         <div class="nav-links" id="navLinks">
             <a href="#features" data-i18n="nav_features">Features</a>
             <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
@@ -809,94 +720,76 @@
 
 <!-- ====== HERO ====== -->
 <section class="hero">
-    <div class="container">
-        <!-- Logo DictoKey (v1.3.0) -->
-        <div class="hero-logo">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DictoKey logo">
-                <defs>
-                    <linearGradient id="dk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#7c6aff"/>
-                        <stop offset="100%" stop-color="#00d4aa"/>
-                    </linearGradient>
-                </defs>
-                <rect x="6" y="6" width="108" height="108" rx="26" fill="#10101a" stroke="url(#dk-grad)" stroke-width="2"/>
-                <g transform="translate(60 50)">
-                    <rect x="-14" y="-24" width="28" height="44" rx="14" fill="url(#dk-grad)"/>
-                    <path d="M -24 0 Q -24 26 0 26 Q 24 26 24 0" stroke="url(#dk-grad)" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <line x1="0" y1="26" x2="0" y2="38" stroke="url(#dk-grad)" stroke-width="5" stroke-linecap="round"/>
-                </g>
-            </svg>
-        </div>
+    <div class="hero-scene"><img src="assets/hero-scene/dusk-sill.webp" alt="" width="1536" height="864" fetchpriority="high" decoding="async"></div>
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <p class="hero-new"><span class="dot"></span><span data-i18n="hero_badge">New · Drag the bubble to translate or correct</span></p>
+            <h1><span data-i18n="hero_title_1">Dictate anywhere,</span><br><span class="soft" data-i18n="hero_title_2">with one tap on the bubble</span></h1>
+            <p class="hero-sub" data-i18n="hero_sub">DictoKey pops a voice bubble over your Android apps.</p>
 
-        <span class="hero-badge hero-badge-new" data-i18n="hero_badge">✨ NEW — Drag the bubble to translate or correct</span>
-        <h1><span data-i18n="hero_title_1">Dictate anywhere,</span><br><span class="gradient-text" data-i18n="hero_title_2">with one tap on the bubble.</span></h1>
-
-        <!-- Social proof (v1.6.0: remontée above CTA pour visibilité mobile) -->
-        <div class="hero-proof-always" id="heroProof">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <strong>4.9</strong>
-            <span data-i18n="hero_proof_label">on Google Play</span>
-        </div>
-
-        <!-- Badge Google Play (v1.6.0: above-the-fold, no fade-in, no cta-label) -->
-        <div class="hero-ctas">
-            <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dsite%26utm_content%3Dhero" class="btn-playstore" id="btnPlaystore" target="_blank" rel="noopener" data-i18n-aria="hero_btn_primary" aria-label="Get it on Google Play">
+            <div class="hero-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dsite%26utm_content%3Dhero" class="btn-playstore" id="btnPlaystore" target="_blank" rel="noopener" data-i18n-aria="hero_btn_primary" aria-label="Get it on Google Play">
                 <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" id="playstoreBadge" alt="Get it on Google Play" width="228" height="76" loading="eager" decoding="async">
             </a>
-        </div>
-        <p class="hero-note" data-i18n="hero_note"><strong>Free forever</strong> — 30 dictations/day &middot; No card &middot; No account &middot; Premium optional</p>
-        <p class="hero-note" style="margin-top:.4rem"><a href="windows/?utm_source=home-hero" data-i18n="hero_also_windows">💻 Also on Windows &rarr;</a></p>
-
-        <!-- Captures de l'app (v2.74.10, 22/10/2026) : bulle et clavier vocal côte à côte -->
-        <div class="hero-screenshot hero-video-pair fade-in">
-            <figure class="hero-video-item">
-                <picture>
-                    <source srcset="assets/hero-v2.74/hero-bubble.webp" type="image/webp">
-                    <img src="assets/hero-v2.74/hero-bubble.png" alt="DictoKey floating bubble over a chat: tap the mic to dictate, the dictated reply is already in the message field" width="540" height="1014" decoding="async">
-                </picture>
-                <figcaption data-i18n="hero_caption_bubble">🫧 Floating bubble</figcaption>
-            </figure>
-            <figure class="hero-video-item">
-                <picture>
-                    <source srcset="assets/hero-v2.74/hero-keyboard.webp" type="image/webp">
-                    <img src="assets/hero-v2.74/hero-keyboard.png" alt="DictoKey voice keyboard with large Translate and Stop buttons while listening" width="540" height="1014" loading="lazy" decoding="async">
-                </picture>
-                <figcaption data-i18n="hero_caption_ime">⌨️ Voice IME keyboard</figcaption>
-            </figure>
-        </div>
-
-        <!-- QR Code Play Store (desktop only — hidden on mobile via media query) -->
-        <div class="hero-qr fade-in" style="margin:2rem auto;text-align:center">
-            <div style="display:inline-block;background:#fff;padding:12px;border-radius:12px">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.dictokey.app&format=svg" alt="QR Code — Download DictoKey on Google Play" width="160" height="160" loading="lazy">
+                <div class="hero-qr">
+                    <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.dictokey.app&format=svg" alt="QR Code — Download DictoKey on Google Play" width="160" height="160" loading="lazy"></div>
+                    <p data-i18n="hero_qr">Scan to download on Android</p>
+                </div>
             </div>
-            <p style="font-size:.8rem;color:var(--text-dim);margin-top:.5rem" data-i18n="hero_qr">Scan to download on Android</p>
+
+            <div class="hero-meta">
+                <div class="hero-proof-always" id="heroProof">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <strong>4.9</strong>
+                    <span data-i18n="hero_proof_label">on Google Play</span>
+                </div>
+                <p class="hero-note" data-i18n="hero_note"><strong>Free forever</strong> — 30 dictations/day &middot; No card &middot; No account &middot; Premium optional</p>
+                <p class="hero-note"><a href="windows/?utm_source=home-hero"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg><span data-i18n="hero_also_windows">Also on Windows &rarr;</span></a></p>
+            </div>
         </div>
 
+        <!-- Le moment : l'app reelle (captures v2.74) -->
+        <div class="hero-visual">
+            <div class="hero-screenshot hero-video-pair">
+                <figure class="hero-video-item">
+                    <picture>
+                        <source srcset="assets/hero-v2.74/hero-bubble.webp" type="image/webp">
+                        <img src="assets/hero-v2.74/hero-bubble.png" alt="DictoKey floating bubble over a chat: tap the mic to dictate, the dictated reply is already in the message field" width="540" height="1014" fetchpriority="high" decoding="async">
+                    </picture>
+                    <figcaption><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span data-i18n="hero_caption_bubble">Floating bubble</span></figcaption>
+                </figure>
+                <figure class="hero-video-item">
+                    <picture>
+                        <source srcset="assets/hero-v2.74/hero-keyboard.webp" type="image/webp">
+                        <img src="assets/hero-v2.74/hero-keyboard.png" alt="DictoKey voice keyboard with large Translate and Stop buttons while listening" width="540" height="1014" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg><span data-i18n="hero_caption_ime">Voice IME keyboard</span></figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- ====== 3 WAYS TO DICTATE (v1.7.0) ====== -->
 <section id="three-ways">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="ways_label">2 ways to dictate, plus shortcuts</p>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="ways_label">2 ways to dictate, plus shortcuts</p>
         <h2 class="section-title fade-in" data-i18n="ways_title">Your choice, every time.</h2>
-        <p class="section-desc fade-in" data-i18n="ways_desc">The same voice engine, two independent ways to use it: if one is not available, the other still works. Notification shortcuts are a bonus.</p>
+        <p class="section-desc fade-in" data-i18n="ways_desc">The same voice engine, two independent ways to use it: if one is not available, the other still works. Notification shortcuts are a bonus.</p></div>
 
-        <div class="features-grid">
+        <div class="features-grid ways-grid">
             <div class="feature-card fade-in">
-                <span class="feature-badge" data-i18n="way_1_badge">NEW</span>
-                <span class="feature-icon">🫧</span>
-                <h3 data-i18n="way_1_title">Floating bubble</h3>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+                <h3><span data-i18n="way_1_title">Floating bubble</span><span class="feature-tag" data-i18n="way_1_badge">New</span></h3>
                 <p data-i18n="way_1_desc">Appears whenever you open a keyboard. Tap to dictate, long press to translate. Drag it onto Translate, Correct or Emojis to rework what you already wrote, and step back just like on the keyboard. If a dictation can’t be inserted, the bubble keeps it for a few minutes and offers to insert it in the next field you tap.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">⌨️</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg></span>
                 <h3 data-i18n="way_2_title">Voice IME keyboard</h3>
                 <p data-i18n="way_2_desc">A dedicated voice keyboard with big Dictate and Translate buttons, punctuation and undo, available in every app where you type.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">🔔</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>
                 <h3 data-i18n="way_3_title">Notification shortcuts (optional)</h3>
                 <p data-i18n="way_3_desc">If you allow notifications: switch languages, show or hide the bubble, open the interpreter, translate the clipboard or copy your last dictation. Not needed to dictate.</p>
             </div>
@@ -907,38 +800,38 @@
 <!-- ====== FEATURES ====== -->
 <section id="features">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="feat_label">Features</p>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="feat_label">Features</p>
         <h2 class="section-title fade-in" data-i18n="feat_title">Everything You Need in a Keyboard</h2>
-        <p class="section-desc fade-in" data-i18n="feat_desc">The only Android keyboard that combines native IME, cloud AI dictation, 51-language translation, and AI rewriting in one app.</p>
+        <p class="section-desc fade-in" data-i18n="feat_desc">The only Android keyboard that combines native IME, cloud AI dictation, 51-language translation, and AI rewriting in one app.</p></div>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
-                <span class="feature-icon">🎤</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
                 <h3 data-i18n="feat_1_title">AI-Powered Dictation</h3>
                 <p data-i18n="feat_1_desc">Cloud AI speech recognition that adds punctuation and capitals for you (Clean mode). Speak naturally, no need to fix the text afterwards.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">🌍</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
                 <h3 data-i18n="feat_2_title">51 Languages</h3>
                 <p data-i18n="feat_2_desc">Dictate in French, translate to Japanese. Real-time AI translation between any two of the 51 languages. Or select text in most apps and choose “Translate with DictoKey”.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">✨</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg></span>
                 <h3 data-i18n="feat_3_title">AI Rewrite</h3>
                 <p data-i18n="feat_3_desc">Transform your text: clean, formal, concise, expanded. One tap to polish any message.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">🔧</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 16 6-12 6 12"/><path d="M8 12h8"/><path d="m16 20 2 2 4-4"/></svg></span>
                 <h3 data-i18n="feat_4_title">Voice Correction</h3>
                 <p data-i18n="feat_4_desc">Say "replace X with Y" to edit hands-free. No typing needed. Natural voice commands for effortless editing.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">🗣️</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
                 <h3 data-i18n="feat_5_title">Interpreter Mode</h3>
                 <p data-i18n="feat_5_desc">Face-to-face translation. Two microphones, real-time conversation in any language pair. Like having a personal interpreter.</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-icon">🔒</span>
+                <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
                 <h3 data-i18n="feat_6_title">Privacy First</h3>
                 <p data-i18n="feat_6_desc">No recordings stored. No account required. Your voice is processed, then deleted. GDPR compliant.</p>
             </div>
@@ -949,9 +842,9 @@
 <!-- ====== HOW IT WORKS ====== -->
 <section style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="how_label">How It Works</p>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="how_label">How It Works</p>
         <h2 class="section-title fade-in" data-i18n="how_title">Start Dictating in 30 Seconds</h2>
-        <p class="section-desc fade-in" data-i18n="how_desc">No account. A short guided setup, then just speak.</p>
+        <p class="section-desc fade-in" data-i18n="how_desc">No account. A short guided setup, then just speak.</p></div>
 
         <div class="steps">
             <div class="step fade-in">
@@ -974,21 +867,21 @@
 </section>
 
 <!-- ====== WINDOWS (20/10/2026) ====== -->
-<section id="windows">
-    <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="win_label">Also on your PC</p>
+<section id="windows" style="background: var(--bg-subtle);">
+    <div class="container text-center win-row">
+        <div class="section-head"><p class="section-label fade-in" data-i18n="win_label">Also on your PC</p>
         <h2 class="section-title fade-in" data-i18n="win_title">DictoKey for Windows</h2>
-        <p class="section-desc fade-in" data-i18n="win_desc">Press Ctrl+Alt+Space, speak, and your words are typed where your cursor is — in any Windows app. Same engine, 51 languages, translation and AI rewrite. Free plan available.</p>
-        <p class="fade-in" style="margin-top:1.5rem"><a href="windows/?utm_source=home-section" class="btn-primary" data-i18n="win_cta">Discover DictoKey for Windows</a></p>
+        <p class="section-desc fade-in" data-i18n="win_desc">Press Ctrl+Alt+Space, speak, and your words are typed where your cursor is — in any Windows app. Same engine, 51 languages, translation and AI rewrite. Free plan available.</p></div>
+        <p class="fade-in"><a href="windows/?utm_source=home-section" class="btn-secondary" data-i18n="win_cta">Discover DictoKey for Windows</a></p>
     </div>
 </section>
 
 <!-- ====== PRICING ====== -->
 <section id="pricing">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="price_label">Pricing</p>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="price_label">Pricing</p>
         <h2 class="section-title fade-in" data-i18n="price_title">Simple, Honest Pricing</h2>
-        <p class="section-desc fade-in" data-i18n="price_desc">Start free, upgrade when you need more. No hidden fees, cancel anytime.</p>
+        <p class="section-desc fade-in" data-i18n="price_desc">Start free, upgrade when you need more. No hidden fees, cancel anytime.</p></div>
 
         <div class="pricing-grid">
             <!-- Free -->
@@ -1013,9 +906,9 @@
                 <div class="price-amount" data-i18n="price_prem_amount">€7.99 <span class="period">/month</span></div>
                 <p class="price-alt" data-i18n="price_prem_alt">or €59.99/year — save 37%</p>
                 <ul class="price-features">
-                    <li class="premium-unlock" data-i18n="price_prem_1"><span class="unlock-icon">&#x1F513;</span> <strong>1000</strong> dictations per day</li>
+                    <li class="premium-unlock" data-i18n="price_prem_1"><strong>1000</strong> dictations per day</li>
                     <li class="premium-unlock" data-i18n="price_prem_4"><strong>Interpreter Mode</strong> included</li>
-                    <li class="premium-unlock" data-i18n="price_prem_5"><span class="unlock-icon">&#x1F513;</span> <strong>Voice Correction</strong> unlocked <em class="unlock-note">(via IME keyboard)</em></li>
+                    <li class="premium-unlock" data-i18n="price_prem_5"><strong>Voice Correction</strong> unlocked <em class="unlock-note">(via IME keyboard)</em></li>
                     <li class="premium-included" data-i18n="price_prem_8"><span class="check">&#10003;</span> Everything in Free included</li>
                     <li data-i18n="price_prem_6">Cancel anytime from Google Play</span> Priority processing</li>
                     <li data-i18n="price_prem_7"><span class="check">&#10003;</span> 7-day free trial</li>
@@ -1030,8 +923,8 @@
 <!-- ====== TESTIMONIALS (FR only — all reviews are in French, displayed JS-side) ====== -->
 <section id="testimonialsSection" style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="test_label">Testimonials</p>
-        <h2 class="section-title fade-in" data-i18n="test_title">What Users Say</h2>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="test_label">Testimonials</p>
+        <h2 class="section-title fade-in" data-i18n="test_title">What Users Say</h2></div>
 
         <div class="testimonials-grid">
             <div class="testimonial-card fade-in">
@@ -1107,9 +1000,9 @@
 <!-- ====== GUIDES (v1.8.0, 28/10/2026 : maillage interne vers les articles) ====== -->
 <section id="guides">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="guides_label">Guides</p>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="guides_label">Guides</p>
         <h2 class="section-title fade-in" data-i18n="guides_title">Voice Typing Help for Android</h2>
-        <p class="section-desc fade-in" data-i18n="guides_desc">Practical guides (in English) to fix your keyboard’s voice typing or compare the alternatives.</p>
+        <p class="section-desc fade-in" data-i18n="guides_desc">Practical guides (in English) to fix your keyboard’s voice typing or compare the alternatives.</p></div>
         <div class="features-grid">
             <a class="feature-card guide-card fade-in" href="blog/gboard-voice-typing-not-working.html">
                 <h3>Gboard voice typing not working?</h3>
@@ -1148,15 +1041,15 @@
                 <p>Type less on your phone: Android options and a floating bubble.</p>
             </a>
         </div>
-        <p class="fade-in" style="margin-top:24px"><a href="blog/" style="color:var(--accent-green)" data-i18n="guides_all">All guides →</a></p>
+        <p class="guides-all"><a href="blog/" data-i18n="guides_all">All guides →</a></p>
     </div>
 </section>
 
 <!-- ====== FAQ ====== -->
 <section id="faq" style="background: var(--bg-subtle);">
     <div class="container text-center">
-        <p class="section-label fade-in" data-i18n="faq_label">FAQ</p>
-        <h2 class="section-title fade-in" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <div class="section-head"><p class="section-label fade-in" data-i18n="faq_label">FAQ</p>
+        <h2 class="section-title fade-in" data-i18n="faq_title">Frequently Asked Questions</h2></div>
 
         <div class="faq-list">
             <div class="faq-item fade-in">
@@ -1250,21 +1143,27 @@
             <a href="mailto:quangapps.dev@gmail.com" data-i18n="foot_contact">Contact</a>
             <a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Dsite%26utm_content%3Dfooter" target="_blank" rel="noopener" data-i18n="foot_gplay">Google Play</a>
         </div>
-        <p class="footer-copy"><span data-i18n="foot_copy">&copy; 2026 DictoKey. All rights reserved.</span> &middot; <span id="visitCount" style="color:var(--accent-green)"></span></p>
+        <p class="footer-copy"><span data-i18n="foot_copy">&copy; 2026 DictoKey. All rights reserved.</span> &middot; <span id="visitCount" style="color:var(--accent-green)"></span> &middot; <span id="siteVersion">v1.8.0</span></p>
     </div>
 </footer>
 
 <!-- ====== JS ====== -->
 <script src="translations.js"></script>
 <script>
+    const SITE_VERSION = "1.8.0"; // affichee en pied de page (#siteVersion)
+    document.getElementById("siteVersion").textContent = "v" + SITE_VERSION;
     // Mobile menu toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
 
     // Close mobile menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('open'));
+        link.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); });
     });
 
     // FAQ accordion
