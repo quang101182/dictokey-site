@@ -51,7 +51,7 @@
 - [x] `voice-typing-for-rsi-tendonitis` (09/11 : 1459 mots, FAQ 6, Sources) — « voice typing for RSI / tendonitis » (travail sur téléphone sans douleur)
 - [x] `voice-to-text-whatsapp-android` (10/11 : 1357 mots, FAQ 6, Sources) — « voice to text for WhatsApp on Android » (dicter au lieu d'envoyer un vocal)
 - [x] `dictate-emails-android-gmail` (11/11 : 1456 mots, FAQ 6, Sources) — « dictate emails on Android (Gmail, Outlook) »
-- [ ] `voice-typing-for-adhd` — « voice typing for ADHD — capture thoughts fast »
+- [x] `voice-typing-for-adhd` (12/11 : 1465 mots, FAQ 6, Sources) — « voice typing for ADHD — capture thoughts fast »
 - [ ] REFONTE `best-voice-dictation-apps-android-2026` — mettre à jour (même méthode que la refonte n° 5)
 - [ ] `speech-to-text-translate-android-keyboard` — « speak in one language, type in another on Android »
 - [x] ~~REFONTE `whisper-speech-recognition-accuracy`~~ → ✅ réécrite le 19/10 (Whisper = modèle tiers, sources arXiv datées, exemptée des seules règles whisper/openai/WER dans `site_allow.txt`) — retirer ce qui est daté sur le moteur (ne pas nommer le fournisseur, cf FACTS)
