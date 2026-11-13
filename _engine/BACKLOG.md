@@ -52,7 +52,7 @@
 - [x] `voice-to-text-whatsapp-android` (10/11 : 1357 mots, FAQ 6, Sources) — « voice to text for WhatsApp on Android » (dicter au lieu d'envoyer un vocal)
 - [x] `dictate-emails-android-gmail` (11/11 : 1456 mots, FAQ 6, Sources) — « dictate emails on Android (Gmail, Outlook) »
 - [x] `voice-typing-for-adhd` (12/11 : 1465 mots, FAQ 6, Sources) — « voice typing for ADHD — capture thoughts fast »
-- [ ] REFONTE `best-voice-dictation-apps-android-2026` — mettre à jour (même méthode que la refonte n° 5)
+- [x] REFONTE `best-voice-dictation-apps-android-2026` (13/11 : 1344 mots, FAQ 5, 6 sources ; Wispr Free « limited words per week », Pro 15/12 $ ; SwiftKey voix multimodale, FAQ MS « English only » ; Otter Basic 300 min/mois, 6 langues) — mettre à jour (même méthode que la refonte n° 5)
 - [ ] `speech-to-text-translate-android-keyboard` — « speak in one language, type in another on Android »
 - [x] ~~REFONTE `whisper-speech-recognition-accuracy`~~ → ✅ réécrite le 19/10 (Whisper = modèle tiers, sources arXiv datées, exemptée des seules règles whisper/openai/WER dans `site_allow.txt`) — retirer ce qui est daté sur le moteur (ne pas nommer le fournisseur, cf FACTS)
 - [x] ~~**CORRECTIONS 18/10**~~ → ✅ **FAIT le 19/10 (Claude en session)** sur **35 fichiers** (et non 9 : accueil, translations.js 7 langues, 16 pages tools, 13 pages blog, accessibilité) + notes inventées (`aggregateRating`) et signature NoCodeFlow retirées. Garde-fou permanent `_engine/check_site.py` (CI GitHub + étape 1 bis du GUIDE). Énoncé d'origine : — pages en ligne qui contredisent FACTS :
