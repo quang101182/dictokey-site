@@ -68,9 +68,9 @@
 ## Relevé du 19/10 (correction site entier) — à traiter APRÈS les lignes ci-dessus, une par passage
 - [x] ~~FACTS : Quang doit trancher si « Interpreter Mode », « voice correction » et la détection automatique de langue~~ → ✅ 19/10 : les trois ajoutées à FACTS (prouvées par le code + fiche Play fr), sans palier gratuit/Premium. Énoncé d'origine :
       (présents dans le code et sur des pages) entrent dans FACTS.md — sinon les retirer des pages.
-- [ ] Faits concurrents non re-vérifiés (laissés en place) dans les comparatifs : Otter (3 langues, 16,99 $), Speechnotes
+- [x] (17/11 : REFONTE `ai-keyboard-for-multilingual-users` en 1092 mots, FAQ 5, 3 sources ; Gboard 300+ langues / 3 simultanées non retrouvés sur support.google.com → « — » ; SwiftKey Android : 5 langues simultanées, 700+ langues, source Microsoft ; reste à vérifier ailleurs : Otter, Speechnotes, Floating Mic, Voice Access, déjà retirés des pages refaites) Faits concurrents non re-vérifiés (laissés en place) dans les comparatifs : Otter (3 langues, 16,99 $), Speechnotes
       (1,99 $, 60+ langues), Floating Mic, Voice Access (~10 langues), Gboard (300+ langues) → sourcer ou retirer.
-- [ ] Pages anciennes qui échouent à `check_page.py` pour la STRUCTURE (pas pour FACTS) : best-floating (FAQ 10, pas de
+- [ ] Pages anciennes qui échouent (17/11 : ai-keyboard-multilingual corrigée ; restent ai-voice-dictation-samsung-android, how-to-translate-text-on-android-keyboard, blog/index) à `check_page.py` pour la STRUCTURE (pas pour FACTS) : best-floating (FAQ 10, pas de
       Sources, 3631 mots), best-voice-dictation-apps (pas de Sources, 2980), best-voice-keyboard (title, Sources, 3711),
       how-to-translate (title/meta), ai-keyboard-multilingual (title, Sources), ai-voice-dictation-samsung (title, meta, auteur, Sources).
 
