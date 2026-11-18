@@ -2,9 +2,9 @@
 
 > Lancé le 13/10/2026. Objectif : regagner la visibilité Google + IA (2/10 recherches, 0/8 IA au 13/10) par le
 > VOLUME et la RÉGULARITÉ, comme Yaps (244 articles en 8 mois) et Voicy (1-3/jour). Rythme : **1 page par exécution,
-> une exécution par semaine, le mercredi** (ralenti le 18/11/2026 : 5/semaine du 16/10 au 18/11 donnait des pages
-> indexées et bien classées, mais sur des recherches que presque personne ne tape — 76 impressions en 5 semaines —
-> et des doublons d'intention que Google refuse). Ce dossier `_engine/` n'est pas publié (Jekyll ignore les dossiers en `_`).
+> lundi, mercredi et vendredi** (18/11/2026 : brièvement ralenti à 1/semaine le matin, puis remis à 3/semaine le jour
+> même sur décision de Quang « on n'arrête pas, on alimente à fond » — le correctif retenu n'est pas le rythme mais le
+> CHOIX DES SUJETS : demande prouvée et public accessibilité, cf. Règles de fond). Ce dossier `_engine/` n'est pas publié (Jekyll ignore les dossiers en `_`).
 
 ## Une exécution = exactement ceci, dans l'ordre
 

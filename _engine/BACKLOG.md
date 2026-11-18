@@ -6,6 +6,14 @@
 > **18/11/2026** : nouvelles lignes = demande prouvée uniquement (GUIDE § Règles de fond « Choix des sujets »), ajoutées par Claude en session.
 > `best-voice-keyboard-android-2026` fusionnée dans `best-voice-dictation-apps-android-2026` (renvoi) : ne pas la recréer ni la « corriger ».
 
+> 🎯 **Lot du 18/11/2026 — demande PROUVÉE** (suggestions Google US relevées le 18/11 par Claude en session ; public = gens
+> pour qui taper est difficile, + intentions pratiques Android). Vérifier quand même le doublon avant d'écrire (GUIDE).
+- [ ] `how-to-enable-voice-typing-android` — « voice typing android enable » (pas à pas Gboard, Samsung, puis option bulle DictoKey ; captures décrites, pas de promesse « every app »)
+- [ ] `voice-to-text-android-messages` — « voice to text on android messages » (Google Messages / SMS ; dicter, ponctuation, envoyer ; ≠ page WhatsApp)
+- [ ] `does-typing-make-arthritis-worse` — « does typing make arthritis worse » / « is typing bad for arthritis » (page d'information prudente, sources médicales officielles datées, AUCUNE promesse médicale ; réduire la frappe : dictée Gboard, Voice Access, DictoKey ; lien vers voice-typing-for-arthritis-hand-pain)
+- [ ] `voice-typing-android-permission` — « voice typing android permission » (micro, accessibilité, superposition : à quoi sert chaque autorisation, comment l'accorder ; formulations FACTS § Accessibilité OBLIGATOIRES)
+- [ ] `dictation-app-for-writers-android` — « dictation app for writers » (écrire un brouillon long à la voix sur Android : Gboard, Wispr, DictoKey ; limites honnêtes)
+
 - [x] `samsung-voice-typing-alternative` — « Samsung voice typing alternative » (frustration Samsung Keyboard voice input ; comparer Samsung voice input, Gboard, DictoKey, Wispr Flow Android) — ⚠️ ne pas cannibaliser `ai-voice-dictation-samsung-android.html` : celle-ci = « remplacer la dictée Samsung », l'autre = « IA sur Samsung »
 - [x] `gboard-voice-typing-alternative` — « Gboard voice typing alternative » (Gboard, SwiftKey, FUTO Voice Input, Wispr Flow, DictoKey)
 - [x] `dictation-app-for-dyslexia-android` — « voice dictation app for dyslexia Android » (écrire en parlant, mode Clean, réécriture ; Gboard, Voice Access, DictoKey)
