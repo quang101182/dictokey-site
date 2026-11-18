@@ -3,6 +3,8 @@
 > Légende : `[ ]` à faire · `[x]` publié · `[!]` abandonné (raison à côté). Slug = nom du fichier dans `blog/`.
 > Priorité : 1) alternatives Android (intention d'achat forte) · 2) besoins d'accessibilité · 3) refontes.
 > Établi le 13/10/2026 d'après l'enquête concurrents (Yaps, Voicy, Wispr, Typeless, FUTO).
+> **18/11/2026** : nouvelles lignes = demande prouvée uniquement (GUIDE § Règles de fond « Choix des sujets »), ajoutées par Claude en session.
+> `best-voice-keyboard-android-2026` fusionnée dans `best-voice-dictation-apps-android-2026` (renvoi) : ne pas la recréer ni la « corriger ».
 
 - [x] `samsung-voice-typing-alternative` — « Samsung voice typing alternative » (frustration Samsung Keyboard voice input ; comparer Samsung voice input, Gboard, DictoKey, Wispr Flow Android) — ⚠️ ne pas cannibaliser `ai-voice-dictation-samsung-android.html` : celle-ci = « remplacer la dictée Samsung », l'autre = « IA sur Samsung »
 - [x] `gboard-voice-typing-alternative` — « Gboard voice typing alternative » (Gboard, SwiftKey, FUTO Voice Input, Wispr Flow, DictoKey)

@@ -2,7 +2,9 @@
 
 > Lancé le 13/10/2026. Objectif : regagner la visibilité Google + IA (2/10 recherches, 0/8 IA au 13/10) par le
 > VOLUME et la RÉGULARITÉ, comme Yaps (244 articles en 8 mois) et Voicy (1-3/jour). Rythme : **1 page par exécution,
-> du lundi au vendredi** (accéléré le 16/10/2026, au lieu de lun/mer/ven). Ce dossier `_engine/` n'est pas publié (Jekyll ignore les dossiers en `_`).
+> une exécution par semaine, le mercredi** (ralenti le 18/11/2026 : 5/semaine du 16/10 au 18/11 donnait des pages
+> indexées et bien classées, mais sur des recherches que presque personne ne tape — 76 impressions en 5 semaines —
+> et des doublons d'intention que Google refuse). Ce dossier `_engine/` n'est pas publié (Jekyll ignore les dossiers en `_`).
 
 ## Une exécution = exactement ceci, dans l'ordre
 
@@ -58,6 +60,9 @@
 - **Honnêteté** : citer les forces des concurrents (Gboard gratuit et intégré, Wispr très bon en réécriture, FUTO
   hors ligne et open source…). Une page qui ne cite que nous ne sera ni crue ni citée.
 - **Accessibilité** : ton respectueux, pas de pathos, pas de promesse médicale (« can help », jamais « cures »).
+- **Choix des sujets (18/11/2026)** : seul Claude en session ajoute des lignes au BACKLOG, et seulement pour une
+  requête dont la demande est PROUVÉE (requête qui donne déjà des impressions dans Search Console, ou suggestion de
+  la saisie semi-automatique Google). L'agent planifié n'invente jamais de sujet : BACKLOG sans `[ ]` = rien à publier.
 - **Pas de doublon** : vérifier qu'aucune page existante ne vise déjà la même requête (`grep -l` sur `blog/`).
   Si oui → faire une refonte de l'existante au lieu d'en créer une.
 - **Anonymat** : aucun nom de personne, aucune mention de l'éditeur réel, aucun lien vers un compte personnel.
