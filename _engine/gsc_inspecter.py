@@ -19,7 +19,7 @@ def call(m, p=None):
         r = json.loads(ws.recv())
         if r.get("id") == n: return r.get("result", {})
 def ev(e): return call("Runtime.evaluate", {"expression": e, "returnByValue": True}).get("result", {}).get("value")
-FIN = ["Cette URL est sur Google", "Cette URL n'est pas sur Google", "L'URL est sur Google", "L'URL n'est pas sur Google", "URL is on Google", "URL is not on Google", "n'est pas disponible"]
+FIN = ["Cette URL est sur Google", "Cette URL n'est pas sur Google", "L'URL est sur Google", "L'URL n'est pas sur Google", "URL is on Google", "URL is not on Google", "Cette URL n'a pas été indexée par Google","n'est pas disponible"]
 out = {}
 try:
     for u in urls:
