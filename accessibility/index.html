@@ -123,6 +123,13 @@ nav { background: rgba(11,13,20,.92); border-bottom: 1px solid rgba(238,240,245,
   .logo, .nav-logo { flex-shrink: 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; } }
+/* 18/11/2026 : bouton Play visible sans defiler sur telephone (avant : seul lien Play = lien texte a ~4 ecrans) */
+.a11y-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 1.25rem 0 0; }
+.a11y-cta span { color: #9aa0b4; font-size: .9rem; }
+.btn-playstore { display: inline-flex; width: 204px; height: 68px; line-height: 0; border-radius: 12px; overflow: hidden; background: #000; transition: opacity .15s, transform 160ms; }
+.btn-playstore:hover { opacity: .88; }
+.btn-playstore:active { transform: scale(.97); }
+.btn-playstore img { display: block; width: 100%; height: 100%; object-fit: cover; }
 </style>
 </head>
 <body>
@@ -139,6 +146,8 @@ nav { background: rgba(11,13,20,.92); border-bottom: 1px solid rgba(238,240,245,
     <div class="highlight-box">
         <p><strong>DictoKey is a voice-to-text accessibility tool for Android.</strong> It lets you write with your voice, in most apps, when typing on a touchscreen is painful, slow, or impossible.</p>
     </div>
+
+    <p class="a11y-cta"><a href="https://play.google.com/store/apps/details?id=com.dictokey.app&amp;referrer=utm_source%3Ddictokey-site%26utm_medium%3Dweb%26utm_campaign%3Daccessibility%26utm_content%3Dtop" class="btn-playstore" target="_blank" rel="noopener" aria-label="Get DictoKey on Google Play"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" width="204" height="68" loading="eager" decoding="async"></a><span>Free to start, no account needed.</span></p>
 
     <h2>Who DictoKey is for</h2>
     <p>A touchscreen keyboard assumes steady hands, precise aim, and good eyesight. When any of those is missing, writing on a phone becomes exhausting — or simply out of reach. DictoKey replaces the keyboard with your voice.</p>
