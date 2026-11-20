@@ -8,7 +8,7 @@
 
 > 🎯 **Lot du 18/11/2026 — demande PROUVÉE** (suggestions Google US relevées le 18/11 par Claude en session ; public = gens
 > pour qui taper est difficile, + intentions pratiques Android). Vérifier quand même le doublon avant d'écrire (GUIDE).
-- [ ] `how-to-enable-voice-typing-android` — « voice typing android enable » (pas à pas Gboard, Samsung, puis option bulle DictoKey ; captures décrites, pas de promesse « every app »)
+- [x] `how-to-enable-voice-typing-android` (20/11 : 1482 mots, FAQ 6, 3 sources) — « voice typing android enable » (pas à pas Gboard, Samsung, puis option bulle DictoKey ; captures décrites, pas de promesse « every app »)
 - [ ] `voice-to-text-android-messages` — « voice to text on android messages » (Google Messages / SMS ; dicter, ponctuation, envoyer ; ≠ page WhatsApp)
 - [ ] `does-typing-make-arthritis-worse` — « does typing make arthritis worse » / « is typing bad for arthritis » (page d'information prudente, sources médicales officielles datées, AUCUNE promesse médicale ; réduire la frappe : dictée Gboard, Voice Access, DictoKey ; lien vers voice-typing-for-arthritis-hand-pain)
 - [ ] `voice-typing-android-permission` — « voice typing android permission » (micro, accessibilité, superposition : à quoi sert chaque autorisation, comment l'accorder ; formulations FACTS § Accessibilité OBLIGATOIRES)
